@@ -11,9 +11,12 @@ Taking inspiration from here:
 https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maestro-with-llms-and-instant-code-solutions-8d26747689c4
 """
 from Chain import Chain, Model, Prompt
+import functools
 
 with open('article.txt', 'r') as f:
 	article_text = f.read()
+
+# We'll want to trace function calls + their output, we can use this decorator.
 
 keyword_extract_prompt_string = """
 You are an efficient key word detector. Your task is to extract only all the important key words and phrases without any duplicates from the below chunk of text.
@@ -44,6 +47,18 @@ The following is set of summaries:
 
 Take these and distill them into one final, consolidated summary.
 """.strip()
+
+def categorize_text_length(text: str):
+	"""
+	Return short, medium, or long.
+	"""
+	if len(text) < 500:
+		return "short"
+	elif len(text) < 2000:
+		return "medium"
+	else:
+		return "long"
+
 
 def chunk_text(text: str, size: int = 1500) -> list[str]:
 	"""
@@ -101,6 +116,13 @@ def reduce_chain(summary_map: dict) -> str:
 	summary = chain.run({'summaries':summary_map.values()}, verbose=False)
 	return summary
 
+def summarize_short_text(text: str) -> str:
+	"""
+	Use Chain of Density prompt to summarize a short text.
+	"""
+	summary = ""
+	return summary
+
 def summarize_medium_text(text: str) -> str:
 	"""
 	Wrapper function.
@@ -111,6 +133,13 @@ def summarize_medium_text(text: str) -> str:
 	final_summary = reduce_chain(summary_map)
 	return final_summary
 
+def summarize_long_text(text:str) -> str:
+	"""
+	Summarizes a long text using embeddings.
+	"""
+	summary = ""
+	return summary
+
 if __name__ == '__main__':
-	summary = summarize_medium_text(article_text)
+	summary = summarize_medium_text(article_text[:2000])
 	print(summary)
