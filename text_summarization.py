@@ -10,8 +10,9 @@ This is a text summarization script that will do the following:
 Taking inspiration from here:
 https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maestro-with-llms-and-instant-code-solutions-8d26747689c4
 """
-from Chain import Chain, Model, Prompt
-import functools
+from Chain import Chain, Model, Prompt, Parser
+
+model = "phi:latest"
 
 chain_of_density_prompt_string = """
 Here is an article: {{ARTICLE}}
@@ -103,7 +104,7 @@ def chain_of_density(text: str) -> str:
 	"""
 	print("\tSummarizing text...")
 	prompt = Prompt(chain_of_density_prompt_string)
-	model = Model('mistral:latest')
+	model = Model(model)
 	chain = Chain(prompt, model)
 	summary = chain.run({'ARTICLE':text}, verbose=False)
 	return summary.content
@@ -114,8 +115,9 @@ def extract_keywords(text_chunk: str) -> list[str]:
 	"""
 	print("\tExtracting keywords...")
 	prompt = Prompt(keyword_extract_prompt_string)
-	model = Model('mistral:latest')
-	chain = Chain(prompt, model)
+	model = Model(model)
+	parser = Parser('list')
+	chain = Chain(prompt, model, parser)
 	keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
 	return keywords
 
@@ -125,7 +127,7 @@ def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
 	"""
 	print("\tSummarizing chunk...")
 	prompt = Prompt(summarize_chunk_prompt_string)
-	model = Model('mistral:latest')
+	model = Model(model)
 	chain = Chain(prompt, model)
 	chunk_summary = chain.run({'text_chunk':text_chunk, 'key_words':keywords}, verbose=False)
 	return chunk_summary
@@ -146,7 +148,7 @@ def reduce_chain(summary_map: dict) -> str:
 	Combines the summaries from the chunks into a single summary.
 	"""
 	prompt = Prompt(reduce_prompt_string)
-	model = Model('mistral:latest')
+	model = Model(model)
 	chain = Chain(prompt, model)
 	summary = chain.run({'summaries':summary_map.values()}, verbose=False)
 	return summary
@@ -169,7 +171,7 @@ def summarize_medium_text(text: str) -> str:
 	final_summary = reduce_chain(summary_map)
 	if final_summary == None:
 		print("No short summary generated")
-	return final_summary
+	return final_summary.content
 
 def summarize_long_text(text:str) -> str:
 	"""
@@ -182,7 +184,7 @@ def main() -> str:
 	"""
 	Tset function using an example article chopped to varying lengths.
 	"""	
-	with open('article.txt', 'r') as f:
+	with open('/home/bianders/Brian_Code/Leviathan/tests/article.txt', 'r') as f:
 		text = f.read()
 	short = text[:500]
 	medium = text[:1500]
@@ -191,8 +193,8 @@ def main() -> str:
 	medium_summary = summarize_medium_text(medium)
 	long_sunmary = summarize_long_text(long)
 	print("Short summary:\n====================\n" + short_summary)
-	print("Short summary:\n====================\n" + medium_summary)
-	print("Short summary:\n====================\n" + long_sunmary)
+	print("Medium summary:\n====================\n" + medium_summary)
+	print("Long summary:\n====================\n" + long_sunmary)
 	return short_summary, medium_summary, long_sunmary
 
 if __name__ == '__main__':
