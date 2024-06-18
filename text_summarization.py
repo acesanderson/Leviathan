@@ -11,10 +11,21 @@ Taking inspiration from here:
 https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maestro-with-llms-and-instant-code-solutions-8d26747689c4
 """
 from Chain import Chain, Model, Prompt, Parser
+from nltk.tokenize import word_tokenize			# for tokenizing texts
 
-model = "phi:latest"
+# Customizable settings
+model_choice = "mistral:latest"
+chain_of_density_summary_length_in_words = 100 # set to 80 by default according to original paper.
+text_sizes = {
+	'short': 1500,
+	'medium': 10000,
+	'long': 10001
+}
+ideal_chunk_size_by_words = 1000
 
-chain_of_density_prompt_string = """
+# Our prompts
+# == this needs to be set to longer character count
+chain_of_density_prompt_string = f"""
 Here is an article: {{ARTICLE}}
 
 You will generate increasingly concise, entity-dense summaries of the above Article.
@@ -32,7 +43,7 @@ A Missing Entity is:
 - Anywhere: located anywhere in the Article.
 
 Guidelines:
-- The first summary should be long (4-5 sentences, ~80 words) yet highly non-specific, containing little information beyond the entities marked as missing. Use overly verbose language and fillers (e.g., "this article discusses") to reach ~80 words.
+- The first summary should be long (4-5 sentences, ~""" + str(chain_of_density_summary_length_in_words) + """ words) yet highly non-specific, containing little information beyond the entities marked as missing. Use overly verbose language and fillers (e.g., "this article discusses") to reach ~80 words.
 - Make every word count: re-write the previous summary to improve flow and make space for additional entities.
 - Make space with fusion, compression, and removal of uninformative phrases like "the article discusses".
 - The summaries should become highly dense and concise yet self-contained, e.g., easily understood without the Article.
@@ -74,29 +85,56 @@ The following is set of summaries:
 Take these and distill them into one final, consolidated summary.
 """.strip()
 
-def categorize_text_length(text: str):
+# Some test texts for testing purposes
+def generate_test_texts():
+	"""
+	Generate some different versions of our example text.
+	"""
+	with open('/home/bianders/Brian_Code/Leviathan/tests/article.txt', 'r') as f:
+		text = f.read()
+	tokenized_text = tokenize_text(text)
+	short = tokenized_text[:text_sizes['short']]
+	medium = tokenized_text[:text_sizes['medium']]
+	long = tokenized_text[:]
+	result = list(map(detokenize, [short, medium, long]))
+	return result
+
+# First, tokenize, classify, and route texts for summarization.
+def tokenize_text(text: str) -> list[str]:
+	"""
+	Splits the text into chunks of specified word count using NLTK for tokenization.
+	Uses NLTK library work_tokenize
+	"""
+	# Tokenize the text into words
+	words = word_tokenize(text)
+	# Create chunks of the specified size
+	return words
+
+def detokenize(words: list[str]) -> str:
+	"""
+	De-chunk text.
+	"""
+	return ' '.join(words)
+
+def chunk_text_by_words(text: str, chunk_size: int = ideal_chunk_size_by_words) -> list[str]:
+	tokens = tokenize_text(text)
+	# Chunk into a list of lists of strings
+	chunks = [tokens[i:i + chunk_size] for i in range(0, len(tokens), chunk_size)]
+	# Detokenize into summarizable smaller texts.
+	chunks = list(map(detokenize, chunks))
+	return chunks
+
+def categorize_text_length(text: str): # tokenize for length for this purpose
 	"""
 	Return short, medium, or long.
 	"""
-	if len(text) < 500:
+	tokenized_text = word_tokenize(text)
+	if len(tokenized_text) < text_sizes['short']:
 		return "short"
-	elif len(text) < 2000:
+	elif len(tokenized_text) < text_sizes['medium']:
 		return "medium"
 	else:
 		return "long"
-
-def chunk_text(text: str, size: int = 1000) -> list[str]:
-	"""
-	Splits the given text into chunks of the specified size.
-	
-	Args:
-	text (str): The text to be chunked.
-	size (int): The size of each chunk.
-	
-	Returns:
-	list of str: A list containing the chunks of text.
-	"""
-	return [text[i:i+size] for i in range(0, len(text), size)]
 
 def chain_of_density(text: str) -> str:
 	"""
@@ -104,7 +142,7 @@ def chain_of_density(text: str) -> str:
 	"""
 	print("\tSummarizing text...")
 	prompt = Prompt(chain_of_density_prompt_string)
-	model = Model(model)
+	model = Model(model_choice)
 	chain = Chain(prompt, model)
 	summary = chain.run({'ARTICLE':text}, verbose=False)
 	return summary.content
@@ -115,7 +153,7 @@ def extract_keywords(text_chunk: str) -> list[str]:
 	"""
 	print("\tExtracting keywords...")
 	prompt = Prompt(keyword_extract_prompt_string)
-	model = Model(model)
+	model = Model(model_choice)
 	parser = Parser('list')
 	chain = Chain(prompt, model, parser)
 	keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
@@ -127,7 +165,7 @@ def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
 	"""
 	print("\tSummarizing chunk...")
 	prompt = Prompt(summarize_chunk_prompt_string)
-	model = Model(model)
+	model = Model(model_choice)
 	chain = Chain(prompt, model)
 	chunk_summary = chain.run({'text_chunk':text_chunk, 'key_words':keywords}, verbose=False)
 	return chunk_summary
@@ -148,7 +186,7 @@ def reduce_chain(summary_map: dict) -> str:
 	Combines the summaries from the chunks into a single summary.
 	"""
 	prompt = Prompt(reduce_prompt_string)
-	model = Model(model)
+	model = Model(model_choice)
 	chain = Chain(prompt, model)
 	summary = chain.run({'summaries':summary_map.values()}, verbose=False)
 	return summary
@@ -166,7 +204,7 @@ def summarize_medium_text(text: str) -> str:
 	Wrapper function.
 	Summarizes a medium-length text using chunking, extractive summarization, and map/reduce.
 	"""
-	text_chunks = chunk_text(text)
+	text_chunks = chunk_text_by_words(text)
 	summary_map = map_chain(text_chunks)
 	final_summary = reduce_chain(summary_map)
 	if final_summary == None:
@@ -184,11 +222,7 @@ def main() -> str:
 	"""
 	Tset function using an example article chopped to varying lengths.
 	"""	
-	with open('/home/bianders/Brian_Code/Leviathan/tests/article.txt', 'r') as f:
-		text = f.read()
-	short = text[:500]
-	medium = text[:1500]
-	long = text
+	short, medium, long = generate_test_texts()
 	short_summary = summarize_short_text(short)
 	medium_summary = summarize_medium_text(medium)
 	long_sunmary = summarize_long_text(long)
