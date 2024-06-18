@@ -12,6 +12,8 @@ Ingests the following data:
 This uses gpt-4o by default, so it's not free. Switch to an ollama model if you want to use it for free.
 
 Next up: automatically grab html (or PDF) versions of arxiv papers and summarize them.
+
+EVENTUALLY this will use a more sophisticated set of summarization techniques that are currently being worked out in text_summarization.py.
 """
 
 from download_article import download_article
