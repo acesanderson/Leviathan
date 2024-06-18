@@ -13,10 +13,35 @@ https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maest
 from Chain import Chain, Model, Prompt
 import functools
 
-with open('article.txt', 'r') as f:
-	article_text = f.read()
+chain_of_density_prompt_string = """
+Here is an article: {{ARTICLE}}
 
-# We'll want to trace function calls + their output, we can use this decorator.
+You will generate increasingly concise, entity-dense summaries of the above Article.
+
+Repeat the following 2 steps 5 times.
+
+Step 1. Identify 1-3 informative Entities ("," delimited) from the Article which are missing from the previously generated summary.
+Step 2. Write a new, denser summary of identical length which covers every entity and detail from the previous summary plus the Missing Entities.
+
+A Missing Entity is:
+- Relevant: to the main story.
+- Specific: descriptive yet concise (5 words or fewer).
+- Novel: not in the previous summary.
+- Faithful: present in the Article.
+- Anywhere: located anywhere in the Article.
+
+Guidelines:
+- The first summary should be long (4-5 sentences, ~80 words) yet highly non-specific, containing little information beyond the entities marked as missing. Use overly verbose language and fillers (e.g., "this article discusses") to reach ~80 words.
+- Make every word count: re-write the previous summary to improve flow and make space for additional entities.
+- Make space with fusion, compression, and removal of uninformative phrases like "the article discusses".
+- The summaries should become highly dense and concise yet self-contained, e.g., easily understood without the Article.
+- Missing entities can appear anywhere in the new summary.
+- Never drop entities from the previous summary. If space cannot be made, add fewer new entities.
+
+Remember, use the exact same number of words for each summary.
+
+Answer in JSON. The JSON should be a list (length 5) of dictionaries whose keys are "Missing_Entities" and "Denser_Summary".
+""".strip()
 
 keyword_extract_prompt_string = """
 You are an efficient key word detector. Your task is to extract only all the important key words and phrases without any duplicates from the below chunk of text.
@@ -59,8 +84,7 @@ def categorize_text_length(text: str):
 	else:
 		return "long"
 
-
-def chunk_text(text: str, size: int = 1500) -> list[str]:
+def chunk_text(text: str, size: int = 1000) -> list[str]:
 	"""
 	Splits the given text into chunks of the specified size.
 	
@@ -72,6 +96,17 @@ def chunk_text(text: str, size: int = 1500) -> list[str]:
 	list of str: A list containing the chunks of text.
 	"""
 	return [text[i:i+size] for i in range(0, len(text), size)]
+
+def chain_of_density(text: str) -> str:
+	"""
+	Use Chain of Density prompt to summarize a text.
+	"""
+	print("\tSummarizing text...")
+	prompt = Prompt(chain_of_density_prompt_string)
+	model = Model('mistral:latest')
+	chain = Chain(prompt, model)
+	summary = chain.run({'ARTICLE':text}, verbose=False)
+	return summary
 
 def extract_keywords(text_chunk: str) -> list[str]:
 	"""
@@ -121,6 +156,9 @@ def summarize_short_text(text: str) -> str:
 	Use Chain of Density prompt to summarize a short text.
 	"""
 	summary = ""
+	summary = chain_of_density(text)
+	if summary == None:
+		print("No short summary generated")
 	return summary
 
 def summarize_medium_text(text: str) -> str:
@@ -131,6 +169,8 @@ def summarize_medium_text(text: str) -> str:
 	text_chunks = chunk_text(text)
 	summary_map = map_chain(text_chunks)
 	final_summary = reduce_chain(summary_map)
+	if final_summary == None:
+		print("No short summary generated")
 	return final_summary
 
 def summarize_long_text(text:str) -> str:
@@ -140,6 +180,21 @@ def summarize_long_text(text:str) -> str:
 	summary = ""
 	return summary
 
+def main() -> str:
+	"""
+	Tset function using an example article chopped to varying lengths.
+	"""	
+	with open('article.txt', 'r') as f:
+		text = f.read()
+	short = text[:500]
+	medium = text[:1500]
+	long = text
+	short_summary = summarize_short_text(short)
+	medium_summary = summarize_medium_text(medium)
+	long_sunmary = summarize_long_text(long)
+	print("Short summary:\n====================\n" + short_summary)
+	print("Short summary:\n====================\n" + medium_summary)
+	print("Short summary:\n====================\n" + long_sunmary)
+
 if __name__ == '__main__':
-	summary = summarize_medium_text(article_text[:2000])
-	print(summary)
+	main()
