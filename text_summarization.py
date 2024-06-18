@@ -106,7 +106,7 @@ def chain_of_density(text: str) -> str:
 	model = Model('mistral:latest')
 	chain = Chain(prompt, model)
 	summary = chain.run({'ARTICLE':text}, verbose=False)
-	return summary
+	return summary.content
 
 def extract_keywords(text_chunk: str) -> list[str]:
 	"""
@@ -157,8 +157,6 @@ def summarize_short_text(text: str) -> str:
 	"""
 	summary = ""
 	summary = chain_of_density(text)
-	if summary == None:
-		print("No short summary generated")
 	return summary
 
 def summarize_medium_text(text: str) -> str:
@@ -195,6 +193,7 @@ def main() -> str:
 	print("Short summary:\n====================\n" + short_summary)
 	print("Short summary:\n====================\n" + medium_summary)
 	print("Short summary:\n====================\n" + long_sunmary)
+	return short_summary, medium_summary, long_sunmary
 
 if __name__ == '__main__':
 	main()
