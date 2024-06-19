@@ -25,7 +25,7 @@ def get_embeddings(text_chunks: list[str]) -> list:
 	embeddings = list(zip(embeddings['documents'], embeddings['embeddings']))
 	return embeddings
 
-def find_cluster_representatives(embeddings, num_clusters=5):
+def find_cluster_representatives(embeddings, num_clusters=config_dict['num_clusters']):
 	"""
 	Take a list of embeddings ([[document,embedding]]), cluster them, identify the cluster centers, and return the closest document to each center.
 	"""
@@ -54,21 +54,22 @@ def summarize_long_text(text:str) -> str:
 	"""
 	text_chunks = chunk_text_by_words(text)
 	embeddings = get_embeddings(text_chunks)
+	print("Generated embeddings.")
 	representative_documents = find_cluster_representatives(embeddings)
+	print("Found representative documents.")
 	# Now we have a medium text to summarize with map/reduce
 	summary_map = map_chain(representative_documents)
+	print("Mapped representative documents.")
 	summary = reduce_chain(summary_map)	
+	print("Reduced representative documents.")
 	if summary == None:
 		print("No long summary generated.")
 	return summary.content
 
 def main():
 	text = generate_test_book()
-	summary = summarize_long_text()
+	summary = summarize_long_text(text)
 	print(summary)
 
 if __name__ == "__main__":
     main()
-
-
-

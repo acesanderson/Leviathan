@@ -16,7 +16,7 @@ from nltk.tokenize import word_tokenize			# for tokenizing texts
 # Customizable settings
 def get_config():
 	# Define your variables here
-	model_choice = "mistral:latest"
+	model_choice = "gpt"
 	chain_of_density_summary_length_in_words = 250
 	text_sizes = {
 		'short': 1500,
@@ -25,7 +25,7 @@ def get_config():
 	}
 	ideal_chunk_size_by_words = 1000
 	# Get the local variables at this point
-	num_clusters = 5
+	num_clusters = 20
 	test_text_path = '/home/bianders/Brian_Code/Leviathan/tests/article.txt'
 	test_book_path = '/home/bianders/Brian_Code/Leviathan/tests/NLTK.txt'
 	local_vars = locals()
