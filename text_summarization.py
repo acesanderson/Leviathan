@@ -25,6 +25,7 @@ def get_config():
 	}
 	ideal_chunk_size_by_words = 1000
 	# Get the local variables at this point
+	num_clusters = 5
 	test_text_path = '/home/bianders/Brian_Code/Leviathan/tests/article.txt'
 	test_book_path = '/home/bianders/Brian_Code/Leviathan/tests/NLTK.txt'
 	local_vars = locals()
@@ -224,7 +225,6 @@ def summarize_short_text(text: str) -> str:
 	"""
 	Use Chain of Density prompt to summarize a short text.
 	"""
-	summary = ""
 	summary = chain_of_density(text)
 	return summary
 
