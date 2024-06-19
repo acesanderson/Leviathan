@@ -10,7 +10,7 @@ This is a text summarization script that will do the following:
 Taking inspiration from here:
 https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maestro-with-llms-and-instant-code-solutions-8d26747689c4
 """
-from Chain import Chain, Model, Prompt, Parser
+from Chain import Chain, Model, Prompt, Parser 	# type: ignore
 from nltk.tokenize import word_tokenize			# for tokenizing texts
 
 # Customizable settings
@@ -222,9 +222,17 @@ def summarize_medium_text(text: str) -> str:
 def summarize_long_text(text:str) -> str:
 	"""
 	Summarizes a long text using embeddings.
+	Creating this in another file.
 	"""
-	summary = ""
-	return summary
+	# text_chunks = chunk_text_by_words(text)
+	# db = get_embeddings(text_chunks)
+	# clusters = cluster_embeddings(db)
+	# exemplar_clusters = pick_best_embeddings(clusters)
+	# summary_map = map_chain(exemplar_clusters)
+	# final_summary = reduce_chain(summary_map)
+	# if final_summary == None:
+	# 	print("No long summary generated.")
+	# return final_summary.content
 
 def main() -> str:
 	"""

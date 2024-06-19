@@ -5,18 +5,9 @@ Decorators:
 """
 
 import pytest
-from text_summarization import categorize_text_length, chain_of_density, chain_of_density_prompt_string, chunk_text, extract_keywords, functools, keyword_extract_prompt_string, main, map_chain, reduce_chain, reduce_prompt_string, summarize_chunk_prompt_string, summarize_chunk_with_keywords, summarize_long_text, summarize_medium_text, summarize_short_text
+from text_summarization import categorize_text_length, chain_of_density, chain_of_density_prompt_string, chunk_text, extract_keywords, functools, keyword_extract_prompt_string, main, map_chain, reduce_chain, reduce_prompt_string, summarize_chunk_prompt_string, summarize_chunk_with_keywords, summarize_long_text, summarize_medium_text, summarize_short_text, generate_test_texts
 
-def generate_test_texts():
-	"""
-	Generate some different versions of our example text.
-	"""
-	with open('/home/bianders/Brian_Code/Leviathan/tests/article.txt', 'r') as f:
-		text = f.read()
-	short = text[:500]
-	medium = text[:1500]
-	long = text
-	return short, medium, long
+
 
 @pytest.fixture
 def setup():

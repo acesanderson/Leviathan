@@ -16,9 +16,9 @@ Next up: automatically grab html (or PDF) versions of arxiv papers and summarize
 EVENTUALLY this will use a more sophisticated set of summarization techniques that are currently being worked out in text_summarization.py.
 """
 
-from download_article import download_article
-from download_youtube_transcript import download_transcript
-from Chain import Chain, Model, Prompt
+from download_article import download_article                   # type: ignore
+from download_youtube_transcript import download_transcript     # type: ignore
+from Chain import Chain, Model, Prompt                          # type: ignore
 import sys
 import os
 
