@@ -48,6 +48,7 @@ def find_cluster_representatives(embeddings, num_clusters=5):
 
 def summarize_long_text(text:str) -> str:
 	"""
+	Wrapper function.
 	Summarizes a long text using embeddings.
 	Creating this in another file.
 	"""
@@ -55,20 +56,19 @@ def summarize_long_text(text:str) -> str:
 	embeddings = get_embeddings(text_chunks)
 	representative_documents = find_cluster_representatives(embeddings)
 	# Now we have a medium text to summarize with map/reduce
-	summary = summarize_medium_text(representative_documents)
+	summary_map = map_chain(representative_documents)
+	summary = reduce_chain(summary_map)	
 	if summary == None:
 		print("No long summary generated.")
 	return summary.content
 
-# def main():
-# 	short, medium, long = generate_test_texts
-# 	summary = summarize_long_text()
-# 	print(summary)
+def main():
+	text = generate_test_book()
+	summary = summarize_long_text()
+	print(summary)
 
-# if __name__ == "__main__":
-#     main()
+if __name__ == "__main__":
+    main()
 
-# get our book and chunk it
-text = generate_test_book()
 
 
