@@ -14,14 +14,24 @@ from Chain import Chain, Model, Prompt, Parser 	# type: ignore
 from nltk.tokenize import word_tokenize			# for tokenizing texts
 
 # Customizable settings
-model_choice = "mistral:latest"
-chain_of_density_summary_length_in_words = 250
-text_sizes = {
-	'short': 1500,
-	'medium': 10000,
-	'long': 10001
-}
-ideal_chunk_size_by_words = 1000
+def get_config():
+	# Define your variables here
+	model_choice = "mistral:latest"
+	chain_of_density_summary_length_in_words = 250
+	text_sizes = {
+		'short': 1500,
+		'medium': 10000,
+		'long': 10001
+	}
+	ideal_chunk_size_by_words = 1000
+	# Get the local variables at this point
+	test_text_path = '/home/bianders/Brian_Code/Leviathan/tests/article.txt'
+	test_book_path = '/home/bianders/Brian_Code/Leviathan/tests/NLTK.txt'
+	local_vars = locals()
+	# You can now return the local_vars as your config dictionary
+	return local_vars
+
+config_dict = get_config()
 
 # Our prompts
 chain_of_density_prompt_string = """
@@ -42,16 +52,16 @@ A Missing Entity is:
 - Anywhere: located anywhere in the Article.
 
 Guidelines:
-- The first summary should be long (~""" + str(chain_of_density_summary_length_in_words) + """  words) yet highly non-specific, 
+- The first summary should be long (~""" + str(config_dict['chain_of_density_summary_length_in_words']) + """  words) yet highly non-specific, 
 containing little information beyond the entities marked as missing. Use overly verbose language and fillers
-(e.g., "this article discusses") to reach ~""" + str(chain_of_density_summary_length_in_words) + """ words.
+(e.g., "this article discusses") to reach ~""" + str(config_dict['chain_of_density_summary_length_in_words']) + """ words.
 - Make every word count: re-write the previous summary to improve flow and make space for additional entities.
 - Make space with fusion, compression, and removal of uninformative phrases like "the article discusses".
 - The summaries should become highly dense and concise yet self-contained, e.g., easily understood without the Article.
 - Missing entities can appear anywhere in the new summary.
 - Never drop entities from the previous summary. If space cannot be made, add fewer new entities.
 
-Remember, use the exact same number of words for each summary (around """ + str(chain_of_density_summary_length_in_words) + """ words).
+Remember, use the exact same number of words for each summary (around """ + str(config_dict['chain_of_density_summary_length_in_words']) + """ words).
 
 Answer in JSON. The JSON should be a list (length 5) of dictionaries whose keys are "Missing_Entities" and "Denser_Summary".
 """.strip()
@@ -89,16 +99,24 @@ Take these and distill them into one final, consolidated summary.
 # Some test texts for testing purposes
 def generate_test_texts():
 	"""
-	Generate some different versions of our example text.
+	Generate some different versions of our example text for short, medium, and long summarization tasks.
 	"""
-	with open('/home/bianders/Brian_Code/Leviathan/tests/article.txt', 'r') as f:
+	with open(config_dict['test_text_path'], 'r') as f:
 		text = f.read()
 	tokenized_text = tokenize_text(text)
-	short = tokenized_text[:text_sizes['short']]
-	medium = tokenized_text[:text_sizes['medium']]
+	short = tokenized_text[:config_dict['text_sizes']['short']]
+	medium = tokenized_text[:config_dict['text_sizes']['medium']]
 	long = tokenized_text[:]
 	result = list(map(detokenize, [short, medium, long]))
 	return result
+
+def generate_test_book():
+	"""
+	Generate a test book.
+	"""
+	with open(config_dict['test_book_path'], 'r') as f:
+		book = f.read()
+	return book
 
 # First, tokenize, classify, and route texts for summarization.
 def tokenize_text(text: str) -> list[str]:
@@ -117,7 +135,7 @@ def detokenize(words: list[str]) -> str:
 	"""
 	return ' '.join(words)
 
-def chunk_text_by_words(text: str, chunk_size: int = ideal_chunk_size_by_words) -> list[str]:
+def chunk_text_by_words(text: str, chunk_size: int = config_dict['ideal_chunk_size_by_words']) -> list[str]:
 	"""
 	Takes a string (and optional chunk size), tokenizes + splits, and returns a set of chunks for the text.
 	"""
@@ -134,9 +152,9 @@ def categorize_text_length(text: str): # tokenize for length for this purpose
 	Return short, medium, or long.
 	"""
 	tokenized_text = word_tokenize(text)
-	if len(tokenized_text) < text_sizes['short']:
+	if len(tokenized_text) < config_dict['text_sizes']['short']:
 		return "short"
-	elif len(tokenized_text) < text_sizes['medium']:
+	elif len(tokenized_text) < config_dict['text_sizes']['medium']:
 		return "medium"
 	else:
 		return "long"
@@ -150,7 +168,7 @@ def chain_of_density(text: str) -> str:
 	"""
 	print("Summarizing text...")
 	prompt = Prompt(chain_of_density_prompt_string)
-	model = Model(model_choice)
+	model = Model(config_dict['model_choice'])
 	parser = Parser('json')
 	chain = Chain(prompt, model, parser)
 	summary = chain.run({'ARTICLE':text}, verbose=False)
@@ -162,7 +180,7 @@ def extract_keywords(text_chunk: str) -> list[str]:
 	Returns a list of important keywords from the given text chunk.
 	"""
 	prompt = Prompt(keyword_extract_prompt_string)
-	model = Model(model_choice)
+	model = Model(config_dict['model_choice'])
 	parser = Parser('list')
 	chain = Chain(prompt, model, parser)
 	keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
@@ -173,7 +191,7 @@ def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
 	Returns extractive summary on a text chunk using the given keywords.
 	"""
 	prompt = Prompt(summarize_chunk_prompt_string)
-	model = Model(model_choice)
+	model = Model(config_dict['model_choice'])
 	chain = Chain(prompt, model)
 	chunk_summary = chain.run({'text_chunk':text_chunk, 'key_words':keywords}, verbose=False)
 	return chunk_summary
@@ -195,7 +213,7 @@ def reduce_chain(summary_map: dict) -> str:
 	"""
 	print("Summarizing the summaries.")
 	prompt = Prompt(reduce_prompt_string)
-	model = Model(model_choice)
+	model = Model(config_dict['model_choice'])
 	chain = Chain(prompt, model)
 	summary = chain.run({'summaries':summary_map.values()}, verbose=False)
 	return summary
