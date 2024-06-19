@@ -118,6 +118,9 @@ def detokenize(words: list[str]) -> str:
 	return ' '.join(words)
 
 def chunk_text_by_words(text: str, chunk_size: int = ideal_chunk_size_by_words) -> list[str]:
+	"""
+	Takes a string (and optional chunk size), tokenizes + splits, and returns a set of chunks for the text.
+	"""
 	tokens = tokenize_text(text)
 	# Chunk into a list of lists of strings
 	chunks = [tokens[i:i + chunk_size] for i in range(0, len(tokens), chunk_size)]
