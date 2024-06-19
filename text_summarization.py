@@ -15,7 +15,7 @@ from nltk.tokenize import word_tokenize			# for tokenizing texts
 
 # Customizable settings
 model_choice = "mistral:latest"
-chain_of_density_summary_length_in_words = 100 # set to 80 by default according to original paper.
+chain_of_density_summary_length_in_words = 250
 text_sizes = {
 	'short': 1500,
 	'medium': 10000,
@@ -24,8 +24,7 @@ text_sizes = {
 ideal_chunk_size_by_words = 1000
 
 # Our prompts
-# == this needs to be set to longer character count
-chain_of_density_prompt_string = f"""
+chain_of_density_prompt_string = """
 Here is an article: {{ARTICLE}}
 
 You will generate increasingly concise, entity-dense summaries of the above Article.
@@ -43,14 +42,16 @@ A Missing Entity is:
 - Anywhere: located anywhere in the Article.
 
 Guidelines:
-- The first summary should be long (4-5 sentences, ~""" + str(chain_of_density_summary_length_in_words) + """ words) yet highly non-specific, containing little information beyond the entities marked as missing. Use overly verbose language and fillers (e.g., "this article discusses") to reach ~80 words.
+- The first summary should be long (~""" + str(chain_of_density_summary_length_in_words) + """  words) yet highly non-specific, 
+containing little information beyond the entities marked as missing. Use overly verbose language and fillers
+(e.g., "this article discusses") to reach ~""" + str(chain_of_density_summary_length_in_words) + """ words.
 - Make every word count: re-write the previous summary to improve flow and make space for additional entities.
 - Make space with fusion, compression, and removal of uninformative phrases like "the article discusses".
 - The summaries should become highly dense and concise yet self-contained, e.g., easily understood without the Article.
 - Missing entities can appear anywhere in the new summary.
 - Never drop entities from the previous summary. If space cannot be made, add fewer new entities.
 
-Remember, use the exact same number of words for each summary.
+Remember, use the exact same number of words for each summary (around """ + str(chain_of_density_summary_length_in_words) + """ words).
 
 Answer in JSON. The JSON should be a list (length 5) of dictionaries whose keys are "Missing_Entities" and "Denser_Summary".
 """.strip()
@@ -122,6 +123,7 @@ def chunk_text_by_words(text: str, chunk_size: int = ideal_chunk_size_by_words) 
 	chunks = [tokens[i:i + chunk_size] for i in range(0, len(tokens), chunk_size)]
 	# Detokenize into summarizable smaller texts.
 	chunks = list(map(detokenize, chunks))
+	print(f"Split text in {len(chunks)} chunks.")
 	return chunks
 
 def categorize_text_length(text: str): # tokenize for length for this purpose
@@ -136,22 +138,26 @@ def categorize_text_length(text: str): # tokenize for length for this purpose
 	else:
 		return "long"
 
+# now our summarization functions
+
 def chain_of_density(text: str) -> str:
 	"""
 	Use Chain of Density prompt to summarize a text.
+	The prompt returns a list of json objects; the second to last seems to have the best mix of named entities to words.
 	"""
-	print("\tSummarizing text...")
+	print("Summarizing text...")
 	prompt = Prompt(chain_of_density_prompt_string)
 	model = Model(model_choice)
-	chain = Chain(prompt, model)
+	parser = Parser('json')
+	chain = Chain(prompt, model, parser)
 	summary = chain.run({'ARTICLE':text}, verbose=False)
-	return summary.content
+	# return the content of the response, which is a list of dicts; grab the second to last one, and grab the value for Denser_Summary.
+	return summary.content[-2]['Denser_Summary']
 
 def extract_keywords(text_chunk: str) -> list[str]:
 	"""
 	Returns a list of important keywords from the given text chunk.
 	"""
-	print("\tExtracting keywords...")
 	prompt = Prompt(keyword_extract_prompt_string)
 	model = Model(model_choice)
 	parser = Parser('list')
@@ -163,7 +169,6 @@ def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
 	"""
 	Returns extractive summary on a text chunk using the given keywords.
 	"""
-	print("\tSummarizing chunk...")
 	prompt = Prompt(summarize_chunk_prompt_string)
 	model = Model(model_choice)
 	chain = Chain(prompt, model)
@@ -185,11 +190,14 @@ def reduce_chain(summary_map: dict) -> str:
 	"""
 	Combines the summaries from the chunks into a single summary.
 	"""
+	print("Summarizing the summaries.")
 	prompt = Prompt(reduce_prompt_string)
 	model = Model(model_choice)
 	chain = Chain(prompt, model)
 	summary = chain.run({'summaries':summary_map.values()}, verbose=False)
 	return summary
+
+# our wrapper functions for the three text sizes
 
 def summarize_short_text(text: str) -> str:
 	"""
@@ -208,7 +216,7 @@ def summarize_medium_text(text: str) -> str:
 	summary_map = map_chain(text_chunks)
 	final_summary = reduce_chain(summary_map)
 	if final_summary == None:
-		print("No short summary generated")
+		print("No medium summary generated")
 	return final_summary.content
 
 def summarize_long_text(text:str) -> str:
@@ -225,11 +233,11 @@ def main() -> str:
 	short, medium, long = generate_test_texts()
 	short_summary = summarize_short_text(short)
 	medium_summary = summarize_medium_text(medium)
-	long_sunmary = summarize_long_text(long)
+	# long_summary = summarize_long_text(long)
 	print("Short summary:\n====================\n" + short_summary)
 	print("Medium summary:\n====================\n" + medium_summary)
-	print("Long summary:\n====================\n" + long_sunmary)
-	return short_summary, medium_summary, long_sunmary
+	# print("Long summary:\n====================\n" + long_sunmary)
+	# return short_summary, medium_summary, long_sunmary
 
 if __name__ == '__main__':
 	main()
