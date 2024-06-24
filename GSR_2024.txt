@@ -1,0 +1,2739 @@
+2024
+Global
+Skills
+Report
+Trusted skill insights for
+a rapidly changing world
+01 02 03 04
+Foreword
+I’m delighted to present the sixth annual The report captures several significant trends While skill rankings are crucial, they are not
+Global Skills Report, which has become a trusted driven by GenAI, digital transformation, and the sole indicators of advancement. There are
+resource for leaders and institutions worldwide automation. Notably, in 2023, a learner signed several countries that have witnessed a surge
+as they navigate the rapidly changing skills up for a GenAI course on Coursera every in new learners coming online for the first time,
+landscape. The report draws on data and insights minute; by 2024, this rate had quadrupled. An including those with basic skills. It may reduce
+from our global learning community—including astounding 1,060% year-over-year increase their ranking in the short term, but it signals
+over 148 million learners and 7,000 institutional in global GenAI course enrollments highlights major strides towards a digitized workforce.
+customers—and content from 325 of the world’s how learners are actively preparing for AI’s Institution-led initiatives are expected to boost
+leading university and industry partners. impact on their careers. Improved technical the nations’ skills rankings as more individuals
+skill rankings in regions like Latin America and gain access to essential skills.
+The rise of generative AI (GenAI) underscores
+the Caribbean reinforce the global appetite
+the pressing need for new and innovative We trust this report will provide actionable
+for acquiring digital skills as a way to achieve
+strategies to build a competitive workforce. Jobs insights for leaders, inspire collaboration
+greater economic mobility.
+and industries stand on the cusp of profound among institutions, and contribute to a
+transformation, with two-thirds of jobs exposed Several factors may influence a country’s skill future where access to high-quality
+to some degree of automation1 and GenAI poised ranking. To provide a holistic view, this edition learning empowers everyone.
+to deliver $4.4 trillion in productivity gains to of the report introduces an evolved skills
+Jeff Maggioncalda
+the global economy.2 In response, businesses, ranking methodology that combines our skill
+CEO, Coursera
+governments, and higher education institutions proficiency data with leading economic indices
+must coordinate their efforts to equip people on global innovation,3 labor force participation,4
+with critical skills. human capital,5 and GDP per capita.6
+Global Skills Report 2024 | Overview 2
+01 02 03 04
+Table of contents
+01 03 Latin America and the Caribbean 35 04
+Brazil 39
+Foreword 2 Regional Skill Trends 15 Appendix 64
+Chile 40
+Table of contents 3 Asia Pacific 16 Colombia 41 Glossary 65
+Executive summary 4 Methodology 68
+India 20 Mexico 42
+How to read this report 8 Endnotes 78
+Indonesia 21 Peru 43
+Malaysia 22
+Middle East and North Africa 44
+02 The Philippines 23
+Egypt 48
+Singapore 24
+Global Skill Trends 10 Saudi Arabia 49
+Thailand 25
+Global overview 11 United Arab Emirates 50
+Europe 26
+North America 51
+France 30
+Canada 55
+Germany 31
+United States 56
+Spain 32
+Turkey 33 Sub-Saharan Africa 57
+United Kingdom 34
+Botswana 61
+Nigeria 62
+South Africa 63
+Global Skills Report 2024 | Overview 3
+01 02 03 04
+Executive summary
+1 AI literacy emerges as a Turn insight into action 2 AI readiness initiatives the stage for AI training and adoption. India’s
+$1.2 billion investment in AI projects,8 Malaysia’s
+global imperative Businesses drive emerging skill
+National AI Studies Centre,9 and Thailand’s AI
+Understand regional AI skill readiness to build an
+adoption across regions infrastructure development program are just a
+The 2022 launch of ChatGPT ignited a global race AI-proficient global team.
+few examples.10
+toward AI literacy. GenAI course enrollments
+The steep increase in GenAI course enrollments
+surged by 1,060% globally over the past year Governments See a list of national initiatives in the appendix
+isn’t just a reflection of learner interest. It
+as learners sought foundational AI skills and Align AI training programs with regional skill
+demonstrates the efforts of businesses,
+enrolled in courses like “Prompt Engineering needs to build an AI-ready workforce.
+governments, and higher education institutions Turn insight into action
+for ChatGPT” by Vanderbilt University and
+Higher education institutions to prepare AI-ready economies. Across the globe,
+“Introduction to Generative AI” by Google Cloud. Businesses
+Tailor curricula to regional AI skill gaps to prepare various AI initiatives are laying the foundation for
+Prioritize AI training to equip employees with
+Learners in regions like Latin America and the students for the future of work. skill development and innovation.
+mission-critical skills to drive innovation
+Caribbean are focusing more on foundational
+Learners In North America, 72% of US CEOs say generative and productivity.
+skills, while learners in North America are diving
+Build AI skills applicable to your current or AI is a top investment priority, driving the rapid
+into more advanced courses like “Generative AI Governments
+desired career path. growth of the AI talent pool and increasing
+with Large Language Models” by Amazon Web Invest in regional and national AI infrastructure,
+investments in employee AI training.7
+Services and DeepLearning.AI. This suggests research, and workforce development.
+that while regions are at different stages of AI Regions like Asia Pacific (1,270% YoY) and Sub-
+adoption, there’s a universal recognition of the Saharan Africa (1,500% YoY) are also witnessing Higher education institutions
+need to develop AI proficiency. significant growth in GenAI course enrollments. Upskill faculty and staff in AI to enhance
+productivity and leverage AI tools like
+Targeted government initiatives in countries
+Course Builder to create content.
+such as India, Malaysia, and Thailand are setting
+Global Skills Report 2024 | Overview 4
+01 02 03 04
+Learners For instance, learners in Peru are more likely to 4 Cybersecurity skills enrollments, which could stem from increased
+Access AI training from universities, employers, focus on skills like culture and resilience, while government focus, like the creation of the
+remain crucial amid
+and/or workforce agencies to boost productivity those in Canada gravitate to storytelling and Council of Ministers for Cybersecurity.17
+and stay competitive. social media. While these skills are valuable, they talent shortages and
+do not align with the pressing need for advanced
+evolving threats Turn insight into action
+digital skills in domains like machine learning,
+3 The digital skills gap
+data science, and programming languages. These Businesses
+Cybersecurity plays a crucial role in building
+persists in a rapidly are among the fastest-growing skills globally.13 Equip your team with cybersecurity skills to
+resilient digital infrastructure, especially with
+manage cyber risks and develop talent to fill
+evolving job market the challenges posed by emerging technologies
+skill gaps.
+Turn insight into action like GenAI. Despite this, enrollment growth in
+More than 9 in 10 jobs now require at least cybersecurity skills falls behind high-growth Governments
+Businesses
+some level of digital proficiency,11 such as using areas like cloud computing and data science. Foster public-private partnerships to
+Invest in upskilling employees in mission-
+a computer to email and create documents. boost cybersecurity awareness, fund
+critical digital skills to keep pace with digital Worldwide, the gap between the number of
+Despite this need, there’s still a big difference skill development, and collaborate on
+transformation in your industry. needed and available skilled cybersecurity
+between what employers expect in terms of threat management.
+professionals rose by 12.6% year-over-year.14 This
+digital skills and what many workers actually Governments
+know and can do. Use labor market data to design local and trend points to an urgent need for cybersecurity Higher education institutions
+skill development, especially given the increasing Integrate cutting-edge cybersecurity content
+national training programs that emphasize the
+Seventy percent of European businesses view frequency and sophistication of cyberattacks into curricula to prepare students for in-demand
+most in-demand digital skills.
+the lack of digital skills as a major obstacle to and the growing talent shortage.15 cybersecurity careers.
+investment, with 40% of adults lacking even basic Higher education institutions
+digital skills.12 This challenge is not unique to the Integrate digital skills into curricula to ensure While cybersecurity enrollments have remained Learners
+region. We found that learners in many regions learners are well-prepared for jobs. relatively stable in some regions, there are Build and strengthen cybersecurity skills to
+are prioritizing human skills over the digital skills notable variations. In Europe, cybersecurity prepare for an in-demand job or advance your
+that are in high demand. Learners enrollments declined by 5% year-over-year, existing career.
+Build in-demand digital skills that are valuable to despite the region being heavily impacted by
+your field and desired career path. cyberattacks.16 Meanwhile, the Middle East and
+North Africa saw a 17% increase in cybersecurity
+Global Skills Report 2024 | Overview 5
+01 02 03 04
+5 Micro-credentials are saw a 41% growth, with learners focusing on Learners NiñaSTEM Pueden—a joint initiative by the
+similar skills. Pursue micro-credentials to gain practical skills Organization for Economic Co-operation and
+a rapid pathway for
+for in-demand digital roles. Development (OECD) and the Government
+learners to prepare for Sub-Saharan Africa saw the smallest growth of Mexico22 to increase careers for women in
+(12%), indicating a need for increased access
+STEM—and Colombia’s efforts to close the digital
+in-demand jobs to learning resources and support to overcome 6 The global gender gap in
+gender gap.
+barriers—such as underdeveloped digital
+online learning continues
+Learners are increasingly turning to industry infrastructure, lack of accessible and affordable The Middle East and North Africa has the largest
+micro-credentials, including Professional connectivity, and inadequate regulatory and to narrow, but regional disparity, with a 13-percentage-point difference
+Certificates, to gain digital skills for jobs. With policy environments. between women learners and women in the
+disparities persist
+60% of workers requiring retraining by 2027, the general population. In Saudi Arabia, women
+need for accessible learning pathways is more represent just 32% of learners yet make up
+Turn insight into action More women globally have been learning
+pressing than ever.18 42% of the general population. Technological,
+on Coursera, up from 43% in 2022 to 46% in
+Businesses economic, and educational barriers are limiting
+Coursera learners are enrolling in job-relevant 2023. In North America and Europe, women
+Adapt hiring practices to recognize micro- women’s access to education.23
+Professional Certificates to prepare for in- experience strong barriers to equitable
+credentials and prioritize developing skills
+demand roles, such as data analysts, project education and careers—yet, with a gender gap Sub-Saharan Africa has a 14-percentage-
+in-house for data analytics, cybersecurity, and
+managers, and IT professionals. The most of five percentage points, far fewer than almost point gap, with Botswana being a bright spot,
+project management.
+popular Professional Certificates align closely anywhere else.20 In the European Union, for achieving gender parity in online learning. The
+with the top target roles learners are pursuing, Governments example, more women aged 16–44 have basic gap could be due to socioeconomic challenges,
+which also have the highest number of Invest in micro-credential programs to keep your digital skills than men,21 despite only 18% of cultural norms, poor internet access, and the
+job openings.19 workforce competitive, and focus on increasing information and communication technology general unaffordability of data and devices.24
+(ICT) specialists being women.
+access to learning in regions with slower growth. Botswana’s success is likely a result of
+There was a 61% year-over-year growth in
+progressive initiatives, such as SmartBots and
+Professional Certificate enrollments in North Higher education institutions Mexico and Colombia have achieved gender
+GIGA, which connect schools to high-speed
+America, with learners gravitating toward Recognize or integrate micro-credentials for parity in online learning, with women making
+internet to strengthen access to online learning.25
+data analytics, cybersecurity, and project credit within your curriculum to help meet up 51% and 50% of learners, respectively.
+management. The Middle East and North Africa evolving student and market needs. This is supported by programs like Mexico’s
+Global Skills Report 2024 | Overview 6
+01 02 03 04
+The Asia Pacific region has a seven-percentage- salaries, economic opportunities, and However, this does not diminish the value of Governments
+point gap in gender parity. The Philippines job flexibility. foundational skills, which are equally important Apply these insights to your policy-making and
+and Thailand have achieved parity, likely due for a well-rounded skill set. In regions like invest in initiatives that strengthen foundational
+Learners
+to effective educational reforms and STEM Sub-Saharan Africa and other parts of Asia capabilities and support emerging skill
+Use online learning resources and support
+initiatives for girls and young women.26 Thailand’s Pacific, learners are building foundational development, recognizing that both impact
+from institutions to build skills and advance
+Girls in ICT program builds awareness about the business and digital capabilities, such as risk economic growth and competitiveness.
+their careers.
+digital divide, supports technology education management, supply chain systems, business
+Higher education institutions
+and skills training, and encourages women to communication, auditing, spreadsheet software,
+Use these trends to guide curriculum and
+pursue careers in STEM.27 India is working toward 7 Different regions and general accounting. These skills form the
+program enhancements. Offer courses that
+closing its 12-percentage-point gap, despite bedrock of many industries and are crucial for
+prioritize different cater to foundational business and digital skills
+sociocultural barriers and access issues.28 economic development.
+or skills in emerging technologies, ensuring
+skills, but the majority
+Popular target roles in these regions include balanced skill development.
+Turn insight into action
+focus on emerging or supply chain and logistics, entrepreneurship,
+Learners
+personal financial advisor, and product
+Businesses foundational capabilities Continue to prioritize skills aligned to in-demand
+marketing manager.
+Invest in initiatives that support women’s
+careers in your region, while also exploring
+professional development and advancement in In Europe and parts of Asia Pacific, learners opportunities to develop a rounded skill set that
+diverse roles. tend to focus on skills related to emerging Turn insight into action blends foundational and emerging skills.
+technologies—such as FinTech, machine learning
+Governments Businesses
+algorithms, and artificial neural networks—as
+Develop policies and initiatives that promote Use regional skill trends to guide talent
+well as human skills like resilience and culture
+women’s access to online learning and address recruitment, development, and retention. Tailor
+building. In Singapore, for example, learners
+regional barriers. training programs to progress skill-set journeys
+are pursuing skills in epidemiology, FinTech,
+in different regions, acknowledging the value of
+Higher education institutions and blockchain, alongside roles like software
+both foundational and emerging skills.
+Enhance curricula to align with high-earning developer and machine learning engineer.
+careers for women; promote the associated
+Global Skills Report 2024 | Overview 7
+01 02 03 04
+How to read this report
+The Global Skills Report Domains are the broadest skill categories and Skills taxonomy example
+include business, technology, and data science.
+presents a comprehensive
+These are the only three domains featured in the Domain Competency Skills
+view of skill and credential report. Respective competencies and skills fall
+under one of these domains.
+trends at a country,
+Business Accounting Auditing
+regional, and global level Competencies are more granular skills tied to a
+respective domain. For instance, “accounting”
+by drawing on insights from or “communication” are competencies in the Communication Writing
+over 148M learners. “business” domain.
+Skills are the most granular skills that are Technology Cloud computing Software as a service
+Coursera’s skills taxonomy covered in this report and ladder directly up
+to competencies.
+Skills in Coursera’s taxonomy fall into three Data science Statistical programming Python
+cascading levels: from broad to granular, they
+include “domains,” “competencies,” and “skills.”
+We use “skills” to describe all three categories
+in the foreword and executive summary. And in
+the regional and country spotlights, we use “top
+skills” to refer to the third level illustrated here. Explore the methodology for the complete list
+of skills featured in this report
+Global Skills Report 2024 | Overview 8
+01 02 03 04
+How to read skill rankings This formula aims to provide a more representative picture of skill Top skills and target roles use an over-indexing methodology
+proficiency across countries. We invite our readers to interpret to capture what learners in a specific country or region are
+The global and regional skill rankings represent how learners
+these findings thoughtfully and consider them as a starting point for disproportionately enrolling in compared to learners globally.
+across countries perform in the business, technology, and data
+further exploration and action.
+science domains. To provide a more comprehensive picture of Most popular content highlights the most enrolled-in courses,
+skill proficiency in a country, this year’s skill ranking methodology A country’s overall rank (1–109) represents the aggregate Guided Projects, and Professional Certificates in the past year.
+combines both learner skill proficiency on Coursera and third-party performance of a country across all domains, and the individual
+indicators illustrated below. domain performance is represented as a percentile (0–100%). See How to interpret recommended content by country
+the table below for an example.
+This year’s country spotlights also introduce recommended content
+that aligns to a country’s top skills and top target roles. These
+Country skill ranking formula
+Regional Global Country Business Technology Data
+are customized recommendations vetted by Coursera’s curation
+50 Country’s aggregated skills measurement rank rank science
+% experts. Consider them a starting point for identifying which
+on Coursera 1 2 Japan 96% 99% 99%
+content you may want to include in a learning program.
+• Learners’ on-platform skill proficiency scores 2 12 Singapore 91% 91% 87%
+3 13 Hong Kong 88% 83% 91%
++
+Recommended content for top skills and roles
+50 Country’s aggregated skills measurement
+%
+How to read enrollment trends Professional Certificate
+index using third party metrics Prompt Engineering IT Support
+for ChatGPT
+• Global Innovation Index (GII)29—skill The report also features enrollment trends on the Coursera
+Professional Certificate
+application to innovation platform that capture which competencies, skills, or top target Financial Markets UX Design
+roles learners are engaging with over time. Enrollment trends
+• Labor force participation30—skill matching
+are presented at global, regional, and country levels and are
+in labor market
+presented in three ways:
+• Human capital index31 (HCI) and GDP per
+capita32—output metrics of skill application Year-over-year (YoY) enrollment growth measures For more details, explore the robust methodology
+in economy cybersecurity, GenAI, and Professional Certificate enrollment used in this year’s report
+growth year-over-year. Timeframes for YoY enrollment may vary.
+Global Skills Report 2024 | Overview 9
+01 02 03 04
+Global
+Skill Trends
+Learning can be transformational. You
+learn for a better life or a better job.
+Amanda Brophy
+Director, Grow with Google
+2024 Job Skills Report webinar
+10
+01 02 03 04
+Global overview
+Global averages
+These figures reflect the
+averaged data for the 109
+countries covered in this report.
+148 33 1,060
+M+ %
+Coursera Median age GenAI course
+learners enrollment growth
+46 45 69
+% % %
+Women Learning Professional Certificate
+learners on mobile enrollment growth
+Cutting-edge Rankings 1–28 Emerging Rankings 56–82
+Competitive Rankings 29–55 Lagging Rankings 83–109
+Global Skills Report 2024 | Global Skill Trends 11
+01 02 03 04
+Global skill ranking categories
+Cutting-edge Competitive Emerging Lagging
+Rankings 1–28 Rankings 29–55 Rankings 56–82 Rankings 83–109
+Where they are Where they are Where they are Where they are
+Europe, parts of Asia Pacific, and Primarily Europe, Latin America, and parts North America and parts of Asia Primarily Asia Pacific, the Middle East
+Latin America of Asia Pacific, though also countries like Pacific, Europe, and the Middle East and North Africa, and Sub-Saharan Africa
+Turkey and United Arab Emirates and North Africa
+84% 48.32 59% 36.7 39% 30.1 18% 21.9
+Average skill Average Global Average skill Average Global Average skill Average Global Average skill Average Global
+proficiency percentile Innovation Index score proficiency percentile Innovation Index score proficiency percentile Innovation Index score proficiency percentile Innovation Index score
+on Coursera on Coursera on Coursera on Coursera
+$42,788 75.3 $23,918 73.4 $18,740 67.8 $4,636 58.4
+Average GDP per capita Average Labor Force Average GDP per capita Average Labor Force Average GDP per capita Average Labor Force Average GDP per capita Average Labor Force
+Participation rate Participation rate Participation rate Participation rate
+.73 .66 .57 .48
+Average Human Average Human Average Human Average Human
+Capital Index Capital Index Capital Index Capital Index
+Global skills rankings are calculated using a 50/50 blend of Coursera skill proficiency
+and third-party data.
+Global Skills Report 2024 | Global Skill Trends 12
+01 02 03 04
+Global skill rankings
+Index rank Country name Index rank Country name Index rank Country name Index rank Country name Index rank Country name Index rank Country name
+1 Switzerland 19 Brazil 37 Dominican 55 Australia 74 Cameroon 93 Iraq
+2 Japan 20 Chile Republic 56 Estonia 75 Kuwait 94 Bangladesh
+3 Germany 21 Uruguay 38 Argentina 57 Turkey 76 Tunisia 95 Algeria
+4 Netherlands 22 Poland 39 Serbia 58 Qatar 77 Jamaica 96 Yemen
+5 France 23 Peru 40 New Zealand 59 Canada 78 Bahrain 97 Zimbabwe
+6 Sweden 24 Czech Republic 41 Indonesia 60 Saudi Arabia 79 Malaysia 98 Kenya
+7 Spain 25 Bulgaria 42 Ireland 61 Ecuador 80 Cambodia 99 Cote d'Ivoire
+8 Austria 26 Mexico 43 Venezuela 62 Costa Rica 81 Thailand 100 South Africa
+9 Denmark 27 Ukraine 44 Honduras 63 Paraguay 82 Jordan 101 Philippines
+10 Belgium 28 Cyprus 45 United Kingdom 64 Morocco 83 Lebanon 102 Uganda
+11 Luxembourg 29 Colombia 46 Hungary 65 Georgia 84 Pakistan 103 Myanmar
+12 Singapore 30 Greece 47 Taiwan 66 Botswana 85 Guatemala 104 Ghana
+13 Hong Kong 31 Slovakia 48 El Salvador 67 Azerbaijan 86 Sri Lanka 105 Nigeria
+14 Portugal 32 Kazakhstan 49 Croatia 68 Panama 87 India 106 Uzbekistan
+15 Italy 33 Belarus 50 Bolivia 69 United States 88 Zambia 107 Somalia
+16 Korea, 34 United Arab 51 Latvia 70 Romania 89 Bhutan 108 Nepal
+Republic of Emirates 52 Armenia 71 Rwanda 90 Oman 109 Sudan
+17 Norway 35 Israel 53 Lithuania 72 Egypt 91 Puerto Rico
+18 Finland 36 China 54 Vietnam 73 Trinidad & Tobago 92 Ethiopia
+Global skill proficiency rankings across business, technology, and data science for 109
+countries, based on the performance of learners on Coursera and key economic indices.
+Global Skills Report 2024 | Global Skill Trends 13
+01 02 03 04
+Top 20: Online learners as a percentage of labor force
+In this year’s report, we spotlight the countries Rank Region Country Labor force active on Coursera
+that are actively training the highest percentage Global All 0.73%
+of their labor force on Coursera and investing 1 Asia Pacific Uzbekistan 6.25%
+in their populations to provide the skills 2 Asia Pacific Singapore 3.83%
+employers need.
+3 Middle East and North Africa United Arab Emirates 2.07%
+4 North America Canada 2.03%
+The table on this page ranks the top 20 countries
+globally based on the percentage of their 5 Asia Pacific Hong Kong 2.02%
+labor force active on Coursera. By investing in 6 North America United States 1.66%
+accessible, job-relevant learning, these digital 7 Europe Luxembourg 1.51%
+champions are not only driving economic 8 Middle East and North Africa Lebanon 1.47%
+growth and competitiveness, but also creating 9 Latin America and the Caribbean Uruguay 1.42%
+opportunities for individuals to adapt and
+10 Europe Ireland 1.41%
+succeed in the face of change.
+11 Latin America and the Caribbean Trinidad and Tobago 1.21%
+12 Europe Switzerland 1.13%
+13 Asia Pacific Cyprus 1.12%
+14 Europe Estonia 1.11%
+15 Europe Netherlands 1.09%
+16 Europe Latvia 1.07%
+17 Middle East and North Africa Saudi Arabia 1.07%
+18 Asia Pacific Kazakhstan 1.06%
+Active learners are those who have started
+19 Europe United Kingdom 1.06%
+at least one course item on Coursera within
+20 Latin America and the Caribbean Colombia 1.02%
+the past year.
+Global Skills Report 2024 | Global Skill Trends 14
+01 02 03 04
+Regional
+Skill Trends
+AI is coming to your job; it’s not
+coming for your job.
+Elisa Graceffo
+General Manager of Technical Content,
+Worldwide Learning at Microsoft
+Unlocking Productivity: The Business Leader’s
+Playbook to Generative AI Skills Training
+15
+01 02 03 04
+Asia Pacific
+49.2 82 42
+M % %
+Coursera YoY enterprise Women
+learners enrollments learners
+45 31 31
+% %
+Learning Median Women
+on mobile age learners in STEM
+In the Asia Pacific (APAC) region, with 49.2
+million learners representing 3.9% of the
+working population, leads in digital literacy.
+A 1,270% year-over-year increase in GenAI
+course enrollments reflects the region’s
+commitment to tech proficiency. Countries like
+India showcase a young, mobile-first learning
+demographic, with a growing number of women
+engaging in technical upskilling.
+See page 19 for country skill rankings in Cutting-edge Rankings 1–28 Emerging Rankings 56–82
+Asia Pacific Competitive Rankings 29–55 Lagging Rankings 83–109
+Global Skills Report 2024 | Regional Skill Trends | APAC 16
+01 02 03 04
+Asia Pacific
+Regional enrollment trends
+Top skills Top target roles Most popular content in Asia Pacific
+APAC CEOs are accelerating AI investment, driving 1. HTML and CSS 1. Marketing Associate
+Tableau Public for Project
+growth in AI and cybersecurity course enrollments 2. BlockChain 2. Web Developer Management and Beyond
+on Coursera.33 Despite this momentum, the region 3. Data Visualization 3. Computer Systems
+Foundations: Data, Data, Everywhere
+faces the challenge of digitally skilling 5.7 billion Software Engineer
+people by 2025.34 4. Applied Machine Learning 4. Database Administrator
+Small Business Marketing Using YouTube
+5. Machine Learning 5. Engineering Manager
+Some countries, like Bangladesh, Myanmar, and
+Algorithms 6. Business Analyst
+the Philippines, have noticeable gaps in tech and Foundations of Cybersecurity
+6. Regression 7. Network Engineer
+data science skills. Coursera collaborates with
+7. Software Architecture 8. Data Engineer
+local institutions to create tailored programs that Foundations of Project Management
+8. Artificial Neural Networks 9. SEO Specialist
+address these gaps.
+9. Network Architecture 10. Market Research Analyst
+Introduction to Microsoft Excel
+10. Data Analysis Software
+For instance, IMS Ghaziabad incorporated micro-
+credentials into their curricula well before the Foundations of Digital
+Marketing and E-commerce
+National Education Policy (NEP 2020) emphasized
+skill development. Differentiated learning
+Financial Markets
+experiences that strengthen academic excellence
+will be critical to preparing more students for a Supervised Machine Learning:
+Regression and Classification
+rapidly changing workforce.
+AI for Everyone
+Industry micro-credentials, such as Professional
+Methodology snapshot
+Certificates, offer pathways for businesses,
+To identify top skills and target roles, we use an over-indexing
+governments, and educational institutions to equip
+methodology. Over-indexing means that learners in a specific
+the workforce with essential tech skills.
+country or region are disproportionately enrolling in a given skill
+compared to learners globally.
+Global Skills Report 2024 | Regional Skill Trends | APAC 17
+01 02 03 04
+Asia Pacific
+Regional enrollment trends cont.
+GenAI Cybersecurity Professional Certificates
+1,270 6 26
+% % %
+Online education with a blended learning
+YoY enrollment growth YoY enrollment growth YoY enrollment growth
+model is going to be the most effective
+going forward. This is the actual coming- Top courses Top courses Top Professional Certificates
+of-age of higher education. Prompt Engineering Professional Certificate
+Foundations of Cybersecurity Data Analytics
+for ChatGPT
+Professional Certificate
+Introduction to Generative AI Crash Course on Python Cybersecurity
+Generative AI with Large Programming for Everybody Project Professional Certificate
+Language Models (Getting Started with Python) Management
+Dr. Fr. Sebastian George, S J
+Digital Professional Certificate
+Director at XLRI, Delhi-NCR Generative AI for Everyone Algorithms, Part 1
+Marketing & E-commerce
+Introduction to Large Analyze Data to Professional Certificate
+UX Design
+Language Models Answer Questions
+CampusTalks with XLRI:
+Learning beyond curriculum
+Global Skills Report 2024 | Regional Skill Trends | APAC 18
+01 02 03 04
+Asia Pacific
+Regional skill rankings
+Regional Global Country Business Technology Data Regional Global Country Business Technology Data
+rank rank science rank rank science
+1 2 Japan 96% 99% 99% 18 89 Bhutan 9% 31% 26%
+Continuous learning is the
+2 12 Singapore 91% 91% 87% 19 94 Bangladesh 22% 12% 16%
+3 13 Hong Kong 88% 83% 91% 20 101 Philippines 17% 6% 8% key enabler to retaining and
+4 16 South Korea 76% 78% 93% 21 103 Myanmar 8% 13% 10% developing talent.
+5 32 Kazakhstan 73% 90% 46% 22 106 Uzbekistan 4% 5% 4%
+6 36 China 71% 54% 77% 23 108 Nepal 1% 2% 15%
+7 40 New Zealand 56% 61% 76%
+8 41 Indonesia 25% 69% 82%
+9 47 Taiwan 50% 43% 72%
+Sumegha Lazarus
+10 54 Vietnam 58% 58% 48% SGM & Head, Content and Digital Learning,
+11 55 Australia 49% 56% 61% Reliance Industries Limited
+12 79 Malaysia 30% 28% 33%
+13 80 Cambodia 32% 35% 25%
+Skills Development:
+14 81 Thailand 31% 23% 29%
+How Coursera Can Upskill Employees
+15 84 Pakistan 24% 22% 20%
+16 86 Sri Lanka 6% 34% 35%
+17 87 India 11% 33% 30%
+Global Skills Report 2024 | Regional Skill Trends | APAC 1199
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+India 98 74 77 1. HTML and CSS 1. Web Developer
+2. Applied Machine Learning 2. Network Engineer
+Business Tech Data science
+3. Python Programming 3. Cloud Security Engineer
+4. Regression 4. Software Developer
+24.6 87 30 Enrollment trends
+M 5. Machine Learning Algorithms 5. Machine Learning Engineer
+GenAI
+Coursera Global Median 6. BlockChain 6. Securities &
+learners rank age 1,648% YoY enrollments 7. Distributed Computing Commodities Trader
+39 33 53 Architecture 7. Data Engineer
+% % % Top courses
+8. Programming Principles 8. Database Administrator
+Women Women learners Learning
+Prompt Engineering 9. Algorithms 9. Marketing Associate
+learners in STEM on mobile
+for ChatGPT
+10. Software Architecture 10. Data Analyst
+Introduction to Generative AI
+India’s 1,648% increase in GenAI course enrollments reflects
+deep engagement with cutting-edge technology. This aligns Generative AI with Large
+with the government’s $1.2 billion investment in AI.35 Learners Language Models
+Recommended content for top skills and roles
+focus on programming languages and applied machine
+learning to prepare for technical roles, like web developer, Professional Certificates Introduction to HTML, CSS, Blockchain and
+software developer, and machine learning engineer. static YoY enrollments & JavaScript Cryptography Overview
+Machine Learning in Bayesian Statistics: From
+India is attracting more new learners, which may impact its Top Professional Certificates the Enterprise Concept to Data Analysis
+skill rankings compared to previous years. While enrollments Professional Certificate The Nuts and Bolts of Creative Programming for
+in Professional Certificates remained static year-over-year, Cybersecurity Machine Learning Digital Media & Mobile Apps
+an 8% increase in Specialization enrollments year-over- Professional Certificate Python Scripting Full Stack Professional Certificate
+year signals interest in a wide range of content. Despite Data Analytics Fundamentals Developer
+sociocultural barriers and access issues,36 India is making Project Professional Certificate Introduction to Network Professional Certificate
+significant strides toward closing its skill gaps and building Management Back-End Development Engineering
+a competitive workforce.
+Global Skills Report 2024 | Regional Skill Trends | APAC 20
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Indonesia 83 35 21 1. Artificial Neural Networks 1. Cloud Security Engineer
+2. Applied Machine Learning 2. Network Engineer
+Business Tech Data science
+3. Computer Graphic Techniques 3. Operations Manager
+4. BlockChain 4. Product Marketing Manager
+1.8 41 29 Enrollment trends
+M 5. Machine Learning Algorithms 5. Personal Financial Advisor
+GenAI
+Coursera Global Median 6. Computer Vision 6. Contract Administrator
+learners rank age 1,158% YoY enrollments 7. Deep Learning 7. IT Project Manager
+46 33 46 8. Audit 8. Project Manager
+% % % Top courses
+9. Network Architecture 9. Web Developer
+Women Women learners Learning
+learners in STEM on mobile Dasar-Dasar Dukungan Teknis 10. Spreadsheet Software 10. General Manager
+Seluk Beluk
+Indonesia’s 116% year-over-year increase in Jaringan Komputer
+Professional Certificate enrollments shows a focus Analisis Data dengan
+on industry-aligned skill development. AI and Pemrograman R
+Recommended content for top skills and roles
+big data are projected to account for over 40%
+of technology training programs in the next five Professional Certificates Foundations of
+AI for Everyone
+years, supporting Indonesia’s strategy to become a 116% YoY enrollments Machine Learning
+key player in Southeast Asia’s tech economy.37 Introduction to
+Top Professional Certificates Computer Vision Machine Learning: Regression
+Professional Certificate Auditing I: Conceptual Introducing Security: Aligning
+Analitik Data
+Foundations of Auditing Asset and Risk Management
+Project Professional Certificate Blockchain and Network Professional Certificate
+Management Cryptography Overview Engineering
+IT Automation Professional Certificate Neural Networks and Professional Certificate
+IT Support
+with Python Random Forests
+Global Skills Report 2024 | Regional Skill Trends | APAC 21
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Malaysia 77 79 74 1. Spreadsheet Software 1. General Manager
+2. SQL 2. IT Director
+Business Tech Data science
+3. FinTech 3. Business Analyst
+4. Supply Chain Systems 4. Operations and
+782 79 32 Enrollment trends
+K 5. Market Research Maintenance Specialist
+GenAI
+Coursera Global Median 6. Business Communication 5. Personal Financial Advisor
+learners rank age 806% YoY enrollments 7. Investment Management 6. Operations Manager
+46 34 38 8. Advertising 7. Systems Analyst
+% % % Top courses
+9. Blockchain 8. Auditor
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Risk Management 9. Product Manager
+10. Financial Analyst
+Prompt Engineering
+Malaysia’s 97% year-over-year increase in for ChatGPT
+Professional Certificate enrollments highlights Generative AI with Large
+the country’s drive to boost digital skills. Language Models
+Recommended content for top skills and roles
+The launch of the national AI Studies Centre
+emphasizes tech education to prepare the Professional Certificates
+workforce for AI and ML opportunities.38 Learners 97% YoY enrollments Concepts in SQL Portfolio and Risk Management
+focus on SQL, FinTech, blockchain, and business Applying Data Analytics
+analytics in response to the growing demand for Top Professional Certificates in Finance Python with Power BI
+tech professionals.39 Professional Certificate Introduction to Business English for Cross-
+Data Analytics
+Market Research cultural Communication
+Project Professional Certificate IT Project Professional Certificate
+Advertising and Society
+Management Manager
+Digital Professional Certificate Business Professional Certificate
+Supply Chain Optimization
+Marketing & E-commerce Intelligence Analyst
+Global Skills Report 2024 | Regional Skill Trends | APAC 22
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+The Philippines 91 103 101 1. Audit 1. Personal Financial Advisor
+2. Spreadsheet Software 2. Product Marketing Manager
+Business Tech Data science
+3. Graphic Design 3. Operations Manager
+4. Storytelling 4. General Manager
+2.4 101 31 Enrollment trends
+M 5. Social Media 5. IT Director
+Coursera Global Median GenAI 6. General Accounting 6. IT Project Manager
+learners rank age 642% YoY enrollments 7. Advertising 7. Project Manager
+51 36 43 8. Business Communication 8. Business Analyst
+% % % Top courses
+9. Influencing 9. Operations & Maintenance Specialist
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Market Research 10. Marketing Specialist
+Prompt Engineering
+In the Philippines, learners pursue skills in for ChatGPT
+auditing and digital marketing, enhancing both
+Generative AI for Everyone
+business acumen and technical proficiency.
+Recommended content for top skills and roles
+With women representing over half of learners,
+there’s a move toward gender inclusivity in Professional Certificates Auditing I: Conceptual Financial Accounting:
+tech education. Plus, a 79% rise in Professional 79% YoY enrollments Foundations of Auditing Advanced Topics
+Certificate enrollments demonstrates a Fundamentals of Introduction to
+dedication to upskilling for the digital future. Top Professional Certificates Graphic Design Market Research
+Professional Certificate Storytelling and influencing: Communication in the 21st
+Data Analytics
+Communicate with impact Century Workplace
+Project Professional Certificate Social Media and Social Social Media Professional Certificate
+Management Content Strategy Marketing
+Digital Professional Certificate Project Professional Certificate
+Marketing in a Digital World
+Marketing & E-commerce Management
+Global Skills Report 2024 | Regional Skill Trends | APAC 23
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Singapore 11 11 15 1. Epidemiology 1. Software Developer
+2. FinTech 2. Machine Learning Engineer
+Business Tech Data science
+3. Resilience 3. Bookkeeper
+4. BlockChain 4. Securities & Commodities Trader
+1.1 12 34 Enrollment trends
+M 5. Investment Management 5. Auditor
+Coursera Global Median GenAI 6. Bayesian Statistics 6. Network Engineer
+learners rank age 815% YoY enrollments 7. Machine Learning Algorithms 7. Data Analyst
+45 36 31 8. Artificial Neural Networks 8. Business Analyst
+% % % Top courses
+9. Applied Machine Learning 9. Product Manager
+Women Women learners Learning
+learners in STEM on mobile Generative AI with Large 10. Risk Management 10. Risk Analyst
+Language Models
+Introduction to Generative AI
+Singapore’s focus on future-oriented skills,
+like blockchain and machine learning, aligns Prompt Engineering
+with its strategy to maintain its position as a for ChatGPT
+Recommended content for top skills and roles
+global learning hub.40 The SkillsFuture credits
+program reflects Singapore’s commitment to Professional Certificates Essential Epidemiologic Tools Neural Networks and
+lifelong learning, ensuring the workforce remains 57% YoY enrollments for Public Health Practice Random Forests
+adaptable and competitive.41 FinTech Foundations
+Top Professional Certificates and Overview Machine Learning: Regression
+Professional Certificate Introduction to Blockchain for Introduction to
+Data Analytics
+Financial Services Risk Management
+Project Professional Certificate Investment Strategies and Professional Certificate
+Data Analytics
+Management Portfolio Analysis
+Professional Certificate Bayesian Statistics: From Business Professional Certificate
+Cybersecurity
+Concept to Data Analysis Intelligence (BI) Analyst
+Global Skills Report 2024 | Regional Skill Trends | APAC 24
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Thailand 76 85 67 1. Culture 1. Media Buyer
+Business Tech Data science 2. SQL 2. Social Media Marketer
+3. Writing 3. Public Relations Manager
+4. Business Communication 4. Communications Specialist
+941 81 32 Enrollment trends
+K 5. Brand Management 5. Personal Financial Advisor
+Coursera Global Median GenAI 6. FinTech 6. Product Marketing Manager
+learners rank age 1,073% YoY enrollments 7. Spreadsheet Software 7. Bookkeeper
+50 % 32 % 46 % Top courses 8. Human Learning 8. Financial Manager
+9. Advertising 9. Data Analyst
+Women Women learners Learning
+learners in STEM on mobile Generative AI for Everyone 10. Experiment 10. IT Director
+Introduction to Generative AI
+Thailand’s 311% year-over-year increase in
+Professional Certificate enrollments highlights a Prompt Engineering
+push toward digital fluency and tech innovation. for ChatGPT
+Recommended content for top skills and roles
+Thai learners are diversifying their skills—from
+SQL to business communication and FinTech—to Professional Certificates Cultural intelligence: Communication Strategies
+meet the evolving global job market demands. 311% YoY enrollments Become a global citizen for a Virtual Age
+Meanwhile, the AI Thailand initiative aims to spur English for Effective
+economic growth and competitiveness through Top Professional Certificates Business Writing Learning Mindsets & Skills
+AI development.42 Professional Certificate
+Data Analytics SQL for Software Developers The Power of Team Culture
+Project Professional Certificate FinTech Foundations Social Media Professional Certificate
+Management and Overview Marketing
+Professional Certificate From Brand to Image: Creating Professional Certificate
+UX Design High Impact Campaigns That Bookkeeper
+Tell Brand Stories
+Global Skills Report 2024 | Regional Skill Trends | APAC 25
+01 02 03 04
+Europe
+Cutting-edge Rankings 1–28
+Competitive Rankings 29–55
+Emerging Rankings 56–82
+Lagging Rankings 83–109
+24.5 43 46
+M % %
+Coursera YoY enterprise Women
+learners enrollments learners
+38 35 34
+% %
+Learning Median Women
+on mobile age learners in STEM
+Learners in Europe demonstrate strong overall skill
+proficiency, with 19 of the top 25 countries globally
+originating from the region. Despite a 4.56% year-
+over-year decline in cybersecurity enrollments,
+Europe witnessed a 775% increase in GenAI course
+enrollments, reflecting a growing interest in
+emerging technologies. The region is nearing gender
+parity in online learning, with 46% of learners being
+women. Furthermore, 38% of learners in Europe
+are learning on mobile, highlighting a shift toward
+accessible and flexible learning solutions.
+See page 29 for country skill rankings in Europe
+Global Skills Report 2024 | Regional Skill Trends | Europe 26
+01 02 03 04
+Europe
+Regional enrollment trends
+Europe’s commitment to safeguarding AI is evident Top skills Top target roles Most popular content in Europe
+in the AI Act, the world’s first-ever comprehensive
+1. FinTech 1. Treasurer
+AI legal framework.43 This aligns with the region’s 2. Resilience 2. Securities & Foundations: Data, Data, Everywhere
+ambitious targets for the Digital Decade, which
+3. Culture Commodities Trader
+aims to accelerate progress in skills, government, 4. Epidemiology 3. Machine Learning Engineer Foundations of Project Management
+infrastructure, and business.44 However, the Digital
+5. Human Learning 4. Software Developer
+Economy and Society Index (DESI) reveals that four 6. Machine 5. Personal Financial Advisor The Science of Well-Being
+out of 10 adults and every third person who works
+Learning Algorithms 6. Operations Manager
+Learning How to Learn: Powerful mental
+in Europe lack basic digital skills, with over 70% of
+7. Artificial Neural Networks 7. Network Engineer tools to help you master tough subjects
+businesses citing this as an obstacle to investment.45
+8. Applied Machine Learning 8. Financial Analyst
+9. Regression 9. Budget Analyst AI for Everyone
+While countries like Switzerland, Germany, and
+10. Bioinformatics 10. Web Developer
+the Netherlands demonstrate cutting-edge
+Financial Markets
+proficiency across business, technology, and data
+science domains, others like Romania, Georgia, and
+Foundations of Cybersecurity
+Azerbaijan have room for improvement, particularly
+in technology skills. To address this, the European Supervised Machine Learning:
+Regression and Classification
+Commission aims to reach 80% of EU adults with at
+least basic digital skills and 20 million ICT specialists—
+Foundations of User Experience (UX) Design
+especially women—employed across the EU by 2030.46
+Methodology snapshot
+English for Career Development
+Coursera’s partnerships with institutions like the
+To identify top skills and target roles, we use an over-indexing
+University of Szeged, whose students have access
+methodology. Over-indexing means that learners in a specific
+to all Professional Certificates, demonstrate the
+country or region are disproportionately enrolling in a given skill
+collaborative effort needed to bridge the digital
+compared to learners globally.
+skills gap.
+Global Skills Report 2024 | Regional Skill Trends | Europe 27
+01 02 03 04
+Europe
+Regional enrollment trends cont.
+GenAI Cybersecurity Professional Certificates
+775 5 34
+% % %
+Generative AI (GenAI) is
+YoY enrollment growth YoY enrollment growth YoY enrollment growth
+transforming the skill
+requirements for employees in Top courses Top courses Top Professional Certificates
+telecoms. Today, employees Generative AI with Large Professional Certificate
+Foundations of Cybersecurity Data Analytics
+Language Models
+must possess the ability to work
+Prompt Engineering Project Professional Certificate
+collaboratively with AI systems, for ChatGPT Crash Course on Python Management
+leverage automation tools, and Play It Safe: Professional Certificate
+Generative AI for Everyone Cybersecurity
+Manage Security Risks
+interpret vast amounts of data to
+Technical Support Digital Professional Certificate
+drive informed decision-making. Introduction to Generative AI Fundamentals Marketing & E-commerce
+ChatGPT Advanced Professional Certificate
+Algorithms, Part 1 UX Design
+Data Analysis
+Julia Ewen-Hoffman
+Head of Learning & Development,
+Deutsche Telekom AG
+Global Skills Report 2024 | Regional Skill Trends | Europe 28
+01 02 03 04
+Europe
+Regional skill rankings
+Regional Global Country Business Technology Data Regional Global Country Business Technology Data
+rank rank Science rank rank Science
+1 1 Switzerland 100% 100% 100% 20 30 Greece 85% 62% 70%
+Learning is no longer an
+2 3 Germany 93% 96% 97% 21 31 Slovakia 68% 81% 58%
+3 4 Netherlands 95% 95% 98% 22 33 Belarus 55% 79% 66% afterthought—it now informs how
+4 5 France 97% 97% 94% 23 39 Serbia 46% 67% 65% we solve business challenges,
+5 6 Sweden 92% 98% 95% 24 42 Ireland 60% 65% 63%
+strategize and approach
+6 7 Spain 90% 94% 94% 25 45 United 53% 59% 72%
+Kingdom new projects.
+7 8 Austria 94% 92% 90%
+26 46 Hungary 43% 57% 62%
+8 9 Denmark 98% 75% 96%
+27 49 Croatia 57% 55% 57%
+9 10 Belgium 89% 83% 92%
+28 51 Latvia 82% 51% 41%
+10 11 Luxembourg 94% 84% 84%
+29 52 Armenia 29% 66% 64%
+11 14 Portugal 72% 94% 88%
+30 53 Lithuania 44% 61% 61%
+12 15 Italy 86% 89% 78% Cyril de Avellar
+31 56 Estonia 61% 50% 54%
+13 17 Norway 84% 88% 83% Learning & Development Manager,
+33 57 Turkey 69% 45% 43%
+14 18 Finland 70% 93% 86% People & Culture, Ingka Group
+34 65 Georgia 28% 48% 53%
+15 22 Poland 77% 86% 67%
+35 67 Azerbaijan 62% 30% 36%
+16 28 Cyprus 75% 70% 71%
+36 70 Romania 27% 47% 47% Ingka Group offers new online
+17 24 Czech 81% 82% 75%
+learning program through Coursera
+Republic
+18 25 Bulgaria 78% 80% 74%
+19 27 Ukraine 79% 76% 69%
+Global Skills Report 2024 | Regional Skill Trends | Europe 29
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+France 4 4 7
+1. Resilience 1. Operations Manager
+Business Tech Data science 2. Culture 2. Bookkeeper
+3. Collaboration 3. Securities & Commodities Trader
+4. Emotional Intelligence 4. IT Project Manager
+1.9 5 35 Enrollment trends
+M
+5. Conflict Management 5. Project Manager
+GenAI
+Coursera Global Median 6. People Development 6. Personal Financial Advisor
+learners rank age 783% YoY enrollments
+7. Investment Management 7. Budget Analyst
+43 % 33 % 37 % Top courses 8. FinTech 8. Contract Administrator
+9. Change Management 9. Systems Analyst
+Women Women learners Learning
+Generative AI with Large
+learners in STEM on mobile 10. Planning 10. Auditor
+Language Models
+Prompt Engineering
+Learners in France demonstrate an aptitude for ChatGPT
+for business skills, with a focus on developing
+Generative AI for Everyone
+leadership capabilities, resilience, and
+Recommended content for top skills and roles
+emotional intelligence. France proves its
+commitment to AI readiness with a 783% Professional Certificates L’investissement à impact:
+Building Your Leadership Skills
+increase in GenAI course enrollments year-over- 29% YoY enrollments les fondamentaux
+year. This aligns with the 85% of organizations Building Strategic
+that say they’re investing in employee training Top Professional Certificates Foresight Capabilities Influencing the Organisation
+to maximize the potential of AI technologies.47 Professional Certificate Positive Psychology:
+Data Analytics Managers du changement
+Resilience Skills
+Professional Certificate Organizational Behavior: How Career Coach Professional Certificate
+UX Design
+to Manage People and Navigator
+Project Professional Certificate Emotional Intelligence: Project Professional Certificate
+Management Cultivating Immensely Management
+Human Interactions
+Global Skills Report 2024 | Regional Skill Trends | Europe 30
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Germany 9 5 4
+1. Artificial Neural Networks 1. Network Engineer
+Business Tech Data science 2. Applied Machine Learning 2. Web Developer
+3. Machine Learning Algorithms 3. Software Developer
+2 3 34 Enrollment trends 4. Regression 4. Machine Learning Engineer
+M
+5. Linear Algebra 5. Securities & Commodities Trader
+GenAI
+Coursera Global Median 6. Python Programming 6. Cloud Security Engineer
+learners rank age 662% YoY enrollments
+7. Epidemiology 7. Bookkeeper
+40 % 30 % 37 % Top courses 8. Distributed Computing 8. Computer Systems Engineer
+Architecture 9. Engineering Manager
+Women Women learners Learning
+learners in STEM on mobile Generative AI with Large 9. Deep Learning 10. Data Engineer
+Language Models
+10. Network Architecture
+Prompt Engineering
+Learners in Germany rank third globally for overall skill for ChatGPT
+proficiency—over-indexing in tech skills like artificial
+Generative AI for Everyone
+neural networks, applied machine learning, and
+Recommended content for top skills and roles
+deep learning. As Germany grapples with a labor gap,
+investing in these skills will be critical for maintaining Professional Certificates Neural Networks and Algebra and Differential
+economic growth.48 39% YoY enrollments Deep Learning Calculus for Data Science
+Managing Machine Essential Epidemiologic Tools
+German learners demonstrate cutting-edge proficiency Top Professional Certificates Learning Projects for Public Health Practice
+across all domains, particularly in data science and
+Project Professional Certificate Machine/Deep Learning
+technology. However, their year-over-year increase in Management AI for Everyone for Mining Quality
+Prediction-Enhanced
+GenAI enrollments is lower than countries like Spain,
+Professional Certificate
+France, and the UK. Industry micro-credentials could Data Analytics Python Data Structures Network Professional Certificate
+Engineering
+play a key role in upskilling, especially given that 81% of
+Professional Certificate
+students in Germany agree that obtaining Professional Cybersecurity Machine Learning: Regression Front-End Professional Certificate
+Developer
+Certificates would enhance their job prospects.49
+Global Skills Report 2024 | Regional Skill Trends | Europe 31
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Spain 12 7 8
+1. Culture 1. Communications Specialist
+Business Tech Data science 2. Calculus 2. Budget Analyst
+3. Adaptability 3. Public Relations Manager
+2.3 7 38 Enrollment trends 4. C Programming Language Family 4. Advertising Manager
+M
+5. Bioinformatics 5. Bookkeeper
+GenAI
+Coursera Global Median 6. Other Programming Languages 6. Machine Learning Engineer
+learners rank age 962% YoY enrollments
+7. People Analysis 7. Cloud Security Engineer
+49 % 35 % 38 % Top courses 8. Graphic Design 8. Operations Manager
+9. Distributed Computing 9. Product Marketing Manager
+Women Women learners Learning
+Prompt Engineering
+learners in STEM on mobile Architecture 10. Securities & Commodities Trader
+for ChatGPT
+10. Negotiation
+Generative AI with Large
+Ranking seventh for skill proficiency globally, Language Models
+learners in Spain excel in technology and data
+Generative AI for Everyone
+science. A 962% year-over-year increase in GenAI
+Recommended content for top skills and roles
+course enrollments—the highest in Europe—
+reflects Spain’s commitment to AI readiness, with Professional Certificates Cultural intelligence: Java Programming: Solving
+85% of organizations investing in employee training static YoY enrollments Become a global citizen Problems with Software
+to maximize the potential of AI technologies.50 Biology Meets Programming:
+Top Professional Certificates Adaptability and Resiliency Bioinformatics for Beginners
+Spain’s National Artificial Intelligence Strategy Diseño de Professional Certificate Introducción a la ciencia de Successful Negotiation:
+aims to attract top AI talent. While only 64% of the experiencia del usuario (UX) datos aplicada Essential Strategies and Skills
+population is projected to have basic digital skills Análisis Professional Certificate Introducción a Data Science: Professional Certificate
+by 2030, Spain’s strong performance in technology de datos Programación Estadística con R Cybersecurity
+and high GenAI enrollments suggest ambitions to Gestión de Professional Certificate Advanced Career Coach Professional Certificate
+surpass this projection.51 Proyectos Programming in Swift and Navigator
+Global Skills Report 2024 | Regional Skill Trends | Europe 32
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Turkey 35 61 63 1. Supply Chain Systems 1. Securities & Commodities Trader
+Business Tech Data science 2. Market Research 2. Machine Learning Engineer
+3. Human Learning 3. Public Relations Manager
+4. Epidemiology 4. Budget Analyst
+1.4 57 32 Enrollment trends
+M
+5. Experiment 5. Communications Specialist
+GenAI
+Coursera Global Median 6. Writing 6. Software Developer
+learners rank age 545% YoY enrollments
+7. Brand Management 7. Bookkeeper
+43 33 40 8. Linear Algebra 8. Operations Manager
+% % % Top courses
+9. Budget Management 9. Media Buyer
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. Machine Learning Algorithms 10. Personal Financial Advisor
+for ChatGPT
+Generative AI with Large
+In Turkey, a 545% year-over-year increase in Language Models
+GenAI course enrollments reflects a growing
+Introduction to Generative AI
+interest in AI and machine learning. Learners are
+Recommended content for top skills and roles
+over-indexing in machine learning algorithms,
+with top target roles including machine learning Professional Certificates Supply Chain Introduction to
+engineer and software developer. With learners 38% YoY enrollments Analytics Essentials Market Research
+pursuing Professional Certificates at a 38% Introduction to Budgeting essentials
+Top Professional Certificates Machine Learning and development
+higher rate than last year, there’s a clear appetite
+for job-relevant skills. This is critical, as Turkey Professional Certificate Doğrusal Cebir I: Uzaylar ve Essential Epidemiologic Tools
+Data Analytics
+İşlemciler / Linear Algebra I: for Public Health Practice
+must reskill more than 21 million workers to
+Spaces and Operators
+meet the demands of the future of work.52 Professional Certificate Project Professional Certificate
+Proje Yönetimi Use AI Builder and Power Apps Management
+to Process Invoice Data
+Front-End Professional Certificate Supply Chain Professional Certificate
+Developer High-Impact Business Writing Data Analyst
+Global Skills Report 2024 | Regional Skill Trends | Europe 33
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+United Kingdom 52 46 32 1. Epidemiology 1. Bookkeeper
+Business Tech Data science 2. Bioinformatics 2. Risk Analyst
+3. Regression 3. Data Analyst
+4. FinTech 4. Database Architect
+3.8 45 35 Enrollment trends
+M
+5. Machine Learning Algorithms 5. Software Developer
+GenAI
+Coursera Global Median 6. Python Programming 6. Financial Analyst
+learners rank age 961% YoY enrollments
+7. Investment Management 7. Product Manager
+48 35 39 8. Bayesian Statistics 8. Technology Consultant
+% % % Top courses
+9. Risk Management 9. Cybersecurity Analyst
+Women Women learners Learning
+learners in STEM on mobile Generative AI with Large 10. Applied Machine Learning 10. Data Scientist
+Language Models
+Prompt Engineering
+Learners in the United Kingdom are over-indexing in for ChatGPT
+skills like bioinformatics, machine learning algorithms,
+Generative AI for Everyone
+and applied machine learning—aligning with the
+Recommended content for top skills and roles
+anticipated 38% net growth in demand for AI and ML
+specialists in the country.53 Professional Certificates Essential Epidemiologic Tools
+Basic Programming in Python I
+59% YoY enrollments for Public Health Practice
+The 961% increase in GenAI course enrollments and
+Fundamental Skills in Mathematics for Machine
+the popularity of roles such as data analyst, software Top Professional Certificates Bioinformatics Learning: Linear Algebra
+developer, and cybersecurity analyst highlight the Professional Certificate Bayesian Statistics: From
+country’s commitment to developing a tech-savvy Data Analytics Regression Analysis Concept to Data Analysis
+workforce. However, with 93% of UK businesses Project Professional Certificate FinTech Foundations Professional Certificate
+reporting an IT skills gap, there’s an urgent need for Management and Overview Data Analyst
+targeted upskilling initiatives to ensure the workforce Professional Certificate Operational Risk Management: Cybersecurity Professional Certificate
+can meet the evolving demands of the digital economy.54 Cybersecurity Frameworks & Strategies Analyst
+Global Skills Report 2024 | Regional Skill Trends | Europe 34
+01 02 03 04
+Latin America
+and the Caribbean
+24.9 29 49
+M % %
+Coursera YoY enterprise Women
+learners enrollments learners
+46 34 46
+% %
+Learning Median Women
+on mobile age learners in STEM
+Latin America and the Caribbean show a strong
+commitment to AI readiness, with GenAI course
+enrollment increasing 882% year-over-year.
+Learners focus on emerging tech skills, preparing
+for roles like machine learning engineer and cloud
+security engineer. The region nears gender parity
+in online learning, with 49% women learners and
+46% learning on mobile, reflecting a shift toward
+accessible, flexible learning. Cutting-edge Rankings 1–28
+Competitive Rankings 29–55
+See page 38 for country skill rankings in
+Emerging Rankings 56–82
+Latin America and the Caribbean
+Lagging Rankings 83–109
+Global Skills Report 2024 | Regional Skill Trends | LATAM 35
+01 02 03 04
+Latin America and the Caribbean
+Regional enrollment trends
+National AI strategies and policies highlight Top skills Top target roles Most popular content in Latin
+the region’s dedication to AI for socioeconomic America and the Caribbean
+1. Culture 1. Communications Manager
+growth. Colombia launched its national AI strategy
+2. Negotiation 2. Advertising Manager
+in February 2024 to close digital access gaps and Contabilidad para no contadores
+3. Calculus 3. Communications Specialist
+advance AI adoption, for example.55 However,
+4. Adaptability 4. Operations Manager
+infrastructural divides and the need for local English for Career Development
+5. Other Programming 5. Budget Analyst
+talent development remain unresolved challenges.
+Languages 6. Product Marketing Manager
+Foundations: Data, Data, Everywhere
+While Brazil, Chile, and Uruguay show cutting- 6. Budget Management 7. Machine Learning Engineer
+edge proficiency in tech and data science 7. Geovisualization 8. Treasure
+Foundations of Project Management
+domains, Guatemala and Puerto Rico have room to 8. People Analysis 9. Contract Administrator
+grow. Micro-credentials are promising, with open 9. C Programming 10. Personal Financial Advisor Étudier en France: French Intermediate
+and distance education participation surpassing Language Family course B1-B2
+OECD averages.56 10. Organizational Introducción a la programación en Python I:
+Development Aprendiendo a programar con Python
+A 2023 OECD study emphasizes innovation
+Primeros Auxilios Psicológicos (PAP)
+and skill development to improve job quality
+and youth unemployment.57 Initiatives like the
+Finanzas personales
+Consortium for North American Higher Education
+Collaboration (CONAHEC) and the Asociación
+Foundations of Digital Marketing
+De Universidades Grupo Montevideo (AUGM) and E-commerce
+Methodology snapshot
+and distance learning can help bridge skill gaps.
+To identify top skills and target roles, we use an over-indexing
+Technical Support Fundamentals
+Investing in accessible, job-relevant learning
+methodology. Over-indexing means that learners in a specific
+allows the region to build on its AI foundation and
+country or region are disproportionately enrolling in a given skill
+prepare the workforce for the digital economy.
+compared to learners globally.
+Global Skills Report 2024 | Regional Skill Trends | LATAM 36
+01 02 03 04
+Latin America and the Caribbean
+Regional enrollment trends cont.
+GenAI Cybersecurity Professional Certificates
+882 1 17
+% % %
+Achievable knowledge available
+YoY enrollment growth YoY enrollment growth YoY enrollment growth
+via platforms like Coursera is the
+present and future of learning. Top courses Top courses Top Professional Certificates
+Prompt Engineering for Foundations: Professional Certificate
+Data Analytics
+ChatGPT Data, Data, Everywhere
+Introducción a la programación Project Professional Certificate
+Introduction to Generative AI en Python I: Aprendiendo a Management
+programar con Python
+Hasari Teddy Andrade Generative AI with Large Digital Professional Certificate
+Language Models Technical Support Marketing & E-commerce
+Coursera Learner, Puebla, Mexico Fundamentals
+Professional Certificate
+Generative AI for Everyone Programming for Everybody IT Support
+(Getting Started with Python)
+ChatGPT Advanced Data Professional Certificate
+UX Design
+Analysis Foundations of Cybersecurity
+Global Skills Report 2024 | Regional Skill Trends | LATAM 37
+01 02 03 04
+Latin America and the Caribbean
+Regional skill rankings
+Regional Global Country Business Technology Data Regional Global Country Business Technology Data
+rank rank Science rank rank Science
+1 19 Brazil 66% 85% 85% 17 73 Trinidad and 59% 17% 27%
+2 20 Chile 65% 74% 83% Tobago
+3 21 Uruguay 83% 87% 60% 18 77 Jamaica 28% 29% 37%
+4 23 Peru 74% 72% 68% 19 85 Guatemala 16% 15% 38%
+5 26 Mexico 54% 77% 81% 20 91 Puerto Rico 15% 17% 17%
+6 29 Colombia 50% 73% 79%
+7 37 Dominican 80% 64% 45%
+Republic
+8 38 Argentina 35% 68% 80%
+9 43 Venezuela 39% 53% 73%
+10 44 Honduras 61% 49% 50%
+11 48 El Salvador 63% 71% 34%
+12 50 Bolivia 39% 63% 51%
+13 61 Ecuador 36% 44% 56%
+14 62 Costa Rica 41% 60% 49%
+15 63 Paraguay 38% 46% 52%
+16 68 Panama 42% 26% 44%
+Global Skills Report 2024 | Regional Skill Trends | LATAM 38
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Brazil 38 17 17
+1. Graphic Design 1. Advertising Manager
+Business Tech Data science 2. Collaboration 2. Cloud Security Engineer
+3. Calculus 3. Communications Specialist
+4. Other Programming Languages 4. Public Relations Manager
+5.8 19 35 Enrollment trends
+M
+5. Organizational Development 5. Machine Learning Engineer
+GenAI
+Coursera Global Median 6. Culture 6. Operations Manager
+learners rank age 1,079% YoY enrollments
+7. Adaptability 7. Engineering Manager
+46 % 34 % 45 % Top courses 8. People Analysis 8. Product Marketing Manager
+9. Computer Vision 9. Computer Systems Engineer
+Women Women learners Learning
+learners in STEM on mobile Generative AI with Large 10. Negotiation 10. Software Developer
+Language Models
+Prompt Engineering
+Brazil ranks in the top 20 countries for overall for ChatGPT
+skill proficiency—and the highest in Latin
+Introduction to Generative AI
+America and the Caribbean—with cutting-edge
+Recommended content for top skills and roles
+proficiency in tech and data science. A 1,079%
+increase in GenAI course enrollments and Professional Certificates Fundamentals of Calculus for Machine Learning
+interest in roles like cloud security engineer 10% YoY enrollments Graphic Design and Data Science
+and machine learning engineer show Brazil’s Laboratório de Programação Introduction to Computer
+enthusiasm for developing a digital-ready Top Professional Certificates Orientada a Objetos - Parte 1 Vision and Image Processing
+workforce. However, with nearly 70% of Professional Certificate Liderança Equilibrada e Collaborate Effectively for
+Data Analytics
+employers reporting hiring difficulties due to Cultura de Inclusão Professional Success
+a skills gap, upskilling initiatives are crucial, Professional Certificate Introdução ao Cloud Professional Certificate
+Suporte em TI
+especially for youth facing triple the national Workforce Management Technology Consultant
+unemployment rate.58 Professional Certificate Negociação e Relações DevOps and Professional Certificate
+UX Design
+Interculturais Software Engineering
+Global Skills Report 2024 | Regional Skill Trends | LATAM 39
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Chile 39 29 19
+1. Geovisualization 1. Operations Manager
+Business Tech Data science 2. C Programming Language Family 2. Public Relations Manager
+3. Other Programming Languages 3. Advertising Manager
+4. Calculus 4. Budget Analyst
+1.6 20 35 Enrollment trends
+M
+5. Culture 5. Communications Specialist
+GenAI
+Coursera Global Median 6. Negotiation 6. Product Marketing Manager
+learners rank age 700% YoY enrollments
+7. Adaptability 7. Bookkeeper
+50 % 38 % 45 % Top courses 8. Social Media 8. Machine Learning Engineer
+9. Organizational Development 9. Social Media Marketer
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. Creativity 10. E-commerce Analyst
+for ChatGPT
+Generative AI with Large
+Chile ranks second-highest in Latin America Language Models
+and the Caribbean for overall skill proficiency,
+Introduction to Generative AI
+with cutting-edge proficiency in tech and
+Recommended content for top skills and roles
+data science. Learners over-index in skills like
+programming languages, geovisualization, Professional Certificates Innovación y creatividad
+Fundamentals of GIS
+and calculus. 16% YoY enrollments organizacional
+Cultural intelligence:
+A 700% increase in GenAI course enrollments Top Professional Certificates C# Class Development Become a global citizen
+reflects Chile’s AI leadership commitment. Chile Análisis Professional Certificate
+also achieves gender parity in online learning. de datos 1.- El Cálculo - Modelo Lineal Agile Project Management
+Government initiatives supporting digital skill Diseño de Professional Certificate Habilidades humanas y de Social Media Professional Certificate
+development prepare the workforce for the experiencia del usuario (UX) negocios para negociar Marketing
+IT sector’s projected $3.9 billion growth from Gestión de Professional Certificate Digital Professional Certificate
+2022–2027.59 Proyectos HTML and CSS in depth Marketing & E-commerce
+Global Skills Report 2024 | Regional Skill Trends | LATAM 40
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Colombia 55 30 24
+1. Culture 1. Communications Specialist
+Business Tech Data science 2. Negotiation 2. Public Relations Manager
+3. Calculus 3. Budget Analyst
+4. C Programming Language Family 4. Operations Manager
+3.3 29 33 Enrollment trends
+M
+5. Other Programming Languages 5. Advertising Manager
+GenAI
+Coursera Global Median 6. Geovisualization 6. Machine Learning Engineer
+learners rank age 659% YoY enrollments
+7. Adaptability 7. Bookkeeper
+50 % 34 % 47 % Top courses 8. Emotional Intelligence 8. Product Marketing Manager
+9. Probability Distribution 9. Social Media Marketer
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. People Analysis 10. Media Buyer
+for ChatGPT
+Generative AI for Everyone
+Colombia’s commitment to technological
+advancement shows in a 659% GenAI course
+Introduction to Generative AI
+enrollments increase and the February 2024
+Recommended content for top skills and roles
+launch of its AI strategy to close digital gaps,
+advance AI, and develop digital talent.60 Professional Certificates
+33% YoY enrollments Fundamentos del Management I on rt ir eo nd tau dcc ai aó n o ba j l ea t op sro eg nr a Jam va ación
+Learners focus on programming and
+negotiation skills for roles like machine learning Top Professional Certificates Adaptability and Resiliency Successful Negotiation:
+Essential Strategies and Skills
+engineer and communications specialist. The Análisis Professional Certificate Project Management:
+Ministry of ICT’s partnership with Coursera aims de datos The Basics for Success Comunicación efectiva para
+el líder actual
+to bridge skill gaps through micro-credentials, Professional Certificate Autoliderazgo y gestión de
+Ciberseguridad Professional Certificate
+as 80% of companies expect an insufficiently emociones para avanzar en Bookkeeping
+skilled talent pipeline by 2027.61 Gestión de Professional Certificate desafíos complejos
+Proyectos Liderazgo efectivo Social Media Professional Certificate
+y colaboración con Marketing
+inteligencia emocional
+Global Skills Report 2024 | Regional Skill Trends | LATAM 41
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Mexico 51 26 22 1. Negotiation 1. Operations Manager
+Business Tech Data science 2. Calculus 2. Public Relations Manager
+3. Budget Management 3. Communications Specialist
+4. Bioinformatics 4. Budget Analyst
+6.7 26 34 Enrollment trends
+M
+5. Culture 5. Advertising Manager
+GenAI
+Coursera Global Median 6. Adaptability 6. Bookkeeper
+learners rank age 1,091% YoY enrollments
+7. Emotional Intelligence 7. Machine Learning Engineer
+51 % 39 % 47 % Top courses 8. Probability Distribution 8. Product Marketing Manager
+9. General Accounting 9. Contract Administrator
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. People Analysis 10. Personal Financial Advisor
+for ChatGPT
+Introduction to Generative AI
+A 1,091% GenAI course enrollment increase
+mirrors Mexico’s strong interest in AI and machine
+Generative AI with Large
+learning, expected to see 35% growth in specialist Language Models
+Recommended content for top skills and roles
+roles.62 Learners focus on culture, adaptability,
+and emotional intelligence, aligning with top Professional Certificates Introducción al mundo de
+1.- El Cálculo - Modelo Lineal
+target roles like operations manager, PR manager, 29% YoY enrollments las negociaciones
+and communications specialist. Comunicación efectiva para
+Top Professional Certificates el líder actual Estadística y probabilidad
+However, with 65% of companies reporting Análisis Professional Certificate Accounting: Principles of Autoliderazgo y gestión de
+talent shortages, upskilling is crucial. Investing de datos Financial Accounting emociones para avanzar en
+desafíos complejos
+in workforce development and micro-credentials Gestión de Professional Certificate
+allows businesses and institutions to build on Proyectos Gestión del talento humano Career Coach Professional Certificate
+and Navigator
+strong tech and data science foundations, driving Digital Professional Certificate Programación y presupuesto
+growth and preparing learners for roles requiring Marketing & E-commerce del proyecto Bookkeeping Professional Certificate
+both technical and interpersonal skills.
+Global Skills Report 2024 | Regional Skill Trends | LATAM 42
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Peru 29 32 36
+1. Culture 1. Advertising Manager
+Business Tech Data science 2. Resilience 2. Operations Manager
+3. Other Programming Languages 3. Public Relations Manager
+4. Negotiation 4. Communications Specialist
+1.5 23 32 Enrollment trends
+M
+5. Social Media 5. Budget Analyst
+GenAI
+Coursera Global Median 6. Emotional Intelligence 6. Product Marketing Manager
+learners rank age 953% YoY enrollments
+7. C Programming Language Family 7. Bookkeeper
+45 % 31 % 35 % Top courses 8. Calculus 8. Cloud Security Engineer
+9. Adaptability 9. Personal Financial Advisor
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. Influencing 10. Machine Learning Engineer
+for ChatGPT
+Introduction to Generative AI
+In Peru, learners pursue soft skills like resilience
+and hard skills like programming to prepare for
+Generative AI for Everyone
+marketing, operations, and engineering roles. A
+Recommended content for top skills and roles
+953% GenAI course enrollment increase indicates
+strong AI interest, aligning with the government’s Professional Certificates Cultural intelligence:
+Fundamentos del Management
+plan to significantly increase digital capacities by 16% YoY enrollments Become a global citizen
+2030.63 With 67% of companies reporting talent
+Top Professional Certificates Adaptability and Resiliency C# Class Development
+shortages, upskilling is urgent.
+Marketing en Professional Certificate Advanced
+1.- El Cálculo - Modelo Lineal
+redes sociales Programming in Swift
+Análisis Professional Certificate Introducción al mundo de Professional Certificate
+Bookkeeping
+de datos las negociaciones
+Digital Professional Certificate Social Media Professional Certificate
+Influencing People
+Marketing & E-commerce Marketing
+Global Skills Report 2024 | Regional Skill Trends | LATAM 43
+01 02 03 04
+Middle East and
+North Africa
+9.4 9 35
+M % %
+Coursera YoY enterprise Women
+learners enrollments learners
+55 31 27
+% %
+Learning Median Women
+on mobile age learners in STEM
+The Middle East and North Africa demonstrates a
+strong commitment to digital transformation and
+emerging technologies. With a 861% increase in GenAI
+course enrollments and a 17% rise in cybersecurity
+enrollments year-over-year, learners focus on cutting-
+edge skills to drive innovation and tackle regional
+challenges. Supply chain systems emerge as a popular
+skill, highlighting the region’s potential as a global
+trade hub. However, with only 35% of learners being
+women, there are opportunities to promote gender
+inclusivity in online learning.
+See page 47 for country skill rankings in the Middle Cutting-edge Rankings 1–28 Emerging Rankings 56–82
+East and North Africa Competitive Rankings 29–55 Lagging Rankings 83–109
+Global Skills Report 2024 | Regional Skill Trends | MENA 44
+01 02 03 04
+Middle East and North Africa
+Regional enrollment trends
+The Middle East and North Africa are positioned Top skills Top target roles Most popular content in the Middle
+to become leaders in digital transformation and 1. Leadership Development 1. Operations Manager East and North Africa
+trade, with governments investing in technology
+2. Supply Chain Systems 2. IT Project Manager
+infrastructure and logistics.64 The establishment
+3. Audit 3. Project Manager ريكفت بولسأك ةضقانتملا ةدايقلا
+of the 2023 Council of Ministers for Cybersecurity
+4. People Development 4. Machine Learning Engineer
+reflects the region’s proactive approach to
+5. Advertising 5. Securities & Commodities مويلا يريدمل ةيساسلأا تاراهملا
+cybersecurity, evident in the 17% year-over-year
+6. Resilience trader
+growth in cybersecurity course enrollments. 7. Storytelling 6. Personal Financial Advisor دادملإا لسلاس ةرادإ
+Supply Chain Management
+Learners focus on skills like leadership
+8. Influencing 7. Communications Specialist
+development, supply chain systems, and
+9. Conflict Management 8. Treasurer Supply Chain Management and Analytics
+auditing, preparing for roles such as operations
+10. Budget Management 9. Contract Administrator
+manager and IT project manager—aligning with Leadership Communication for
+10. Communications Manager
+Maximum Impact: Storytelling
+the region’s strategic location and workforce
+development goals.
+Mediation and Conflict Resolution
+However, with 82% of UAE workers seeking
+Foundations of Project Management
+additional training65 and 60% of Saudi higher
+education students pursuing degrees not aligned
+Learning Mindsets & Skills
+with job market demands,66 there’s a need for
+accessible, career-ready skill development. By
+Work Smarter, Not Harder: Time Management
+investing in job-relevant learning and harnessing Methodology snapshot for Personal & Professional Productivity
+the young, tech-savvy population, the region To identify top skills and target roles, we use an over-indexing Professional Certificate
+can build a skilled workforce to drive economic methodology. Over-indexing means that learners in a specific Project Management
+growth and competitiveness in sectors like country or region are disproportionately enrolling in a given skill
+manufacturing, logistics, and cybersecurity. compared to learners globally.
+Global Skills Report 2024 | Regional Skill Trends | MENA 45
+01 02 03 04
+Middle East and North Africa
+Regional enrollment trends cont.
+GenAI Cybersecurity Professional Certificates
+861 17 41
+% % %
+We are committed to equipping our
+YoY enrollment growth YoY enrollment growth YoY enrollment growth
+students and graduates with the skills
+and knowledge needed to thrive in the Top courses Top courses Top Professional Certificates
+ever-evolving job market. In an era where Prompt Engineering Professional Certificate
+Foundations of Cybersecurity Data Analytics
+for ChatGPT
+rapid technological advancements and
+Project Professional Certificate
+changing industries demand continuous Introduction to Generative AI Introduction to Data Analytics Management
+learning and adaptation, upskilling and Generative AI with Large Programming for Everybody Professional Certificate
+Cybersecurity
+Language Models (Getting Started with Python)
+reskilling have become paramount.
+Technical Support Digital Professional Certificate
+Generative AI for Everyone
+Fundamentals Marketing & E-commerce
+Build Basic Generative Social Media Professional Certificate
+Cybersecurity for Everyone
+Adversarial Networks (GANs) Marketing
+Prof. Ibrahim Mohamed Alkaabi
+Vice President for Academic Affairs, Qatar University
+Global Skills Report 2024 | Regional Skill Trends | MENA 46
+01 02 03 04
+Middle East and North Africa
+Regional skill rankings
+Regional Global Country Business Technology Data
+rank rank Science
+1 34 United Arab 99% 42% 55%
+Emirates We will spare no effort to meet Realizing skill development
+2 35 Israel 40% 72% 89%
+the ambitions of our students to solutions that are necessary for
+3 58 Qatar 83% 40% 42%
+obtain world-leading education meeting the challenges of the
+4 60 Saudi Arabia 87% 39% 29%
+that qualifies them for current and 21st century requires robust
+5 64 Morocco 67% 52% 17%
+6 72 Egypt 34% 39% 40% future labor market requirements. innovation and collaboration
+7 75 Kuwait 51% 27% 31% between key actors.
+8 76 Tunisia 7% 41% 39%
+9 78 Bahrain 45% 28% 28%
+10 82 Jordan 52% 14% 14%
+11 83 Lebanon 23% 32% 19%
+12 90 Oman 19% 21% 18%
+His Excellency, Dr. Ahmad Belhoul Al Falasi Abdallah Al Dardari
+13 93 Iraq 21% 19% 9%
+Minister of Education, UAE Assistant Secretary-General
+14 95 Algeria 2% 25% 32%
+Assistant Administrator and Director of the
+15 96 Yemen 33% 10% 7% Regional Bureau for Arab States, UNDP
+16 109 Sudan 3% 3% 2%
+Coursera, UNDP, and MBRF
+Launch FutureSkills4All Initiative
+Global Skills Report 2024 | Regional Skill Trends | MENA 4477
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Egypt 73 68 68
+1. Audit 1. Operations Manager
+Business Tech Data science 2. Storytelling 2. Machine Learning Engineer
+3. Advertising 3. Securities & Commodities Trader
+4. Leadership Development 4. Public Relations Manager
+2.9 72 29 Enrollment trends
+M
+5. Social Media 5. Communications Specialist
+GenAI
+Coursera Global Median 6. Experiment 6. Social Media Marketer
+learners rank age 585% YoY enrollments
+7. Brand Management 7. Marketing Associate
+35 % 22 % 64 % Top courses 8. Budget Management 8. Budget Analyst
+9. Writing 9. Financial Manager
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Deep Learning 10. Web Developer
+Generative AI with Large
+Learners in Egypt are typically younger than Language Models
+the global average, with a median age of 29, Prompt Engineering
+and increasingly learn on mobile devices, with for ChatGPT
+Recommended content for top skills and roles
+64% accessing courses through smartphones
+or tablets. This tech-savvy generation focuses Professional Certificates تانايبلا ةصق ةياور نف ةنزاوملا تايساسأ
+on skills like advertising, deep learning, and 34% YoY enrollments The Art of Data Storytelling ةلاعفلا ةيطيطختلا
+auditing, preparing for roles such as machine Introduction to
+learning engineer, operations manager, and Top Professional Certificates Social Media Marketing Sequence Models
+securities & commodities trader. As university Data Analytics Professional Certificate ةطلس نودب ةدايقلا Brand Identity and Strategy
+degrees remain the most recognized hiring Leading without Authority
+criteria in Egypt, integrating job-relevant skills Social Media Professional Certificate ةقيشرلا ةرادلإا تايساسأ Lean Career Coach Professional Certificate
+into higher education curricula can help bridge Marketing Management Fundamentals and Navigator
+the gap between academia and industry.67 Front-End Professional Certificate Social Media Professional Certificate
+لخدلا ةمئاقو ةينازيملا ةمئاق
+Developer Marketing
+Global Skills Report 2024 | Regional Skill Trends | MENA 48
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Saudi Arabia 15 67 79 1. Leadership Development 1. IT Project Manager
+Business Tech Data science 2. Supply Chain Systems 2. Project Manager
+3. Resilience 3. Personal Financial Advisor
+4. People Development 4. Bookkeeper
+1.2 60 35 Enrollment trends
+M
+5. Graphic Design 5. Securities & Commodities Trader
+GenAI
+Coursera Global Median 6. Change Management 6. Machine Learning Engineer
+learners rank age 1,788% YoY enrollments
+7. Conflict Management 7. Market Research Analyst
+28 33 55 8. Regression 8. Communications Specialist
+% % % Top courses
+9. Adaptability 9. Operations Manager
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Emotional Intelligence 10. Financial Reporting Manager
+Prompt Engineering
+Cybersecurity attacks cost organizations in for ChatGPT
+Saudi Arabia and the UAE $6.53 million in 2023, Generative AI with Large
+driving a surge in demand for cybersecurity Language Models
+Recommended content for top skills and roles
+professionals.68 Coursera data shows a 65%
+year-over-year increase in cybersecurity course Professional Certificates Fundamentals of
+enrollments. This aligns with Saudi Arabia’s 98% YoY enrollments ريكفت بولسأك ةضقانتملا ةدايقلا Graphic Design
+efforts to develop a skilled workforce, including
+Top Professional Certificates مويلا يريدمل ةيساسلأا تاراهملا Adaptability and Resiliency
+the goal of training 40% of the workforce in data
+and AI skills by 2030. Data Analytics Professional Certificate دادملإا لسلاس ةرادإ Leading transformations:
+Supply Chain Management Manage change
+With 60% of college students pursuing degrees Project Professional Certificate Build Regression, Classification, Career Coach Professional Certificate
+that don’t match job market demands, bridging Management and Clustering Models and Navigator
+the skills gap remains vital.69 Cybersecurity Professional Certificate Resolving and Project Professional Certificate
+Transforming Conflict Management
+Global Skills Report 2024 | Regional Skill Trends | MENA 49
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+United Arab 2 64 50
+1. Resilience 1. Operations Manager
+Business Tech Data science 2. Leadership Development 2. IT Project Manager
+Emirates 3. BlockChain 3. Project Manager
+4. Supply Chain Systems 4. Personal Financial Advisor
+Enrollment trends
+5. People Development 5. Contract Administrator
+GenAI
+6. Emotional Intelligence 6. Bookkeeper
+1 34 35 1,102% YoY enrollments
+M 7. Conflict Management 7. Product Marketing Manager
+Coursera Global Median 8. Audit 8. Business Analyst
+Top courses
+learners rank age 9. General Accounting 9. IT Director
+33 27 42 Introduction to Generative AI 10. Change Management 10. Public Relations Manager
+% % %
+Women Women learners Learning Prompt Engineering
+learners in STEM on mobile for ChatGPT
+Generative AI with Large
+Language Models
+The UAE ranks first in the Middle East and North Recommended content for top skills and roles
+Africa for skill proficiency and second worldwide Professional Certificates
+دادملإا لسلاس ةرادإ
+for business. Learners focus on leadership 40% YoY enrollments Supply Chain Management مويلا يريدمل ةيساسلأا تاراهملا
+development, resilience, and blockchain skills,
+Getting Started Auditing I: Conceptual
+preparing for roles such as operations manager, IT Top Professional Certificates with Leadership Foundations of Auditing
+project manager, and business analyst. This aligns Professional Certificate Introduction to Blockchain for Emotional and
+Data Analytics
+with the UAE’s focus on business intelligence Financial Services Social Intelligence
+and digital transformation roles, both expected Project Professional Certificate Accounting: Principles of IT Project Professional Certificate
+to grow significantly.70 However, with 82% of Management Financial Accounting Manager
+UAE workers seeking more training for career Digital Professional Certificate Project Professional Certificate
+confidence, further skill development is crucial.71 Marketing & E-commerce ريكفت بولسأك ةضقانتملا ةدايقلا Management
+Global Skills Report 2024 | Regional Skill Trends | MENA 50
+01 02 03 04
+North America
+31.2 18 52
+M % %
+Coursera YoY enterprise Women
+learners enrollments learners
+40 36 38
+% %
+Learning Median Women
+on mobile age learners in STEM
+North America shows a strong commitment to
+digital upskilling, with a 1,040% increase in GenAI
+course enrollments and a 61% rise in Professional
+Certificate enrollments year-over-year. The region
+has achieved gender parity in online learning,
+with women comprising 52% of learners. As the
+semiconductor industry grows, learners focus on
+skills like SQL, Python programming, and supply
+chain logistics to drive innovation and economic
+Cutting-edge Rankings 1–28
+growth in this critical sector.
+Competitive Rankings 29–55
+See page 54 for country skill rankings in Emerging Rankings 56–82
+North America Lagging Rankings 83–109
+Global Skills Report 2024 | Regional Skill Trends | NA 51
+01 02 03 04
+North America
+Regional enrollment trends
+North America remains steadfast in developing Top skills Top target roles Most popular content in
+a skilled, inclusive workforce ready for the 1. Geovisualization 1. Personal Financial Advisor North America
+digital economy. Learners’ focus on technical
+2. SQL 2. Treasurer
+skills like SQL, Bayesian statistics, and Python 3. Business Communication 3. Business Foundations: Data, Data, Everywhere
+programming aligns with the high demand for
+4. General Accounting Intelligence Analyst
+digital competencies in the job market, where 5. Epidemiology 4. Risk Analyst Foundations of Cybersecurity
+92% of US job ads require digital proficiency.72
+6. Spreadsheet Software 5. Technology Consultant
+7. Bayesian Statistics 6. Financial Foundations of Project Management
+Governments and industry leaders invest
+8. Python Programming Quantitative Analyst
+in initiatives like the North American
+9. Change Management 7. Network Engineer Technical Support Fundamentals
+Semiconductor Conference (NASC) and the North
+10. Project Management 8. Database Architect
+American Ministerial Committee on Economic Foundations of Digital
+9. Financial Analyst Marketing and E-commerce
+Competitiveness (NAMCEC) to strengthen the
+10. Cyber Analyst
+region’s competitiveness in industries of the
+The Science of Well-Being
+future, including semiconductors.73
+AI for Everyone
+Collaboration among government, industry,
+and academia is key to creating quality jobs and
+Supervised Machine Learning:
+providing talent for growth in the digital age. Regression and Classification
+Coursera’s partnerships with institutions like
+the University of Texas System74 and the state Introduction to Microsoft Excel
+Methodology snapshot
+of Nevada75 exemplify the efforts needed to
+To identify top skills and target roles, we use an over-indexing
+Prompt Engineering for ChatGPT
+equip learners with job-relevant skills and drive
+methodology. Over-indexing means that learners in a specific
+economic growth.
+country or region are disproportionately enrolling in a given skill
+compared to learners globally.
+Global Skills Report 2024 | Regional Skill Trends | NA 52
+01 02 03 04
+North America
+Regional enrollment trends cont.
+GenAI Cybersecurity Professional Certificates
+1,040 8 61
+% % %
+What I’m excited about is GenAI
+YoY enrollment growth YoY enrollment growth YoY enrollment growth
+opens the door for all of our
+employees to have access to tools Top courses Top courses Top Professional Certificates
+to do their job more efficiently. Prompt Engineering Professional Certificate
+Foundations of Cybersecurity Data Analytics
+for ChatGPT
+Technical Support Professional Certificate
+Introduction to Generative AI Cybersecurity
+Fundamentals
+Generative AI with Large Play It Safe: Project Professional Certificate
+Language Models Manage Security Risks Management
+Alison Klein
+Connect and Protect: Networks Professional Certificate
+Information Systems Talent Manager, Dow Generative AI for Everyone IT Support
+and Network Security
+ChatGPT Advanced Programming for Everybody Digital Professional Certificate
+Data Analysis (Getting Started with Python) Marketing & E-commerce
+How to Bridge the Generative AI Skills
+Gap: Insights from Dow, Microsoft, and
+Vanderbilt University
+Global Skills Report 2024 | Regional Skill Trends | NA 53
+01 02 03 04
+North America
+Regional skill rankings
+Regional Global Country Business Technology Data
+rank rank Science
+1 59 Canada 47% 50% 59%
+2 69 United States 37% 36% 50%
+Students want to know that their learning is linked The AI revolution is not on the horizon, it is already Building a thriving workforce in Missouri means equipping
+to a career pathway. They want to acquire skills that here. Its impact will be as profound as the Industrial everyone with the skills needed to succeed. Delivering
+prepare them for work immediately, and employers Revolution or the Digital Revolution. Your organization on our commitment to provide equitable access to skills
+want the same thing. must embrace this transformation or risk being development, we have created unique courses like
+left behind. The choice is clear: adapt or become Missouri Job Ready Day One and learning pathways
+irrelevant. The time to act is now. tailored to both the needs of populations facing barriers
+to employment and demands in the job market.
+Mark Rosenbaum Mark A. Lane, PhD Julie Carter
+Dean of HPU’s College of Business, Hawai’i Pacific University Strategy & Innovation Engineer, Cisco Director of Workforce Development, Department of Higher
+Education and Workforce Development (DHEWD), State of Missouri
+Professional Certificates Playbook
+Global Skills Report 2024 | Regional Skill Trends | NA 54
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Canada 59 56 46
+1. Storytelling 1. Product Marketing Manager
+Business Tech Data science 2. Culture 2. Marketing Manager
+3. Social Media 3. Marketing Specialist
+4. Negotiation 4. E-commerce Analyst
+4 59 36 Enrollment trends
+M
+5. Resilience 5. Media Buyer
+Coursera Global Median GenAI 6. SQL 6. Personal Financial Advisor
+learners rank age 914% YoY enrollments
+7. Epidemiology 7. Search Engine
+54 % 40 % 38 % Top courses 8. Creativity Optimization Specialist
+9. Spreadsheet Software 8. Bookkeeper
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. Geovisualization 9. Social Media Marketer
+for ChatGPT
+10. Advertising Manager
+With a 63% year-over-year growth in Professional Generative AI with Large
+Language Models
+Certificate enrollments, Canadian learners are
+increasingly committed to developing job-ready skills.
+Introduction to Generative AI
+They’re pursuing micro-credentials in in-demand
+Recommended content for top skills and roles
+fields like data analytics and digital marketing,
+Professional Certificates
+preparing for roles like product marketing manager, Cultural intelligence: Data Analysis with
+e-commerce analyst, and social media marketer. 63% YoY enrollments Become a global citizen Spreadsheets and SQL
+Storytelling and influencing: Essential Epidemiologic Tools
+This aligns with the government’s efforts to address Top Professional Certificates Communicate with impact for Public Health Practice
+the skills gap, as 45% of Canadians lack the digital Professional Certificate
+Data Analytics Adaptability and Resiliency Everyday Excel, Part 1
+skills needed for the knowledge economy.76 Initiatives
+like the Skills for Success Program (supporting Professional Certificate Spatial Analysis and Satellite Digital Professional Certificate
+Cybersecurity
+60,000+ Canadians) and Ontario’s $15 million Imagery in a GIS Marketing & E-commerce
+investment in rapid training contribute to building Project Professional Certificate Social Media Professional Certificate
+Natural Creativity
+this crucial workforce.77 Management Marketing
+Global Skills Report 2024 | Regional Skill Trends | NA 55
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+United States 70 71 55 1. Geovisualization 1. Personal Financial Advisor
+Business Tech Data science 2. SQL 2. Business Intelligence Analyst
+3. Business Communication 3. Bookkeeper
+4. General Accounting 4. Risk Analyst
+27.7 69 36 Enrollment trends
+M
+5. Epidemiology 5. Technology Consultant
+GenAI
+Coursera Global Median 6. Bayesian Statistics 6. Network Engineer
+learners rank age 1,058% YoY enrollments
+7. Spreadsheet Software 7. Financial Quantitative Analyst
+52 38 40 8. Change Management 8. Database Architect
+% % % Top courses
+9. Python Programming 9. Cybersecurity Analyst
+Women Women learners Learning
+learners in STEM on mobile Prompt Engineering 10. Project Management 10. Financial Analyst
+for ChatGPT
+US learners focus on a mix of business and technical Generative AI with Large
+skills, such as business communication, general Language Models
+accounting, and SQL, though mostly prepare for roles in
+Introduction to Generative AI
+business and finance.
+Recommended content for top skills and roles
+However, nearly one-third of US workers lack Professional Certificates
+Bayesian Statistics: From Cross-Cultural Communication
+foundational digital skills, with workers of color 61% YoY enrollments Concept to Data Analysis and Management
+disproportionately affected.78 As the public and private
+Python Scripting Financial Accounting
+sectors digitize, the need for highly trained STEM workers Top Professional Certificates Fundamentals Fundamentals
+grows, despite fewer than 100,000 US graduates earning Professional Certificate Data Analysis with Leading transformations:
+Data Analytics
+engineering and computer science degrees each year.79 Spreadsheets and SQL Manage change
+Professional Certificate Power BI Professional Certificate
+The 1,058% surge in GenAI course enrollments and the Cybersecurity Introduction to GIS Mapping
+Data Analyst
+61% year-over-year growth in Professional Certificate
+Project Professional Certificate Investigating Epidemics like Project Professional Certificate
+enrollments show learners’ commitment to upskilling
+Management COVID-19: An Analyst’s Guide Management
+for the digital economy.
+Global Skills Report 2024 | Regional Skill Trends | NA 56
+01 02 03 04
+Sub-Saharan Africa
+6.9 38 36
+M % %
+Coursera YoY enterprise Women
+learners enrollments learners
+65 34 27
+% %
+Learning Median Women
+on mobile age learners in STEM
+Learners in Sub-Saharan Africa show a strong appetite
+for mobile learning, with 65% accessing courses
+on smartphones or tablets—the highest among all
+regions. They focus on developing business skills like
+risk management and supply chain systems, as well
+as technical skills like SQL and HTML/CSS. However,
+with only 36% of learners being women, despite
+comprising 46.1% of the region’s labor force, there’s a
+significant gender disparity in online learning.80 Cutting-edge Rankings 1–28
+Competitive Rankings 29–55
+See page 60 for country skill rankings in
+Emerging Rankings 56–82
+Sub-Saharan Africa
+Lagging Rankings 83–109
+Global Skills Report 2024 | Regional Skill Trends | SSA 57
+01 02 03 04
+Sub-Saharan Africa
+Regional enrollment trends
+Sub-Saharan Africa must focus on developing a skilled young Top skills Top target roles Most popular content in
+workforce, especially given lagging skill rankings of most 1. Risk Management 1. IT Project Manager Sub-Saharan Africa
+countries in the region. With 230 million digital jobs projected
+2. Epidemiology 2. Project Manager
+by 2030, investing in accessible, job-relevant learning is crucial.81 3. Audit 3. Operations Manager Foundations: Data, Data, Everywhere
+4. Supply Chain Systems 4. Personal Financial Advisor
+Learners focus on skills like risk management, auditing, and
+5. Influencing 5. IT Manager Foundations of Project Management
+supply chain systems. The prevalence of mobile learning
+6. Spreadsheet Software 6. Business Analyst
+(65%) highlights the importance of flexible, on-the-go learning
+7. Advertising 7. Operations Specialist Foundations of Cybersecurity
+solutions. Enabling further internet access will be critical to
+8. Business Communication 8. Auditor
+skills development, as 75% of Africa’s internet traffic comes
+9. People Development 9. Marketing Specialist Ask Questions to Make Data-Driven Decisions
+from smartphones.82
+10. Market Research 10. Product Marketing Manager
+The region must also address the gender gap in online learning, Introduction to Microsoft Excel
+with only 36% of learners being women despite comprising
+Foundations of Digital
+50.2% of the working-age population. Prioritizing digital Marketing and E-commerce
+literacy in education, promoting gender-inclusive initiatives,
+and collaborating with industry are key to building a skilled, Technical Support Fundamentals
+diverse workforce.
+Business Analytics with Excel:
+Elementary to Advanced
+Sub-Saharan Africa’s growing youth population presents
+both challenges and opportunities for the workforce. About Cybersecurity for Everyone
+Methodology snapshot
+10–12 million young Africans enter the labor market annually,
+where only 3 million formal jobs are available.83 Transforming To identify top skills and target roles, we use an over-indexing Prepare Data for Exploration
+methodology. Over-indexing means that learners in a specific
+education systems to update curricula, investing in teacher
+country or region are disproportionately enrolling in a given skill
+training, and increasing education funding is vital. By
+compared to learners globally.
+equipping young Africans for the future, the region can turn its
+demographic challenge into an economic advantage.
+Global Skills Report 2024 | Regional Skill Trends | SSA 58
+01 02 03 04
+Sub-Saharan Africa
+Regional enrollment trends cont.
+GenAI Cybersecurity Professional Certificates
+1,500 2 12
+% % %
+My advice to learners is to BE the change
+YoY enrollment growth YoY enrollment growth YoY enrollment growth
+you want to see! Just empower yourself to
+give power to others. Top courses Top courses Top Professional Certificates
+Professional Certificate
+Introduction to Generative AI Foundations of Cybersecurity Data Analytics
+Prompt Engineering Technical Support Project Professional Certificate
+for ChatGPT Fundamentals Management
+Professional Certificate
+Oluwakemi Sarah Adenekan Generative AI for Everyone Cybersecurity for Everyone Cybersecurity
+Coursera Learner, Oyo State, Nigeria
+Generative AI with Large Play It Safe: Digital Professional Certificate
+Language Models Manage Security Risks Marketing & E-commerce
+ChatGPT Advanced Computer Science: Professional Certificate
+IT Support
+Data Analysis Programming with a Purpose
+Global Skills Report 2024 | Regional Skill Trends | SSA 59
+01 02 03 04
+Sub-Saharan Africa
+Regional skill rankings
+Regional Global Country Business Technology Data
+rank rank Science
+1 66 Botswana 72% 37% 23%
+Remember: skills and learning material alone
+2 71 Rwanda 64% 24% 28%
+3 74 Cameroon 48% 38% 21% don’t make you successful. Instead, it’s on you
+4 88 Zambia 14% 16% 24% to prove to yourself that what you’ve learned
+5 92 Ethiopia 12% 20% 22%
+is valuable and beneficial to what you want
+6 97 Zimbabwe 13% 18% 11%
+to accomplish. For me, it’s solving existing
+7 98 Kenya 17% 9% 12%
+problems in the community and seeing the
+8 99 Cote d'Ivoire 20% 8% 6%
+9 100 South Africa 10% 11% 13% positive impact I’ve helped make—from machine
+10 102 Uganda 18% 7% 5% translation projects for Kenyan languages
+11 104 Ghana 6% 6% 6%
+(Kikuyu and Kiswahili languages as part of the
+12 105 Nigeria 26% 1% 1%
+Masakhane Community) to using AI to solve
+13 107 Somalia 5% 4% 3%
+pressing problems in the supply chain field.
+Kennedy Wangari
+Coursera Learner, Kenya
+Global Skills Report 2024 | Regional Skill Trends | SSA 60
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Botswana 31 70 85 1. Investment Management 1. Project Manager
+Business Tech Data science 2. Leadership Development 2. IT Project Manager
+3. Risk Management 3. Operations Manager
+85 66 33 Enrollment trends 4. Audit 4. Contract Administrator
+K
+5. Resilience 5. Personal Financial Advisor
+Coursera Global Median GenAI 6. General Accounting 6. Bookkeeper
+learners rank age 1,433% YoY enrollments
+7. Conflict Management 7. Systems Analyst
+50 % 32 % 54 % Top courses 8. Change Management 8. Business Analyst
+9. Emotional Intelligence 9. IT Director
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Market Research 10. Auditor
+Generative AI for Everyone
+In Botswana, learners focus on leadership, risk
+management, and accounting skills, preparing for roles Prompt Engineering
+such as project manager, IT project manager, for ChatGPT
+Recommended content for top skills and roles
+and operations manager. Despite unemployment
+challenges, with 25% of the labor force and 33% of youth Professional Certificates Innovations in Investment Storytelling and influencing:
+aged 20–39 unemployed,84 Botswana has made strides 35% YoY enrollments Technology: Artificial Communicate with impact
+Intelligence
+in connecting schools to high-speed internet through Emotional and
+initiatives like SmartBots and GIGA.85 Top Professional Certificates I Rn it sr ko Mdu anct ai go en m to e n t Social Intelligence
+Professional Certificate Introduction to
+Botswana also achieves gender parity in online learning, Data Analytics Auditing I: Conceptual Market Research
+Foundations of Auditing
+with women making up 50% of learners. With projected Project Professional Certificate Career Coach Professional Certificate
+annual economic growth of 4.5% over the next five Management Resolving and and Navigator
+Transforming Conflict
+years, continued investments in digital infrastructure Professional Certificate IT Project Professional Certificate
+and skills development are key to reducing Cybersecurity Leading and Developing Manager
+Top Talent
+unemployment and fostering inclusive growth.86
+Global Skills Report 2024 | Regional Skill Trends | SSA 61
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+Nigeria 82 109 109 1. SQL 1. Product Marketing Manager
+Business Tech Data science 2. Advertising 2. E-commerce Analyst
+3. Spreadsheet Software 3. Personal Financial Advisor
+4. Business Communication 4. Project Manager
+2.4 105 32 Enrollment trends
+M
+5. Audit 5. IT Project Manager
+Coursera Global Median GenAI 6. HTML and CSS 6. Social Media Marketer
+learners rank age 1,817% YoY enrollments
+7. Influencing 7. Cloud Security Engineer
+34 % 29 % 76 % Top courses 8. Supply Chain Systems 8. Marketing Specialist
+9. Storytelling 9. Operations Manager
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Market Research 10. IT Director
+Prompt Engineering
+With 76% of learners accessing courses on mobile for ChatGPT
+devices, learners in Nigeria gravitate toward
+Generative AI for Everyone
+flexible, on-the-go learning. They focus on
+Recommended content for top skills and roles
+developing technical skills like SQL and HTML/
+CSS, as well as business skills like advertising and Professional Certificates Data Analysis with Storytelling and influencing:
+business communication. 7% YoY enrollments Spreadsheets and SQL Communicate with impact
+Learn HTML and CSS Business Writing
+Top target roles learners prepare for span engineering Top Professional Certificates
+and marketing, including cloud security engineer, Professional Certificate Mastering Excel Essentials to Market Research and
+Data Analytics
+product marketing manager, and e-commerce Enhance Business Value Consumer Behavior
+analyst. However, with only one in 10 workers holding Professional Certificate Establishing a Professional Digital Professional Certificate
+positions that require advanced skill levels,87 these Cybersecurity ‘Self’ through Effective Marketing & E-commerce
+Intercultural Communication
+skill sets are crucial in addressing Nigeria’s youth Project Professional Certificate Supply Chain Professional Certificate
+unemployment rate, which stands at 53.4%.88 Management Auditing I: Conceptual Data Analyst
+Foundations of Auditing
+Global Skills Report 2024 | Regional Skill Trends | SSA 62
+01 02 03 04
+Country spotlight Domain rankings Top skills Top target roles
+South Africa 99 98 96 1. Risk Management 1. IT Project Manager
+Business Tech Data science 2. Supply Chain Systems 2. Project Manager
+3. Brand Management 3. Operations Manager
+4. Market Research 4. IT Director
+1.3 100 36 Enrollment trends
+M
+5. Spreadsheet Software 5. Personal Financial Advisor
+GenAI
+Coursera Global Median 6. Change Management 6. Business Analyst
+learners rank age 1,156% YoY enrollments
+7. Operations Management 7. General Manager
+46 % 36 % 62 % Top courses 8. Influencing 8. Operations and
+9. FinTech Maintenance Specialist
+Women Women learners Learning
+learners in STEM on mobile Introduction to Generative AI 10. Business Communication 9. Database Architect
+10. Marketing Manager
+Prompt Engineering
+South Africa has the potential to generate 4.5 for ChatGPT
+million new jobs across industries by 2030.89
+Generative AI for Everyone
+However, with an estimated 28,800 digital and ICT
+Recommended content for top skills and roles
+jobs already being outsourced, there’s a pressing
+need to develop a skilled domestic workforce.90 Professional Certificates Operational Risk Management: Storytelling and influencing:
+Learners focus on building business skills such as 33% YoY enrollments Frameworks & Strategies Communicate with impact
+risk management, supply chain systems, and brand FinTech Foundations
+Everyday Excel, Part 1
+management, preparing for roles like IT project Top Professional Certificates and Overview
+manager, operations manager, and business analyst. Professional Certificate Market Research and
+Data Analytics Supply Chain Optimization
+With 62% accessing courses on mobile devices, Consumer Behavior
+they demonstrate a strong preference for flexible, Project Professional Certificate Professional Certificate
+Brand Identity and Strategy IT Support
+accessible learning. Management
+Digital Professional Certificate Leading transformations: Database Professional Certificate
+Marketing & E-commerce Manage change Engineer
+Global Skills Report 2024 | Regional Skill Trends | SSA 63
+01 02 03 04
+Appendix
+Each and every one of us needs
+to own our own careers. Each
+and every one of us needs to be
+intellectually curious in building
+those careers.
+Leon Katsnelson
+Director & CTO,
+IBM Skills Network at IBM
+2024 Job Skills Report webinar
+64
+01 02 03 04
+Glossary
+Active learners: Individuals who have started at Cybersecurity skills: A collection of skills that Digital skills include everything from typing Generative AI (GenAI): A subset of artificial
+least one course item within the past year. allows individuals to protect computer and posting on social media to developing intelligence (AI) that focuses on creating new
+systems, networks, and data from software and managing cybersecurity. Digital content, such as text, images, audio, or video,
+Artificial Intelligence (AI) skills: A set of skills that
+unauthorized access, attacks, or damage. skills exist on an ever-evolving spectrum. based on learned patterns and rules from
+enables individuals to understand, develop,
+These skills include risk management, existing data. GenAI technologies include
+and apply AI technologies. This report focuses Human skills constitute our ability to relate
+network security, cryptography, and incident language models like GPT-4o and image
+on both advanced and foundational skills to one another and include skills such as
+response, among others. generators like DALL-E.
+relevant to AI. creativity, critical thinking, information
+Cybersecurity enrollments: The year-over-year interpretation, decision-making, leadership, GenAI enrollments: The YoY increase in the
+Advanced skills: Data management, machine
+(YoY) increase in the number of learners and communication. number of learners enrolling in courses
+learning, applied machine learning, artificial
+enrolling in courses related to cybersecurity related to generative AI technologies on
+Note: These two categories are
+neural networks, Bayesian networks, big
+on the Coursera platform. We compare the Coursera platform, calculated for a
+complementary. People use human skills
+data, computer vision, deep learning, feature
+cybersecurity enrollments in 2022 to specific country or region. We compare total
+to effectively and ethically make use of
+engineering, machine learning algorithms,
+cybersecurity enrollments in 2023. cumulative enrollments on June 13, 2023 with
+digital skills. Likewise, digital skills
+machine learning software, natural language
+total cumulative enrollments on May 13, 2024.
+enhance human skills.
+processing, and statistical machine learning. Digital and human skills: Two broad categories of
+skills that are essential in today’s workforce. Industry micro-credential or micro-credential:
+Enrollment trends: Patterns in learner
+Foundational skills: Computer programming,
+Digital skills encompass abilities related to A short, focused, and flexible learning
+enrollments on the Coursera platform, which
+data analysis, mathematics, theoretical
+understanding, using, and creating value program that allows individuals to acquire
+can reveal insights into the popularity and
+computer science, applied mathematics, and
+with technology, while human skills refer to specific job-relevant skills or competencies.
+relevance of specific skills, competencies, or
+data modeling.
+cognitive, social, and emotional capabilities Micro-credentials, such as Coursera’s
+courses in a given country or region.
+that enable effective interpersonal Professional Certificates, prepare learners
+interactions and decision-making.
+Global Skills Report 2024 | Appendix 65
+01 02 03 04
+for in-demand industry skills and can Over-indexing (“top skills”): A measure of the Recommended content for top skills and roles: worldwide, and regional skill rankings,
+complement traditional degree programs for relative popularity of a specific skill among These sections highlight courses and learning comparing countries within specific regions.
+higher education institutions, upskill teams learners in a particular country or region programs that align with the skills and career Skill proficiency is a key metric used in this
+for businesses, or develop an entire workforce compared to the global learner population paths trending among learners in each report to benchmark countries and regions.
+for governments. on Coursera. Over-indexing is not a measure country or region. Recommendations are
+Skills: The transference of knowledge into value
+of proficiency. based on learner enrollment data, reflecting
+Leadership skills: A set of skills that enable and the ability to perform specific tasks.
+the content that is most popular and relevant
+individuals to guide, motivate, and manage Professional Certificate(s): Coursera offers To figure out what skills each Coursera
+to the local learning community. Institutions
+teams effectively. These skills include Professional Certificates, a type of micro- content offering teaches, we use Coursera’s
+can leverage these insights to inform their
+adaptability, change management, emotional credential, from leading industry partners Skills Graph, which draws information from
+learning programs, ensuring they offer
+intelligence, decision-making, and strategic that teach the specific skills needed for open-source taxonomies like Wikipedia
+courses and curricula that match learner
+thinking, among others. entry-level roles in in-demand digital jobs. and insights from Coursera educators and
+interests and market demands.
+Professional Certificates typically take 4–6 learners. A single course often covers several
+Learner: An individual who is registered for
+months to complete and include hands-on Skill ranking: A measure of a learner’s mastery different skills.
+content on the Coursera platform. Learners
+projects that simulate real-world tasks. of a specific skill, based on their performance
+can be enrolled in multiple learning programs, Top GenAI course(s): The GenAI course or courses
+in assessments and projects within relevant
+but are counted only once in the platform’s Professional Certificate enrollments: with the highest total enrollments within a
+courses on the Coursera platform. This
+metrics. The skills benchmarking data in this This metric examines the YoY growth in specific country or region, which is based on
+year’s Global Skills Report introduces a new
+report is based on learner data. total enrollments for a country or region. the overall number of learners enrolling in
+methodology that combines learners’ skill
+Growth figures for regions take into the course. It helps identify the GenAI course
+proficiency scores on the Coursera platform
+Most popular content: These sections
+consideration only the enrollment figures that is most in-demand among learners in a
+with third-party indicators, including the
+highlight the courses, Guided Projects, and
+of the 109 countries included in this report. particular area.
+Global Innovation Index (GII), Labor Force
+Professional Certificates with the highest
+We compare Professional Certificate
+Participation Rate, Human Capital Index (HCI),
+enrollments in the past year among learners Top Professional Certificate(s):
+enrollments in 2022 to Professional
+and GDP per capita. This approach provides a
+in each region. Most popular content is The Professional Certificate or Certificates
+Certificate enrollments in 2023.
+more comprehensive view of skill proficiency
+based on the overall number of enrollments with the highest total enrollments within a
+across countries. The report includes both
+and provides insights into the content that specific country or region, which is based on
+global skill rankings, comparing countries
+attracts the most learners in a given area.
+Global Skills Report 2024 | Appendix 66
+01 02 03 04
+the overall number of learners enrolling in the
+certificate program. This helps identify the
+most sought-after Professional Certificate(s)
+among learners in a particular area.
+Top target roles: Roles and career trajectories
+that are gaining popularity among learners in
+a specific country or region, as indicated by
+enrollment patterns in courses and learning
+programs related to those roles. These
+insights can help institutions, businesses, and
+governments align their offerings with the
+evolving interests and aspirations of learners.
+Upskilling: The process of acquiring new skills
+or enhancing existing skills to improve
+job performance, adapt to changing job
+requirements, or prepare for new roles.
+Upskilling is increasingly important in today’s
+rapidly evolving digital economy.
+Global Skills Report 2024 | Appendix 67
+01 02 03 04
+Methodology
+Overview The Coursera Skills Graph For the Global Skills Report, we leverage the Skill to learner
+following parts of the Skills Graph: Connects skills to learners who have
+The Coursera Skills Graph maps the connections
+Coursera’s Global Skills Report assesses the skill demonstrated them by passing relevant
+among skills, content, careers, and learners on Skill to skill
+proficiency of learners, measures which skills are graded items, measured using a variant of the
+the Coursera platform. Describes the connections among skills and
+trending globally, and identifies roles that engage Glicko algorithm.
+generates a skills taxonomy where broad,
+highly with skills critical for the future of work.
+Outcome of higher-level skills are parents of more granular, The full set of skills and competencies for which
+This year’s report focuses on the 109 countries
+lower-level skills. we measure learner proficiency, grouped by
+with the most learners on the Coursera platform,
+domain (business, technology, and data science),
+accounting for over 95% of learners.
+Skill to content
+are listed in the table provided on the next page.
+T frh oe
+m
+r e sp evo er rt a’s
+l
+m coe mth po od no el no tg sy
+:
+incorporates data is a parent
+of Required by
+M tea ap cs
+h
+esk
+s
+i tl hls
+e
+t mo .the Coursera content that
+Skills
+Skill to assessment
+1. The Coursera Skills Graph
+Maps skills to the graded items that assess
+2. Skill proficiency scores and benchmarking
+them. Graded items on Coursera include
+by country
+multiple-choice quizzes, peer review 3. Third-party metrics included in our Taught by
+assignments, and programming assignments.
+skills index
+4. Over-indexing trends
+Skill to occupation
+Connects the Lightcast Occupation Taxonomy
+to relevant Coursera skills needed in the roles.
+Global Skills Report 2024 | Appendix 68
+fo
+laoG
+Learner
+Career
+Specializations
+Courses &
+New Guided Projects
+Assessed by
+• Quiz
+• Assessment
+• Programming assignment
+01 02 03 04
+Set of skill levels related to the Global Skills Report
+Business Technology Data science
+Skills in this domain include a range of soft skills for every Skills in this domain focus on the creation, maintenance, and scaling Skills in this domain focus on capturing and utilizing the data
+context, along with those that are required for the management of computer systems and software. generated within a business for decision-making and/or powering
+and operation of an organization. underlying products and services.
+1. Accounting focuses on proper record keeping and Cloud Computing involves delivering computing resources—namely Data Management comprises everything related to managing and
+communication of financial information for corporations in hardware, software, or software development platforms—via accessing data for reporting, analysis, and model building.
+accordance with government regulations. the internet.
+Sample skills: cloud APIs, Hadoop
+Sample skills: auditing, financial accounting Sample skills: software as a service (SaaS), Kubernetes
+2. Business Analysis is the discipline of recognizing business needs Computer Architecture is the set of rules and methods that specify the Data Visualization involves the creation and study of visual
+and developing solutions to business problems. structure, organization, and implementation of computer systems. representations of data to communicate information clearly and
+efficiently.
+Sample skills: business intelligence, spreadsheet software Sample skills: network architecture, distributed
+computing architecture Sample skills: Tableau, plotting data
+3. Business Psychology applies the science of human psychology Computer Graphics is the creation and manipulation of visual data Machine Learning creates algorithms and statistical models that
+to practical business applications in order to train and motivate through the use of computational tools and techniques. computer systems can use to perform a specific task without explicit
+employees and teams to work more effectively. instructions.
+Sample skills: graphic design, interactive design
+Sample skills: marketing psychology, organization development Sample skills: multitask learning, deep learning
+4. Communication is the practice of discussion between two or Computer Networking is the process of creating a digital Math is the study of numbers and their relationships, applying these
+more individuals in written or oral forms. telecommunications network where connected devices exchange principles to models of real phenomena.
+data with each other.
+Sample skills: people skills, writing Sample skills: calculus, linear algebra
+Sample skills: cloud computing, Internet of Things
+Global Skills Report 2024 | Appendix 69
+01 02 03 04
+Business (cont.) Technology (cont.) Data science (cont.)
+5. Data Analysis is the process of inspecting, cleansing, Computer Programming is the process that professionals use to Statistical Programming is the set of programming languages and
+transforming, and modeling data with the goal of discovering write code that instructs how a computer, application, or software tools used to create statistical models and algorithms.
+useful information, informing conclusions, and supporting program performs.
+decision-making. Sample skills: R, Python
+Sample skills: JavaScript, Java
+Sample skills: exploratory data analysis, spatial data analysis
+6. Entrepreneurship is the process of designing, launching, and Databases are an organized collection of data, generally stored and Statistics deals with all aspects of data collection, organization,
+running a new business. accessed electronically from a computer system. analysis, interpretation, and presentation.
+Sample skills: adaptability, innovation Sample skills: relational database, key value database Sample skills: regression, A/B testing
+7. Finance is focused on the efficient allocation of capital toward Design & Product is about how to create software products that N/A
+investment opportunities under conditions of risk or uncertainty. effectively solve user problems or otherwise provide them value.
+Sample skills: financial ratios, blockchain Sample skills: product management, user research
+8. Human Resources refers to the corporate function of overseeing DevOps is focused on building software delivery pipelines, deploying N/A
+the various aspects of employment, such as onboarding/ and monitoring services, and designing accelerated feedback loops
+offboarding, labor law compliance, employee benefits, and talent to improve development speed.
+acquisition.
+Sample skills: continuous integration, storage security
+Sample skills: benefits, employee relations
+9. Management is about how to set a company’s strategy and Human Computer Interaction studies the design and use of N/A
+coordinate the efforts of employees. interfaces between people and computing environments.
+Sample skills: people management, business analytics Sample skills: user experience, interactive design
+10. Marketing is the process of creating relationships with potential Mobile Development is the process of developing software N/A
+and actual customers, allowing businesses to identify how they applications for mobile devices such as mobile phones or tablets.
+should present themselves and who they should cater to.
+Sample skills: Android development, iOS development
+Sample skills: digital marketing, product placement
+Global Skills Report 2024 | Appendix 70
+01 02 03 04
+Business (cont.) Technology (cont.) Data science (cont.)
+11. Research & Design is about problem framing and solution Operating Systems consists of building system software that N/A
+modeling to inform business strategy. provides common services for other types of computer programs.
+Sample skills: innovation, market research Sample skills: mobile app development, C programming language
+12. Sales is focused on taking a company’s products and services to Security Engineering is a specialized field that focuses on the N/A
+market and transacting with actual customers. security aspects in the design of systems that need to be able to deal
+robustly with possible sources of disruption.
+Sample skills: cross-selling, lead generation
+Sample skills: cybersecurity, cryptography
+13. Strategy & Operations consists of the planning and strategic Software Engineering involves applying rigorous principles to N/A
+work organizations undertake to grow and prosper. the design, development, maintenance, testing, and evaluation of
+computer software.
+Sample skills: operations management, strategy
+Sample skills: software architecture, software development
+14. Supply Chain & Logistics is about the systems involved in the Theoretical Computer Science focuses on mathematical aspects of N/A
+efficient flow of goods and services from suppliers to consumers. computer science and the theory behind algorithms, data structures,
+computational complexity, and related topics.
+Sample skills: supply chain systems, planning
+Sample skills: algorithms, cryptography
+15. N/A Web Development is the work involved in developing websites. It N/A
+can range from developing a simple static page to complex web
+applications such as e-commerce sites.
+Sample skills: Angular, HTML and CSS
+Global Skills Report 2024 | Appendix 71
+01 02 03 04
+Relationships between skills Coursera skill benchmarking Individual skill scores We compare countries via percentile ranking of
+and content the aggregate scores. To get a country’s overall
+To benchmark skill proficiency at the country Using the set of assessments for each
+Coursera skill proficiency, we rank the average
+The skills in the Coursera Skills Taxonomy are level, we first measure each learner’s proficiency competency, we train machine learning models
+of its business, technology, and data science
+mapped to the content that teaches them using in each skill. Then, we aggregate those to simultaneously estimate learners’ skill
+percentiles. State-level scores are computed
+a machine learning model trained on a dataset proficiencies to compute statistics like the proficiencies and assessment difficulties. This
+similarly and compared only to other states
+of instructor and learner-labeled skill-to-content country skill proficiency in a particular skill. methodology allows us to measure learner skill
+within the same country. The same 250-learner
+mappings. The model considers features proficiencies while adjusting for item difficulty,
+minimum applies to states.
+like occurrence counts in lecture transcripts, ensuring fair comparisons across the wide range
+assignments, and course descriptions, as well as of content on the platform. The full details of
+learner feedback. Learner attempts our methodology for individual skill scoring are Third-party data
+Assessment quizzes
+detailed in a public technical paper.91 In conjunction with the average Coursera skill
+With over 10,000 content offerings across proficiency of each country, we incorporate other
+business, technology, and data science from Skill scoring Item difficulty Country and state skill scores country-level indicators from the World Bank
+leading university and industry partners and the World Intellectual Property Organization
+With skill scores computed at the individual level
+worldwide, our catalog spans the wide variety of (WIPO) to create a skills index for the country
+and using connections between users, states,
+skills relevant to the competencies in this report. Learner and countries, we calculate country and state rankings. This allows us to corroborate our
+skill score on-platform scores with external metrics and
+For each skill-content pair, this machine learning proficiency levels for each skill by averaging the
+captures a more holistic view of learner skill
+system outputs a score that captures the individual skill scores.
+application in the economy.
+likelihood of the skill being taught in the content.
+Skill score Linkages For country aggregate scores in each domain, we
+To define the set of skill-to-content tags that aggregation Learner country We incorporate the following metrics from the
+average the country scores for the competencies
+power this report, we tune a cutoff threshold World Bank:
+within those domains, including only countries
+based on expert feedback from our content
+strategy team. Country score with at least 250 learners in at least three • GDP per capita92
+benchmark
+competencies per domain.
+Assessments • Human Capital Index93
+Quizzes
+• Labor force participation rate94
+Global Skills Report 2024 | Appendix 72
+01 02 03 04
+We incorporate the following metrics Combined skill index A country’s on-platform skill percentile and popular, over-indexing skills reveal what
+from the World Intellectual Property third-party index are weighted equally to is disproportionately popular within a
+Organization (WIPO): calculate the final country rankings overall and particular group.
+Country skill ranking formula by domain. The percentile rankings are divided
+• Global Innovation Index (GII)95 The methodology works as follows:
+into four quartiles:
+50 Country’s aggregated skills
+%
+We use the most recent year of data for each 1. Compute the share of enrollments in courses
+measurement on Coursera • Cutting-Edge (Rankings 1–28)
+country, up to the oldest accepted year (2018). teaching {skill S} overall (say 20%)
+• Learners’ on-platform skill • Competitive (Rankings 29–55)
+Missing metrics or data older than 2018 are 2. Compute the share of enrollments in courses
+proficiency scores
+imputed with the metric average. Metrics not • Emerging (Rankings 56–82) teaching {skill S} from learners within group
+already on a scale from 0 to 1 are normalized + • Lagging (Rankings 83–109) G (say 30%)
+by ranking across all countries to create 3. Compute the “skill-quotient” of {skill S} for
+metric percentiles. 50 Country’s aggregated skills Coursera’s over 148 million registered learners group G as (30% / 20% = 1.5)
+%
+measurement index using span the globe and myriad industries, but
+The third-party skills index for each country is The notion of whether a course teaches a skill
+third party metrics note that the Global Skills Report estimate may
+calculated using the following formula: is derived from the Coursera Skills Graph,
+not reflect the average skill proficiency of all
+• Global Innovation Index
+described earlier in this appendix. The same
+(GII)96—skill application members within an entity because Coursera
+0.5 0.5 methodology is applied to calculate over-
+(GII percentile) + (LFP percentile) + to innovation learners are not necessarily representative of a
+4 4 indexed roles by substituting {skill S} with
+country, even with some normalization from the
+0.5 0.5 • Labor force participation97— {competency C} or {role R}. {Role R} consists of
+(GDP percentile) + (human capital index) selected third-party metrics.
+4 4 skill matching in the set of skills required for a role, as defined by
+labor market our skill-to-occupation mappings.
+Over-indexing or “top” skills
+The maximum possible value for the index
+• Human capital index (HCI)98
+is 0.5 if a country is ranked number 1 in all To determine which skills learners are most
+and GDP per capita99—
+selected metrics. interested in within a particular country or
+output metrics of skill
+job group, we look for skills that over-index
+application in economy
+in the data by the number of enrollments.
+While trending skills reveal what is generally
+Global Skills Report 2024 | Appendix 73
+01 02 03 04
+State skill ranking: India
+Rankings include states with a minimum of Rank Region Business Technology Data science
+250 learners. 1 State of Punjab 100% 100% 95%
+2 Chandigarh 95% 90% 100%
+3 West Bengal 75% 95% 85%
+4 Haryana 90% 55% 80%
+5 State of Himachal Pradesh 60% 60% 90%
+6 State of Jharkhand 80% 50% 70%
+7 State of Assam 85% 85% 30%
+8 Maharashtra 70% 75% 50%
+9 Karnataka 50% 80% 65%
+10 Tamil Nadu 65% 65% 45%
+11 National Capital Territory of Delhi 55% 20% 75%
+12 Gujarat 45% 25% 60%
+13 Uttar Pradesh 25% 30% 55%
+14 Andhra Pradesh 15% 70% 25%
+15 Rajasthan 20% 45% 40%
+16 Bihar 30% 35% 35%
+17 State of Chhattisgarh 40% 40% 10%
+18 Kerala 35% 10% 15%
+19 Odisha 10% 15% 5%
+20 Madhya Pradesh 5% 5% 20%
+Global Skills Report 2024 | Appendix 74
+01 02 03 04
+State skill ranking: United States
+Rankings include states with a minimum of Rank Region Business Technology Data science
+250 learners. 1 Washington 93% 100% 100%
+2 Colorado 89% 93% 98%
+3 Michigan 96% 91% 85%
+4 Illinois 100% 80% 91%
+5 California 78% 96% 96%
+6 New Jersey 85% 87% 89%
+7 Montana 91% 89% 76%
+8 Minnesota 65% 98% 80%
+9 Massachusetts 74% 76% 93%
+10 District of Columbia 87% 74% 83%
+11 Oregon 70% 85% 87%
+12 Wisconsin 98% 65% 67%
+13 Iowa 80% 72% 70%
+14 New Hampshire 72% 70% 63%
+15 Pennsylvania 67% 59% 74%
+16 New York 61% 78% 59%
+17 Maine 76% 63% 46%
+18 Hawaii 83% 57% 30%
+19 Virginia 11% 83% 72%
+20 Delaware 43% 61% 61%
+21 Rhode Island 54% 67% 41%
+22 North Carolina 48% 43% 52%
+23 Idaho 59% 30% 54%
+Global Skills Report 2024 | Appendix 75
+01 02 03 04
+United States cont.
+Rankings include states with a minimum of Rank Region Business Technology Data science
+250 learners. 24 Maryland 26% 37% 78%
+25 Texas 46% 50% 43%
+26 Indiana 63% 22% 48%
+27 Arizona 41% 48% 39%
+28 West Virginia 57% 35% 37%
+29 Utah 15% 54% 57%
+30 New Mexico 33% 28% 65%
+31 Missouri 52% 39% 35%
+32 Florida 50% 52% 24%
+33 Georgia 37% 41% 20%
+34 Connecticut 39% 7% 50%
+35 Ohio 30% 26% 33%
+36 Nebraska 22% 46% 17%
+37 Tennessee 35% 15% 26%
+38 Kentucky 28% 24% 22%
+39 Kansas 13% 33% 28%
+40 South Carolina 24% 17% 13%
+41 Louisiana 17% 11% 7%
+42 Alabama 20% 9% 4%
+43 Arkansas 9% 20% 2%
+44 Nevada 7% 4% 15%
+45 Mississippi 2% 13% 9%
+46 Oklahoma 4% 2% 11%
+Global Skills Report 2024 | Appendix 76
+01 02 03 04
+Examples of large-scale AI initiatives
+Region Country Initiative
+Asia Pacific India Digital Personal Data Protection (DPDP) Act100
+Asia Pacific Thailand AI Thailand101 The capabilities of GenAI
+Asia Pacific Singapore AI Verify102
+are groundbreaking and
+Europe European Union AI Act103
+game-changing.
+Latin America and the Caribbean Chile Política Nacional De Inteligencia Artificial104
+Latin America and the Caribbean Colombia Política Nacional Para La Transformación Digital e
+Inteligencia Artificial105
+Middle East and North Africa Saudi Arabia Saudi Data & AI Authority106
+Middle East and North Africa UAE UAE National Strategy for Artificial Intelligence 2031107
+North America Canada Pan-Canadian Artificial Intelligence Strategy108 Dr. Jules White
+North America United States Federal: Blueprint for an AI Bill of Rights109 Director of the Initiative on the Future of
+Learning & GenAI, Vanderbilt University
+Connecticut: SSB No. 1103 - Public Act No. 23-16110
+Louisiana: SCR 49111
+Maryland: HB0622112
+It’s About Making Better Decisions, Not
+North Dakota: HB1361113 Replacing People: Generative AI Insights from
+Texas: Artificial Intelligence Advisory Council114 Dr. Jules White of Vanderbilt University
+Sub-Saharan Africa N/A African Union Development Agency’s AI Blueprint115
+Global Skills Report 2024 | Appendix 77
+01 02 03 04
+Endnotes
+1. The Potentially Large Effects of 11. Closing the digital skill divide 20. The right to higher education in Europe 27. Bigger Bandwidth: Girls in ICT make
+Artificial Intelligence on Economic (National Skills Coalition, 2023) and North America: briefing note way for digital equity in Thailand (UN
+Growth (Goldman Sachs, 2023) compendium (UNESCO International Sustainable Development Group, 2021)
+12. The Digital Economy and Society Index
+Institute for Higher Education in Latin
+2. The economic potential of generative AI: The (DESI) (European Commission, 2022) 28. India Social Development Report
+America and the Caribbean, 2023)
+next productivity frontier (McKinsey, 2023) 2023 (Oxford Academic, 2023)
+13. The Future of Jobs Report (World
+21. Digital skills in 2023: impact of education
+3. Global Innovation Index (GII) Economic Forum, 2023) 29. Global Innovation Index (GII)
+and age (European Union, 2024)
+(WIPO, 2018–2023) (WIPO, 2018–2023)
+14. ISC2 Cybersecurity Workforce
+22. NiñaSTEM (OECD, 2023)
+4. Labor force participation rate Study (ISC2, 2023) 30. Labor force participation rate
+(World Bank, 2018–2023) 23. Saudi Arabian Students’ Beliefs about (World Bank, 2018–20233
+15. Global Cybersecurity Outlook 2024
+and Barriers to Online Education
+5. Human Capital Index (HCI) (World Economic Forum, 2024) 31. Human Capital Index (HCI)
+during the COVID-19 Pandemic
+(World Bank, 2018–2023) (World Bank, 2018–2023)
+16. IBM X-Force Threat Intelligence
+(National Library of Medicine, 2022)
+6. GDP per capita (World Bank, 2018–2023) Index 2024 (IBM, 2024) 32. GDP per capita (World Bank, 2018–2023)
+24. Preparing girls for the future of Africa:
+7. KPMG 2023 U.S. CEO Outlook (KPMG, 2023) 17. Arab League forms cybersecurity 33. How Asia-Pacific CEOs can grow in
+Approaches to empowerment through
+ministerial council to combat growing the AI era amid economic challenges
+8. India announces $1.2 bln investment digital skills (World Bank, 2023)
+threats (Forbes Middle East, 2023) (EY CEO Outlook Survey, 2023)
+in AI projects (Reuters, 2024)
+25. Botswana makes strides in bridging
+18. The Future of Jobs Report (World 34. Unlocking APAC’s digital potential:
+9. Expanding AI education in Malaysia’s the digital divide (UNICEF, 2022)
+Economic Forum, 2023) Changing digital skill needs and
+public universities (OpenGov, 2023)
+26. Philippine Commission on Women Education
+policy approaches (AWS, 2021)
+19. Occupational Outlook Handbook (U.S.
+10. Thailand national AI strategy and Initiatives (Republic of the Philippines, 2022)
+Bureau of Labor Statistics, 2024)
+action plan (AI Thailand, 2022)
+Global Skills Report 2024 | Appendix 78
+01 02 03 04
+35. India announces $1.2 bln investment 46. Towards 2023: the European year 57. Skills in Latin America (OECD, 2023) 68. Saudi Arabia sees surge in demand
+in AI projects (Reuters, 2024) of skills (Publications Office of for cybersecurity experts amid global
+58. Brazil’s future workforce trends (CSIS, 2018)
+the European Union, 2022) threat (Al Arabiya News, 2024)
+36. How can India prepare its youth for the
+59. Chile - country commercial guide (U.S.
+future of work? Here’s what’s needed 47. Cisco AI Readiness Index - 69. A study to identify the potential skill gaps in
+Department of Commerce, 2023)
+now (World Economic Forum, 2022) France (Cisco, 2023) the Saudi labor market requirements (Prince
+60. Inteligencia Artificial, innovación
+Mohammad Bin Fahd University, 2023)
+37. The Future of Jobs Report (World 48. Germany’s shortage of workers is biggest
+y datos, las apuestas para volver
+Economic Forum, 2023) risk to growth, minister says (Reuters, 2024) 70. The Future of Jobs Report (World
+a Colombia una PotencIA Digital
+Economic Forum, 2023)
+38. Expanding AI education in Malaysia’s 49. Advancing higher education with industry (Gobierno de Colombia, 2024)
+public universities (OpenGov, 2023) micro-credentials (Coursera, 2022) 71. Majority of UAE workers see AI as key to
+61. The Future of Jobs Report (World
+future jobs (Fast Company Middle East, 2023)
+39. Bridging the skills gap: Fuelling 50. Cisco AI Readiness Index - Spain (Cisco, 2023) Economic Forum, 2023)
+careers and the economy in Malaysia 72. Closing the Digital Skill Divide
+51. Unlocking Spain’s digital 62. The Future of Jobs Report (World
+(Economist Impact, 2023) (National Skills Coalition, 2023)
+potential (AWS, 2021) Economic Forum, 2023)
+40. Singapore education and training 73. Joint statement on the launch of
+52. How reskilling can play a key role in Turkey’s 63. Política Nacional de Transformación
+services industry snapshot (U.S. the North American Semiconductor
+recovery (World Economic Forum, 2021) Digital (Gobierno de Perú, 2023)
+Department of Commerce, 2023) Conference and North American
+53. The Future of Jobs Report (World 64. See how the Middle East is people-
+Ministerial Committee on Economic
+41. 6 lessons from Singapore on upskilling for
+Economic Forum, 2023) powering the digital revolution
+Competitiveness (The White House, 2023)
+the future (World Economic Forum, 2023)
+(World Economic Forum, 2023)
+54. IT skills gap report 2023
+74. University of Texas System and Coursera
+42. Thailand National AI Strategy and
+(Forbes Advisor, 2023) 65. Majority of UAE workers see AI as key to
+Launch the Most Comprehensive Industry
+Action Plan (AI Thailand, 2022)
+future jobs (Fast Company Middle East, 2023)
+55. Inteligencia Artificial, innovación Micro-Credential Program Offered by a
+43. AI Act (European Commission, 2024)
+y datos, las apuestas para volver 66. A study to identify the potential skill gaps in U.S. University System (Coursera, 2023)
+44. 2023 report on the state of the Digital a Colombia una PotencIA Digital the Saudi labor market requirements (Prince
+75. Nevada DETR and Coursera announce
+Decade (European Commission, 2023) (Gobierno de Colombia, 2024) Mohammad Bin Fahd University, 2023)
+statewide program providing
+45. Shaping Europe’s digital future: Digital skills 56. Making the most of technology for learning 67. The Future of Jobs Report (World free job training to thousands
+and jobs (European Commission, 2023) and training in Latin America (OECD, 2020) Economic Forum, 2023) of people (Coursera, 2023)
+Global Skills Report 2024 | Appendix 79
+01 02 03 04
+76. Government of Canada creating 85. Botswana makes strides in bridging 94. Labor force participation rate 105. Política Nacional Para La Transformación
+more skills training opportunities for the digital divide (UNICEF, 2022) (World Bank, 2018–2023) Digital e Inteligencia Artificial (Consejo
+Canadians (Employment and Social Nacional de Política Económica y
+86. Challenges and opportunities for a systems 95. Global Innovation Index (GII)
+Development Canada, 2023) Social, Gobierno de Colombia, 2019)
+approach to skills development in Botswana (WIPO, 2018–2023)
+77. Ontario Invests in New and (International Youth Foundation, 2023) 106. Saudi Data & AI Authority (Government
+96. Global Innovation Index (GII) (2018–2023)
+Expanded Rapid Training Programs of Saudi Arabia, 2019)
+87. Why do so many Nigerian workers
+97. Labor force participation rate
+(Government of Ontario, 2021)
+remain poor? Labor force surveys may 107. UAE National Strategy for Artificial
+(World Bank, 2018–2023)
+78. Closing the Digital Skill Divide have the answer (World Bank, 2024) Intelligence 2031 (Government of UAE, 2023)
+98. Human Capital Index (HCI)
+(National Skills Coalition, 2023)
+88. FG inaugurates committee to tackle 108. Pan-Canadian Artificial Intelligence
+(World Bank, 2018–2023)
+79. Improving workforce development and STEM increasing youth unemployment In Nigeria Strategy (Innovation, Science and
+99. GDP per capita (World Bank, 2018–2023)
+education to preserve America’s innovation (Nigeria National Bureau of Statistics, 2022) Economic Development Canada, 2022)
+edge (The Brookings Institution, 2023) 100. Understanding India’s New Data
+89. Skills demand and supply in South 109. Blueprint for an AI Bill of Rights
+Protection Law (Carnegie India, 2023)
+80. Labor force, female (% of total Africa’s digital economy (International (White House Office of Science
+labor force) - Sub-Saharan Africa Labour Organization, 2022) 101. Thailand national AI strategy and and Technology Policy, 2022)
+(The World Bank Data 2023) action plan (AI Thailand, 2022)
+90. Mapping of digital and ICT roles and 110. SSB No. 1103 - Public Act No. 23-16
+81. Digital Skills in Sub-Saharan Africa: demand in South Africa (Harambee 102. Singapore’s Approach to AI Governance (Connecticut State Legislature, 2023)
+Spotlight on Ghana (International Youth Employment Accelerator, 2020) (Personal Data Protection Commission,
+111. SCR49 (Louisiana State Legislature, 2023)
+Finance Corporation, 2019) Government of Singapore, 2023)
+91. Using a Glicko-based Algorithm to Measure
+112. HB0622 (Maryland State Legislature, 2023)
+82. Share of web traffic in Africa as of July In-Course Learning (Educational Data 103. AI Act (European Commission, 2024)
+113. HB1361 (North Dakota State
+2023, by device (Statista, 2023) Mining Conference Proceedings, 2019)
+104. Política Nacional de Inteligencia
+Legislature, 2023)
+83. Preparing young Africans for jobs of the 92. GDP per capita (World Bank, 2018–2023) Artificial (Ministerio de Ciencia
+114. HB 2060 (88R) (Texas State Legislature, 2024)
+future (Africa Renewal Magazine, 2022) Tecnología Conocimiento e Innovación,
+93. Human Capital Index (HCI)
+Gobierno de Chile, 2021) 115. Africa’s push to regulate AI starts now
+84. Challenges and opportunities for a systems (World Bank, 2018–2023)
+(MIT Technology Review, 2024)
+approach to skills development in Botswana
+(International Youth Foundation, 2023)
+Global Skills Report 2024 | Appendix 80
