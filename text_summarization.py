@@ -12,6 +12,19 @@ https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maest
 """
 from Chain import Chain, Model, Prompt, Parser 	# type: ignore
 from nltk.tokenize import word_tokenize			# for tokenizing texts
+from pydantic import BaseModel, conlist
+from typing import List
+
+# Define our classes for Parser
+class Answer_List(BaseModel):
+	answer: List[str]
+
+class Iteration(BaseModel):
+	Missing_Entities: str
+	Denser_Summary: str
+
+class Chain_of_Density(BaseModel):
+	COD: List[Iteration]
 
 # Customizable settings
 def get_config():
@@ -170,11 +183,12 @@ def chain_of_density(text: str) -> str:
 	print("Summarizing text...")
 	prompt = Prompt(chain_of_density_prompt_string)
 	model = Model(config_dict['model_choice'])
-	parser = Parser('json')
+	parser = Parser(Chain_of_Density)
 	chain = Chain(prompt, model, parser)
 	summary = chain.run({'ARTICLE':text}, verbose=False)
+	summary = summary.content.COD[-2].Denser_Summary		# this seems complicated because we have a type within a type; this is a List of Iterations.
 	# return the content of the response, which is a list of dicts; grab the second to last one, and grab the value for Denser_Summary.
-	return summary.content[-2]['Denser_Summary']
+	return summary
 
 def extract_keywords(text_chunk: str) -> list[str]:
 	"""
@@ -184,7 +198,13 @@ def extract_keywords(text_chunk: str) -> list[str]:
 	model = Model(config_dict['model_choice'])
 	parser = Parser('list')
 	chain = Chain(prompt, model, parser)
-	keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
+	while True:
+		try:
+			keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
+			break
+		except Exception as e:
+			print(f"Error extracting keywords: {e}")
+			print("Trying again...")
 	return keywords
 
 def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
