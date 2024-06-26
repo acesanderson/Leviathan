@@ -196,15 +196,10 @@ def extract_keywords(text_chunk: str) -> list[str]:
 	"""
 	prompt = Prompt(keyword_extract_prompt_string)
 	model = Model(config_dict['model_choice'])
-	parser = Parser('list')
+	parser = Parser(Answer_List)
 	chain = Chain(prompt, model, parser)
-	while True:
-		try:
-			keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
-			break
-		except Exception as e:
-			print(f"Error extracting keywords: {e}")
-			print("Trying again...")
+	keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
+	keywords = keywords.content.answer
 	return keywords
 
 def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
