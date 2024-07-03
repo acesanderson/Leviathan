@@ -39,8 +39,8 @@ def get_config():
 	ideal_chunk_size_by_words = 1000
 	# Get the local variables at this point
 	num_clusters = 20
-	test_text_path = '/home/bianders/Brian_Code/Leviathan/tests/article.txt'
-	test_book_path = '/home/bianders/Brian_Code/Leviathan/tests/NLTK.txt'
+	test_text_path = 'tests/article.txt'
+	test_book_path = 'tests/NLTK.txt'
 	local_vars = locals()
 	# You can now return the local_vars as your config dictionary
 	return local_vars
