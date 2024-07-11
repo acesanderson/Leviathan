@@ -22,17 +22,24 @@ from Chain import Chain, Model, Prompt, Parser                  # type: ignore
 import sys
 import os
 import argparse
-from typing import Union
+from typing import Union, Tuple
 from pydantic import BaseModel
 from datetime import datetime
 
+# Define our variables
+# -----------------------------------------------------
+
 # get OBSIDIAN_PATH from environment variable
 obsidian_path = os.environ.get('OBSIDIAN_PATH')
-
 # switch this if on different comp
 summarized_urls = obsidian_path + '/Summarized_URLs.md'
+# example url for testing
+# url = 'https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805'
 
-# define our summary Pydantic object
+# Our pydantic models for parsing
+# -----------------------------------------------------
+
+# for our default summarization prompt
 class Summary(BaseModel):
 	title: str
 	summary: str
@@ -42,8 +49,8 @@ class YouTube_Article(BaseModel):
 	title: str
 	article: str
 
-# example url for testing
-# url = 'https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805'
+# Define our prompts
+# -----------------------------------------------------
 
 default_prompt_string = """
 Summarize the key points from the following article or youtube transcript. Structure the summary with clear headings and subheadings.
@@ -144,13 +151,22 @@ ONLY return the title, no extra text. This will be used to a title a file, and i
 ============================================
 """.strip()
 
-def retrieve_summarized_urls():
+# Our functions
+# -----------------------------------------------------
+
+def retrieve_summarized_urls() -> list[str]:
+	"""
+	This checks if we've already downloaded the article or transcript.
+	"""
 	with open(summarized_urls, 'r') as f:
 		urls = f.read()
 	urls = urls.split('\n')
 	return urls
 
 def save_summarized_url(url):
+	"""
+	Save the URL to the list of summarized URLs.
+	"""
 	with open(summarized_urls, 'a') as f:
 		f.write(url + '\n')
 
@@ -201,7 +217,7 @@ def generate_title_for_article(article: str) -> str:
 	response = chain.run(input_variables = {'article': article}, verbose=False)
 	return response.content
 
-def summarize_text(text, custom_prompt = None):
+def summarize_text(text: str, custom_prompt: str = None):
 	"""
 	If no custom prompt given, use default prompt.
 	If custom prompt provided, uses a different template.
@@ -224,7 +240,7 @@ def summarize_text(text, custom_prompt = None):
 	summary = summary.strip()
 	return title, summary
 
-def import_summary(url):
+def import_summary(url: str) -> Tuple[str, str]:
 	"""
 	This is the importable version of the script, takes URL and returns summary.
 	Needs to be updated to reflect new functionality / parsers.
@@ -233,7 +249,7 @@ def import_summary(url):
 	title, summary = summarize_text(data)
 	return title, summary
 
-def main(url, custom_prompt = None):
+def main(url: str, custom_prompt = None):
 	"""Takes url, summarizes, and saves to Obsidian."""
 	try:
 		data = parse_input(url)
@@ -251,14 +267,14 @@ def main(url, custom_prompt = None):
 	else:
 		print('Output is empty.')
 
-def save_entire_article(url):
+def save_entire_article(url: str):
 	"""
 	No summarization here; just save the article. Title is just "Saved_Article" + timestamp.
 	"""
 	title, article = parse_input(url, transcript_cleanup = True)
 	save_to_obsidian(title, article, url)
 
-def save_to_obsidian(title, summary, url):
+def save_to_obsidian(title: str, summary: str, url: str) -> str:
 	filename = f'{obsidian_path}/{title}.md'
 	summary = url + "\n\n" + summary
 	with open(filename, 'w') as f:
