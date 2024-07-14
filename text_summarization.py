@@ -190,17 +190,23 @@ def chain_of_density(text: str) -> str:
 	# return the content of the response, which is a list of dicts; grab the second to last one, and grab the value for Denser_Summary.
 	return summary
 
-def extract_keywords(text_chunk: str) -> list[str]:
+def extract_keywords(text_chunks: list[str]) -> list[tuple[str,str]]:
 	"""
-	Returns a list of important keywords from the given text chunk.
+	Refactored to use async.
+	Takes a list of text chunks, and returns a list of tuples, with the chunk and its keywords.
 	"""
+	print("Extracting keywords...")
+	extract_keywords_prompts = []
 	prompt = Prompt(keyword_extract_prompt_string)
-	model = Model(config_dict['model_choice'])
-	parser = Parser(Answer_List)
-	chain = Chain(prompt, model, parser)
-	keywords = chain.run({'text_chunk':text_chunk}, verbose=False)
-	keywords = keywords.content.answer
-	return keywords
+	model = Model('gpt3')
+	for chunk in text_chunks:
+		extract_keywords_prompt = prompt.render({'text_chunk':chunk})
+		extract_keywords_prompts.append(extract_keywords_prompt)
+	print("running async")
+	keywords_list = model.run_async(prompts = extract_keywords_prompts, pydantic_model = Answer_List, verbose = True)
+	assert len(keywords_list) == len(text_chunks)
+	chunks_with_keywords = list(zip(text_chunks, keywords_list))
+	return chunks_with_keywords
 
 def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
 	"""
@@ -216,12 +222,16 @@ def map_chain(text_chunks: list[str]) -> dict:
 	"""
 	Takes a list of text chunks, performs extractive summarization on each, and returns a dict, with chunks as keys and summaries as values.
 	"""
-	summary_map = {}
-	for index, chunk in enumerate(text_chunks):
-		print(f"Summarizing chunk {index+1} of {len(text_chunks)}...")
-		keywords = extract_keywords(chunk)
-		summary_map[chunk] = summarize_chunk_with_keywords(chunk, keywords)
-	return summary_map
+	print("Summarizing chunks...")
+	keywords = extract_keywords(text_chunks)
+	print('NOW THIS =======================')
+	print(keywords)
+	# summary_map = {}
+	# for index, chunk in enumerate(text_chunks):
+	# 	print(f"Summarizing chunk {index+1} of {len(text_chunks)}...")
+	# 	keywords = extract_keywords(chunk)
+	# 	summary_map[chunk] = summarize_chunk_with_keywords(chunk, keywords)
+	# return summary_map
 
 def reduce_chain(summary_map: dict) -> str:
 	"""
