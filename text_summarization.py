@@ -202,38 +202,36 @@ def extract_keywords(text_chunks: list[str]) -> list[tuple[str,str]]:
 	for chunk in text_chunks:
 		extract_keywords_prompt = prompt.render({'text_chunk':chunk})
 		extract_keywords_prompts.append(extract_keywords_prompt)
-	print("running async")
+	print("running async: generating keywords for chunks")
 	keywords_list = model.run_async(prompts = extract_keywords_prompts, pydantic_model = Answer_List, verbose = True)
 	assert len(keywords_list) == len(text_chunks)
 	chunks_with_keywords = list(zip(text_chunks, keywords_list))
 	return chunks_with_keywords
 
-def summarize_chunk_with_keywords(text_chunk: str, keywords: list[str]) -> str:
+def summarize_chunks_with_keywords(chunks_with_keywords: list[tuple[str]]) -> list[str]:
 	"""
 	Returns extractive summary on a text chunk using the given keywords.
 	"""
+	summarize_chunks_prompts = []
 	prompt = Prompt(summarize_chunk_prompt_string)
-	model = Model(config_dict['model_choice'])
-	chain = Chain(prompt, model)
-	chunk_summary = chain.run({'text_chunk':text_chunk, 'key_words':keywords}, verbose=False)
-	return chunk_summary
+	model = Model('gpt3')
+	for chunk, keywords in chunks_with_keywords:
+		summarize_chunk_prompt = prompt.render({'text_chunk':chunk, 'key_words':keywords})
+		summarize_chunks_prompts.append(summarize_chunk_prompt)
+	print("running async: summarizing chunks")
+	summarized_chunks = model.run_async(prompts = summarize_chunks_prompts, verbose = True)
+	return summarized_chunks
 
-def map_chain(text_chunks: list[str]) -> dict:
+def map_chain(text_chunks: list[str]) -> list[str]:
 	"""
 	Takes a list of text chunks, performs extractive summarization on each, and returns a dict, with chunks as keys and summaries as values.
 	"""
 	print("Summarizing chunks...")
-	keywords = extract_keywords(text_chunks)
-	print('NOW THIS =======================')
-	print(keywords)
-	# summary_map = {}
-	# for index, chunk in enumerate(text_chunks):
-	# 	print(f"Summarizing chunk {index+1} of {len(text_chunks)}...")
-	# 	keywords = extract_keywords(chunk)
-	# 	summary_map[chunk] = summarize_chunk_with_keywords(chunk, keywords)
-	# return summary_map
+	chunks_with_keywords = extract_keywords(text_chunks)
+	summarized_chunks = summarize_chunks_with_keywords(chunks_with_keywords)
+	return summarized_chunks
 
-def reduce_chain(summary_map: dict) -> str:
+def reduce_chain(summarized_chunks: list[str]) -> str:
 	"""
 	Combines the summaries from the chunks into a single summary.
 	"""
@@ -241,7 +239,7 @@ def reduce_chain(summary_map: dict) -> str:
 	prompt = Prompt(reduce_prompt_string)
 	model = Model(config_dict['model_choice'])
 	chain = Chain(prompt, model)
-	summary = chain.run({'summaries':summary_map.values()}, verbose=False)
+	summary = chain.run({'summaries':summarized_chunks}, verbose=False)
 	return summary
 
 # our wrapper functions for the three text sizes
@@ -259,8 +257,8 @@ def summarize_medium_text(text: str) -> str:
 	Summarizes a medium-length text using chunking, extractive summarization, and map/reduce.
 	"""
 	text_chunks = chunk_text_by_words(text)
-	summary_map = map_chain(text_chunks)
-	final_summary = reduce_chain(summary_map)
+	summarized_chunks = map_chain(text_chunks)
+	final_summary = reduce_chain(summarized_chunks)
 	if final_summary == None:
 		print("No medium summary generated")
 	return final_summary.content
