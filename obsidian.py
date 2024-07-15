@@ -48,7 +48,7 @@ class YouTube_Article(BaseModel):
 default_prompt_string = """
 Summarize the key points from the following article or youtube transcript. Structure the summary with clear headings and subheadings.
 Distill the main ideas concisely, but include key details and takeaways. Use direct quotes sparingly, only to highlight the most insightful or impactful statements.
-Aim for a summary that is around 500-1,000 words in length.
+Aim for a summary that is around 1,000-1,500 words in length.
 
 Structure the summary as follows:
 
@@ -90,6 +90,7 @@ Please follow these guidelines:
 
 - Do not address the user directly; these should be instantly digestible notes.
 - Carefully read and comprehend the entire text.
+- Make explicit reference to the text whenever relevant, so the user can easily verify your summary.
 - Focus on extracting information that is most relevant to the user's query, but also include important context and supporting details.
 - Provide a rich and comprehensive summary between 500-1,000 words, unless the query demands a different length.
 - Structure your summary in a logical manner, potentially using subheadings if it aids clarity.
