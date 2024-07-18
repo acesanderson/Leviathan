@@ -13,18 +13,17 @@ https://sourajit16-02-93.medium.com/text-summarization-unleashed-novice-to-maest
 from Chain import Chain, Model, Prompt, Parser 	# type: ignore
 from nltk.tokenize import word_tokenize			# for tokenizing texts
 from pydantic import BaseModel, conlist
-from typing import List
 
 # Define our classes for Parser
 class Answer_List(BaseModel):
-	answer: List[str]
+	answer: list[str]
 
 class Iteration(BaseModel):
 	Missing_Entities: str
 	Denser_Summary: str
 
 class Chain_of_Density(BaseModel):
-	COD: List[Iteration]
+	COD: list[Iteration]
 
 # Customizable settings
 def get_config():
@@ -280,7 +279,7 @@ def summarize_long_text(text:str) -> str:
 
 def main() -> str:
 	"""
-	Tset function using an example article chopped to varying lengths.
+	Test function using an example article chopped to varying lengths.
 	"""	
 	short, medium, long = generate_test_texts()
 	short_summary = summarize_short_text(short)
@@ -293,3 +292,4 @@ def main() -> str:
 
 if __name__ == '__main__':
 	main()
+
