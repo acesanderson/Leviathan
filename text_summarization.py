@@ -207,7 +207,30 @@ def extract_keywords(text_chunks: list[str]) -> list[tuple[str,str]]:
 	chunks_with_keywords = list(zip(text_chunks, keywords_list))
 	return chunks_with_keywords
 
-def summarize_chunks_with_keywords(chunks_with_keywords: list[tuple[str]]) -> list[str]:
+def summarize_chunks_with_keywords(chunks_with_keywords: list[tuple[str]], run_async = False) -> list[str]:
+	"""
+	This routes to either the async or sync version of the function.
+	"""
+	if run_async:
+		return summarize_chunks_with_keywords_async(chunks_with_keywords)
+	else:
+		return summarize_chunks_with_keywords_sync(chunks_with_keywords)
+
+def summarize_chunks_with_keywords_sync(chunks_with_keywords: list[tuple[str]]) -> list[str]:
+	"""
+	Returns extractive summary on a text chunk using the given keywords.
+	This is the synchronous version of the function.
+	"""
+	prompt = Prompt(summarize_chunk_prompt_string)
+	model = Model('gpt3')
+	summarized_chunks = []
+	for chunk, keywords in chunks_with_keywords:
+		chain = Chain(prompt, model)
+		summary = chain.run({'text_chunk':chunk, 'key_words':keywords}, verbose=False)
+		summarized_chunks.append(summary.content)
+	return summarized_chunks
+
+def summarize_chunks_with_keywords_async(chunks_with_keywords: list[tuple[str]]) -> list[str]:
 	"""
 	Returns extractive summary on a text chunk using the given keywords.
 	"""
@@ -227,7 +250,11 @@ def map_chain(text_chunks: list[str]) -> list[str]:
 	"""
 	print("Summarizing chunks...")
 	chunks_with_keywords = extract_keywords(text_chunks)
-	summarized_chunks = summarize_chunks_with_keywords(chunks_with_keywords)
+	# assuming 20 is a limit for async; can change this after experimentation.
+	if len(chunks_with_keywords) < 21:
+		summarized_chunks = summarize_chunks_with_keywords(chunks_with_keywords, run_async = True)
+	else:
+		summarized_chunks = summarize_chunks_with_keywords(chunks_with_keywords, run_async = False)
 	return summarized_chunks
 
 def reduce_chain(summarized_chunks: list[str]) -> str:
