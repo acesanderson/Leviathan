@@ -250,8 +250,8 @@ def map_chain(text_chunks: list[str]) -> list[str]:
 	"""
 	print("Summarizing chunks...")
 	chunks_with_keywords = extract_keywords(text_chunks)
-	# assuming 20 is a limit for async; can change this after experimentation.
-	if len(chunks_with_keywords) < 21:
+	# assuming 30 is a limit for async; can change this after experimentation.
+	if len(chunks_with_keywords) < 31:
 		summarized_chunks = summarize_chunks_with_keywords(chunks_with_keywords, run_async = True)
 	else:
 		summarized_chunks = summarize_chunks_with_keywords(chunks_with_keywords, run_async = False)
