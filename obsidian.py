@@ -25,6 +25,7 @@ import argparse
 from typing import Union, Tuple
 from pydantic import BaseModel
 from datetime import datetime
+from time import sleep
 
 # Define our variables
 # -----------------------------------------------------

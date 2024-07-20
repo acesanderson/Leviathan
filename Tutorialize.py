@@ -2,7 +2,9 @@
 
 # Imports
 from Chain import Chain, Model, Prompt
-from obsidian import save_to_obsidian
+from obsidian import save_to_obsidian, obsidian_path
+import sys
+from time import sleep
 
 # Topics
 beginner_topics = """
@@ -131,21 +133,25 @@ def process_topic(topic: str) -> str:
 	Process a topic into a tutorial using the persona template.
 	"""
 	messages = Chain.create_messages(system_prompt = persona)
-	model = Model("claude")
+	model = Model('claude-3-opus-20240229')
 	prompt = Prompt(tutorial_prompt)
 	chain = Chain(prompt, model)
 	response = chain.run(messages = messages, input_variables = {"topic": topic})
 	return response.content
 
-def main():
+def Tutorialize(topic):
 	"""
 	Main function.
 	"""
-	topic = beginner_topics[0]
 	tutorial = process_topic(topic)
 	print(tutorial)
 	print("\n\n\n")
-	save_to_obsidian(text = tutorial, title = topic)
+	filename = save_to_obsidian(text = tutorial, title = topic)
+	print(f"Saved to {obsidian_path + filename}.")
 
 if __name__ == "__main__":
-	main()
+	if len(sys.argv) > 1:
+		topic = sys.argv[1]
+	else:
+		topic = beginner_topics[3]
+	Tutorialize(topic)
