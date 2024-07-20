@@ -264,6 +264,7 @@ def main(url: str, custom_prompt = None):
 		print(summary)
 		print('=============================================')
 		filename = save_to_obsidian(title, summary, url)
+		save_summarized_url(url)
 		print(f'Saved to Obsidian: {filename}')
 	else:
 		print('Output is empty.')
@@ -275,12 +276,11 @@ def save_entire_article(url: str):
 	title, article = parse_input(url, transcript_cleanup = True)
 	save_to_obsidian(title, article, url)
 
-def save_to_obsidian(title: str, summary: str, url: str) -> str:
+def save_to_obsidian(title: str, text: str, url: str = "") -> str:
 	filename = f'{obsidian_path}/{title}.md'
-	summary = url + "\n\n" + summary
+	text = url + "\n\n" + text
 	with open(filename, 'w') as f:
-		f.write(summary)
-	save_summarized_url(url)
+		f.write(text)
 	return filename
 
 if __name__ == '__main__':
