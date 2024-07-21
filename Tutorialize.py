@@ -149,9 +149,35 @@ def Tutorialize(topic):
 	filename = save_to_obsidian(text = tutorial, title = topic)
 	print(f"Saved to {obsidian_path + filename}.")
 
+def Tutorialize_Async(topics: list[str]) -> list[str]:
+	"""
+	Generate tutorials for a list of topics asynchronously.
+	"""
+	messages = Chain.create_messages(system_prompt = persona)
+	model = Model('claude')
+	prompt = Prompt(tutorial_prompt)
+	# construct list of prompts
+	prompts = []
+	for topic in topics:
+		prompt_obj = prompt.render(input_variables = {"topic": topic})
+		message_obj = messages + [{'role':'user', 'content': prompt_obj}]
+		prompts.append((topic, message_obj))
+	
+	# run async
+	results = []
+	async_results = model.run_async(prompts = [p[1] for p in prompts], model = "claude")
+	for (topic, _), result in zip(prompts, async_results):
+		filename = save_to_obsidian(text = result, title = topic)
+		print(f"Saved to {obsidian_path + filename}.")
+		results.append(filename)
+	
+	return results
+
 if __name__ == "__main__":
 	if len(sys.argv) > 1:
 		topic = sys.argv[1]
+		Tutorialize(topic)
 	else:
-		for topic in beginner_topics[7:]:
-			Tutorialize(topic)
+		results = Tutorialize_Async(ubuntu_specific_topics)
+		for result in results:
+			print(result)
