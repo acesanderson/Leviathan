@@ -73,6 +73,29 @@ Network bonding and bridging in Ubuntu: How to combine multiple network interfac
 Resolv.conf and systemd-resolved in Ubuntu: Managing DNS resolution in modern Ubuntu systems
 """.strip().split('\n')
 
+finance_topics_for_biz_strategy = """
+Basic Financial Statements: Income Statement, Balance Sheet, Cash Flow Statement
+Key Financial Metrics: Revenue, Gross Margin, EBITDA, Net Income
+Profitability Ratios: ROI, ROE, ROIC, Profit Margin
+Accounting Principles: GAAP, IFRS, Accrual vs. Cash Accounting
+Valuation Methods: DCF, Multiples, NPV
+SaaS Metrics: ARR, MRR, CAC, LTV, Churn Rate
+Tech Industry KPIs: DAU/MAU, Engagement Rate, Conversion Rate
+Enterprise Sales Concepts: Sales Cycle, Pipeline, Bookings
+Market Analysis: TAM, SAM, SOM
+Business Models: Freemium, Subscription, Advertising
+Unit Economics: Customer Acquisition Cost, Customer Lifetime Value
+Network Effects and Virality
+Capital Structure: Debt vs. Equity
+Fundraising: Seed, Series A/B/C, IPO
+Corporate Finance: Capital Budgeting, Working Capital Management
+Risk Management: Diversification, Hedging
+Mergers and Acquisitions: Types, Valuation, Synergies
+Financial Forecasting and Modeling
+Competitive Strategy: Porter's Five Forces, SWOT Analysis
+Product-Market Fit and Go-to-Market Strategy
+""".strip().split('\n')
+
 persona = """
 You are an experienced IT instructor with a great deal of experience with linux system administration.
 You specialize in teaching networking and security concepts to amateurs who want to do cool things with linux on their home networks.
@@ -178,6 +201,6 @@ if __name__ == "__main__":
 		topic = sys.argv[1]
 		Tutorialize(topic)
 	else:
-		results = Tutorialize_Async(ubuntu_specific_topics)
+		results = Tutorialize_Async(finance_topics_for_biz_strategy)
 		for result in results:
 			print(result)
