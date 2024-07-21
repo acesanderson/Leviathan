@@ -153,5 +153,5 @@ if __name__ == "__main__":
 	if len(sys.argv) > 1:
 		topic = sys.argv[1]
 	else:
-		topic = beginner_topics[3]
-	Tutorialize(topic)
+		for topic in beginner_topics[7:]:
+			Tutorialize(topic)

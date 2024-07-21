@@ -278,6 +278,8 @@ def save_entire_article(url: str):
 	save_to_obsidian(title, article, url)
 
 def save_to_obsidian(title: str, text: str, url: str = "") -> str:
+	# Make sure this is saveable as a file!
+	title = title.replace('/', '-').replace(':', '-').replace('?', '').replace('=', '').replace('&', '-').replace('.', '-')
 	filename = f'{obsidian_path}/{title}.md'
 	text = url + "\n\n" + text
 	with open(filename, 'w') as f:
