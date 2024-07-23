@@ -193,7 +193,7 @@ def parse_input(input, transcript_cleanup = False) -> Union[str, tuple]:
 		if transcript_cleanup:
 			title = generate_title_for_article(article)
 			return title, article
-		return download_article(input)
+		return article
 	else:
 		raise ValueError('Input must be a YouTube URL or an article URL.')
 
@@ -301,6 +301,7 @@ if __name__ == '__main__':
 	print(f"Custom Prompt: {args.prompt}")
 	# if args, run main()
 	if all:
+		print('Saving entire article...')
 		save_entire_article(url)
 	elif custom_prompt:
 		main(url, custom_prompt = custom_prompt)
