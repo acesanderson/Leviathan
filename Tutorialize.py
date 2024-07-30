@@ -5,6 +5,7 @@ from Chain import Chain, Model, Prompt
 from obsidian import save_to_obsidian, obsidian_path
 import sys
 from time import sleep
+import argparse
 
 # Topics
 beginner_topics = """
@@ -197,8 +198,24 @@ def Tutorialize_Async(topics: list[str]) -> list[str]:
 	return results
 
 if __name__ == "__main__":
-	if len(sys.argv) > 1:
-		topic = sys.argv[1]
+	"""
+	If without args, just creates an example tutorial.
+	If with a string, treats the string as a topic and generates a tutorial for it.
+	If -t, treats the string as a topic and prints the tutorial to the terminal.
+		- this is useful if you are bad at linux networking and can't save to obsidian.
+	"""
+	parser = argparse.ArgumentParser(description="Process some topics.")
+	parser.add_argument('topic', type=str, help='The topic to process')
+	parser.add_argument('-t', '--terminal', action='store_true', help='Flag to indicate terminal mode')
+	args = parser.parse_args()
+
+	topic = args.topic
+	terminal = args.terminal
+	
+	if terminal and topic:
+		tutorial = process_topic(topic)
+		print(tutorial)
+	elif topic:
 		Tutorialize(topic)
 	else:
 		results = Tutorialize_Async(finance_topics_for_biz_strategy)
