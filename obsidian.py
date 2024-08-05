@@ -274,8 +274,9 @@ def save_entire_article(url: str):
 	"""
 	No summarization here; just save the article. Title is just "Saved_Article" + timestamp.
 	"""
-	title, article = parse_input(url, transcript_cleanup = True)
-	save_to_obsidian(title, article, url)
+	title = "Saved_Transcript_" + str(datetime.now())
+	summary = parse_input(url, transcript_cleanup = False)
+	save_to_obsidian(title, summary, url)
 
 def save_to_obsidian(title: str, text: str, url: str = "") -> str:
 	# Make sure this is saveable as a file!
