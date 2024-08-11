@@ -1,0 +1,62 @@
+front,back
+alias,A command in Bash that allows you to create shortcuts or custom commands for longer or frequently used commands. It simplifies command-line usage by enabling users to define their own command aliases.
+bg,"The `bg` command in Bash is used to resume suspended jobs and run them in the background. It stands for ""background"". When used without arguments, it resumes the most recently suspended job. You can also specify a job number to resume a specific job."
+bind,The 'bind' command in Bash is used to assign a key sequence to a readline function or macro. It allows you to create custom keyboard shortcuts for various shell operations.
+break,"The `break` command in Bash is used to exit from a loop (such as for, while, or until) before its normal completion. It immediately terminates the innermost enclosing loop, transferring control to the statement after the terminated loop."
+builtin,"A command or function that is part of the shell's internal set of commands, rather than an external program. Builtins are typically faster to execute and may have access to shell internals that external commands do not."
+caller,"In Bash scripting, 'caller' is a builtin command that prints the context of the current subroutine call. It provides information about the calling function, including the line number and source file from which the current function was called."
+cd,The 'cd' command in Bash stands for 'change directory'. It is used to navigate the file system by changing the current working directory. Usage: cd [directory]
+command,"A command in Bash is an instruction given to the shell to perform a specific task. It can be a built-in shell command, an executable program, or a shell script. Commands are typically entered at the command line interface and executed by the shell."
+What is the 'compgen' command in Bash?,"The 'compgen' command in Bash is used to generate possible completion matches for a given word based on the specified options. It's often used in shell scripts or completion functions to generate lists of possible completions for commands, variables, or other elements."
+complete,"A built-in shell command in Bash that provides command-line completion functionality. It attempts to autocomplete partially typed commands, filenames, or variables based on the current context."
+compopt,A builtin command in Bash used to modify or print completion options for a specified command. It is typically used within completion functions to modify the behavior of programmable completion for specific commands.
+"What does the ""continue"" command do in Bash?","The ""continue"" command in Bash is used within loops to skip the rest of the current iteration and move to the next iteration of the loop. It allows you to bypass the remaining commands in the loop body for the current iteration and continue with the next iteration."
+declare,"A Bash builtin command used to declare variables and give them attributes. It can be used to create variables, set their type (such as integer or array), or modify their attributes (such as making them read-only)."
+dirs,The `dirs` command in Bash displays the list of currently remembered directories in the directory stack. It is often used in conjunction with the `pushd` and `popd` commands for directory navigation.
+disown,"A bash built-in command used to remove a job from the shell's job table, allowing it to continue running even after the shell is closed. It's often used with background processes to prevent them from being terminated when the terminal session ends."
+echo,A command used to display text or variables to the standard output (usually the terminal). It can also be used to write text to files.
+enable,A bash built-in command used to enable shell built-in commands or shell options. It can be used to turn on disabled shell built-ins or to display a list of enabled and disabled built-in commands.
+eval,The `eval` command in Bash is used to evaluate and execute arguments as a shell command. It allows you to construct and run commands dynamically.
+exec,"The 'exec' command in Bash is used to replace the current shell process with a new program. It executes a specified command, replacing the current shell without creating a new process. This is often used in shell scripts to hand off control to another program."
+exit,Command used to terminate a shell session and exit the current shell.
+export,A command in Bash used to make variables or functions available to child processes. It sets environment variables that can be accessed by other programs or scripts running in the current shell session.
+false,A shell keyword used in conditional statements to represent a logical false value. It typically returns an exit status of 1.
+fc,"The 'fc' command in bash is used to display or manipulate the command history list. It stands for ""fix command"" or ""forward command"". It allows you to view and edit commands from your command history."
+fg,"The `fg` command in bash is used to bring a background job to the foreground. It stands for ""foreground"". When you run a process in the background using `&`, you can use `fg` to bring it back to the foreground, allowing it to interact with the terminal."
+getopts,"A built-in Bash command used to parse command-line options and arguments. It helps in creating scripts with flexible option handling, supporting both short and long option formats."
+hash,A built-in shell command in Bash that displays or manipulates the hash table of remembered command locations. It is used to locate and cache the full pathnames of executable files.
+help,A built-in command in Bash that provides information about other commands and shell features. Usage: help [command]
+history,"A command that displays the command history, showing a list of previously executed commands in the current shell session."
+jobs,The `jobs` command in Bash is used to list the status of jobs in the current shell session. It shows running and stopped background jobs.
+kill,"A command used to terminate processes in Unix-like operating systems. It sends a signal to a process, which by default is the TERM signal, instructing the process to terminate. The basic syntax is: kill [options] PID, where PID is the process ID of the target process."
+What does the 'let' command do in Bash?,The 'let' command in Bash is used for arithmetic operations and evaluations. It allows you to perform mathematical calculations and assign the result to variables.
+What does the 'local' keyword do in Bash?,"The 'local' keyword in Bash declares a variable with local scope within a function. It limits the variable's visibility and lifetime to the function where it's defined, preventing it from affecting variables with the same name outside the function."
+logout,A command used to exit a user session and terminate the current shell session in Unix-like operating systems.
+mapfile,A bash built-in command that reads lines from the standard input into an indexed array variable. It's useful for reading files into arrays efficiently.
+popd,The 'popd' command in bash is used to remove (pop) the top directory from the directory stack and change to the new top directory. It is often used in conjunction with 'pushd' to navigate between directories.
+printf,"The printf command in bash is used to format and print data. It allows you to display text, variables, and formatted output to the console. The basic syntax is: printf format [arguments...]
+
+Example: printf ""Hello, %s!\n"" ""World""
+Output: Hello, World!"
+pushd,"A Bash command that pushes the current directory onto a stack and changes to a new directory. It allows you to save the current working directory and move to a different one, making it easy to return to the original directory later using 'popd'."
+pwd,Print Working Directory. This command displays the current directory (folder) you are in within the file system.
+read,A bash command used to read input from the user or a file. It can be used to read a line of text from standard input or to parse fields from a string.
+readarray,A Bash built-in command used to read lines from standard input into an array variable. It's commonly used for reading file contents or command output into an array for further processing.
+readonly,"A Bash shell builtin command used to mark variables as read-only, preventing their values from being changed. It is often used to create constants in shell scripts."
+return,A keyword in Bash used to exit a function and optionally return a value to the caller. It terminates the execution of a function and passes control back to the calling script or function.
+set,The `set` command in Bash is used to set or unset shell options and positional parameters. It can be used to modify the behavior of the shell or to assign values to variables.
+shift,A Bash command used to manipulate command-line arguments. It removes the first argument from the list of command-line arguments ($@) and shifts all other arguments one position to the left. The removed argument can be accessed using $1.
+shopt,A built-in Bash command used to set and unset various Bash shell options. It allows you to control the behavior of the shell by enabling or disabling certain features.
+source,"A built-in Bash command used to execute commands from a file in the current shell environment. It is commonly used to load functions, variables, and configuration settings from external files."
+suspend,"The `suspend` command in bash is used to pause the execution of a running process and move it to the background. It sends the SIGTSTP signal to the specified job or process, allowing it to be resumed later."
+test,A command-line utility in Unix-like operating systems used to check the syntax of shell scripts without executing them. It's also used to evaluate conditional expressions.
+times,A command used to display or set the system time and date. It can also be used to measure the execution time of a command or program.
+What is the 'trap' command in Bash?,"The 'trap' command in Bash is used to execute a command when a signal is received. It allows you to catch signals and execute specified commands when those signals occur, often used for cleanup operations or custom signal handling in shell scripts."
+true,A shell builtin command in Bash that returns a successful exit status (0). It is often used in shell scripts or conditional statements when you want to indicate a successful operation or a true condition.
+type,"Display information about a command, including its type and the path to its executable. It can also be used to show whether a command is a shell builtin, an alias, or an external program."
+typeset,"A built-in command in Bash used to set and manipulate variable attributes, such as declaring variables as integers or readonly. It can also be used to set the format for displaying numbers."
+ulimit,"A command in Unix-like operating systems used to get and set user limits on system resources. It can limit things like the number of open files, maximum memory usage, or CPU time for processes."
+umask,umask (User Mask) is a command and system call in Unix-like operating systems that sets the default file and directory permissions for newly created files. It determines which permissions are not given to a file or directory when it is created.
+unalias,A Bash built-in command used to remove aliases. It deletes one or more aliases from the current shell's list of aliases.
+unset,The `unset` command in Bash is used to remove (unset) shell and environment variables. It removes the definition of one or more shell variables or functions.
+wait,The 'wait' command in Bash is used to pause the execution of a script or shell until one or more background processes have completed. It allows a parent process to wait for its child processes to finish before continuing execution.
