@@ -26,6 +26,8 @@ from typing import Union, Tuple
 from pydantic import BaseModel
 from datetime import datetime
 from time import sleep
+from rich.console import Console
+from rich.markdown import Markdown
 
 # Define our variables
 # -----------------------------------------------------
@@ -251,6 +253,17 @@ def import_summary(url: str) -> Tuple[str, str]:
 	title, summary = summarize_text(data)
 	return title, summary
 
+def print_markdown(markdown_string: str):
+	"""
+	Prints formatted markdown to the console.
+	"""
+	console = Console(width=80)
+	# Create a Markdown object
+	border = "-" * 80
+	markdown_string = f"{border}\n{markdown_string}\n\n{border}"
+	md = Markdown(markdown_string)
+	console.print(md)
+
 def main(url: str, custom_prompt = None):
 	"""Takes url, summarizes, and saves to Obsidian."""
 	try:
@@ -260,10 +273,7 @@ def main(url: str, custom_prompt = None):
 		sys.exit(1)
 	if data:
 		title, summary = summarize_text(data, custom_prompt)
-		print(title)
-		print('=============================================')
-		print(summary)
-		print('=============================================')
+		print_markdown(f"# {title}\n{summary}")
 		filename = save_to_obsidian(title, summary, url)
 		save_summarized_url(url)
 		print(f'Saved to Obsidian: {filename}')
