@@ -298,6 +298,8 @@ def Tutorialize_Sync(topic: str, persona: str, save_to_file = True) -> str:
 	if save_to_file:
 		filename = save_to_obsidian(text = tutorial, title = topic)
 		print(f"Tutorial saved to {obsidian_path + filename}.")
+	else:
+		print(tutorial)
 	return tutorial
 
 def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> list[str]:
