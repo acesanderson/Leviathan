@@ -6,6 +6,8 @@ from obsidian import save_to_obsidian, obsidian_path
 import sys
 from time import sleep
 import argparse
+from rich.console import Console
+from rich.markdown import Markdown
 
 # Topics
 beginner_topics = """
@@ -325,6 +327,17 @@ def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> l
 		results.append(filename)
 	return results
 
+def print_markdown(markdown_string: str):
+	"""
+	Prints formatted markdown to the console.
+	"""
+	console = Console(width=80)
+	# Create a Markdown object
+	border = "-" * 80
+	markdown_string = f"{border}\n{markdown_string}\n\n{border}"
+	md = Markdown(markdown_string)
+	console.print(md)
+
 if __name__ == "__main__":
 	"""
 	If without args, just creates an example tutorial.
@@ -344,4 +357,5 @@ if __name__ == "__main__":
 		save_to_file = False
 	elif topic:
 		save_to_file = True
-	Tutorialize(topic, subject, save_to_file)
+	tutorial = Tutorialize(topic, subject, save_to_file)
+	print_markdown(tutorial)
