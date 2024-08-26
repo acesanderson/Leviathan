@@ -327,16 +327,6 @@ def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> l
 		results.append(filename)
 	return results
 
-def print_markdown(markdown_string: str):
-	"""
-	Prints formatted markdown to the console.
-	"""
-	console = Console(width=80)
-	# Create a Markdown object
-	border = "-" * 80
-	markdown_string = f"{border}\n{markdown_string}\n\n{border}"
-	md = Markdown(markdown_string)
-	console.print(md)
 
 if __name__ == "__main__":
 	"""

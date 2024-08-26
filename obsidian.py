@@ -302,11 +302,13 @@ if __name__ == '__main__':
 	parser.add_argument('url', type=str, help='URL to summarize.')
 	# if user puts "--p" or "--path" in command line, take what's after it and assign it to "custom_prompt"
 	# add an argument for the prompt
-	parser.add_argument('--p', '--prompt', nargs="?", type=str, dest='prompt', help='Prompt to use for summarization.')
-	parser.add_argument('--a', '--all', action='store_true', dest='all', help='Save the entire article to Obsidian.')
+	parser.add_argument('-p', '--prompt', nargs="?", type=str, dest='prompt', help='Prompt to use for summarization.')
+	parser.add_argument('-a', '--all', action='store_true', dest='all', help='Save the entire article to Obsidian.')
+	parser.add_argument('-t', '--terminal', action='store_true', dest='terminal', help='Print to terminal instead of saving to Obsidian.')
 	args = parser.parse_args()
 	url = args.url
 	all = args.all
+	terminal = args.terminal
 	custom_prompt = args.prompt
 	print(f"URL: {args.url}")
 	print(f"Custom Prompt: {args.prompt}")
