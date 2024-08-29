@@ -2,7 +2,7 @@
 
 # Imports
 from Chain import Chain, Model, Prompt
-from obsidian import save_to_obsidian, obsidian_path
+from obsidian import save_to_obsidian, obsidian_path, print_markdown
 import sys
 from time import sleep
 import argparse
