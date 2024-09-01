@@ -1,0 +1,16 @@
+Chain==1.0
+chromadb==0.5.5
+matplotlib==3.9.2
+networkx==3.3
+newspaper3k==0.2.8
+nltk==3.8.1
+numpy==2.1.0
+pandas==2.2.2
+pydantic==2.8.2
+PyPDF2==3.0.1
+pytest==8.3.2
+rdflib==7.0.0
+rich==13.8.0
+scikit_learn==1.5.1
+spacy==3.7.6
+youtube_transcript_api==0.6.2
