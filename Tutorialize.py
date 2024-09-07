@@ -8,6 +8,12 @@ from time import sleep
 import argparse
 from rich.console import Console
 from rich.markdown import Markdown
+import pickle
+import os
+
+# Constants
+dir_path = os.path.dirname(os.path.realpath(__file__))
+tutorial_store_file = os.path.join(dir_path, 'tutorial_store.pkl')
 
 # Topics
 beginner_topics = """
@@ -260,6 +266,31 @@ Someone has come to you with this topic:
 Please generate a tutorial on the topic.
 """.strip()
 
+# Persistence functions
+
+def initialize_tutorial_store():
+	"""
+	Initialize the message store with an empty list. Run this manually, this is not invoked in the script.
+	"""
+	tutorial_store = []
+	save_to_tutorial_store(tutorial_store)
+
+def load_tutorial_store() -> list[str]:
+	"""
+	Load the message store from a pickle file.
+	"""
+	with open(tutorial_store_file, 'rb') as f:
+		tutorial_store = pickle.load(f)
+	return tutorial_store
+
+def save_to_tutorial_store(obj):
+	"""
+	Save an object to a pickle file.
+	"""
+	with open(tutorial_store_file, 'wb') as f:
+		pickle.dump(obj, f)
+
+# Functions
 def create_tutor(subject: str) -> str:
 	"""
 	Create a tutor persona for a given subject.
@@ -327,25 +358,46 @@ def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> l
 		results.append(filename)
 	return results
 
-
 if __name__ == "__main__":
 	"""
 	If without args, just creates an example tutorial.
 	If with a string, treats the string as a topic and generates a tutorial for it.
 	If -t, treats the string as a topic and prints the tutorial to the terminal.
 		- this is useful if you are bad at linux networking and can't save to obsidian.
+	If -r, treats the string as a topic and prints the tutorial to the terminal in raw format.
+	If -l, prints the last tutorial in the tutorial store, this is markdown by default but you can specify -lr for raw.
 	"""
+	# Handle null case first; this will just show help.
+	if len(sys.argv) == 1:                                 
+		sys.argv.append('-h')
+	# Parse arguments
 	parser = argparse.ArgumentParser(description="Process some topics.")
-	parser.add_argument('topic', type=str, help='The topic to process')
 	parser.add_argument('-s', '--subject', type=str, help='The subject to create a tutor persona for')
 	parser.add_argument('-t', '--terminal', action='store_true', help='Flag to indicate terminal mode')
+	parser.add_argument('-r', '--raw', action='store_true', help='Flag to indicate raw output')
+	parser.add_argument('-l', '--last', action='store_true', help='Flag to print the last tutorial')
+	parser.add_argument("topic", nargs="*", help="The topic to process")
 	args = parser.parse_args()
 	topic = args.topic
 	subject = args.subject
 	terminal = args.terminal
+	raw = args.raw
+	last = args.last
 	if terminal and topic:
 		save_to_file = False
 	elif topic:
 		save_to_file = True
+	elif last and not raw:
+		tutorial = load_tutorial_store()[-1]
+		print_markdown(tutorial)
+		sys.exit(0)
+	elif last and raw:
+		tutorial = load_tutorial_store()[-1]
+		print(tutorial)
+		sys.exit(0)
 	tutorial = Tutorialize(topic, subject, save_to_file)
 	print_markdown(tutorial)
+	tutorial_store = load_tutorial_store()
+	tutorial_store.append(tutorial)
+	save_to_tutorial_store(tutorial_store)
+
