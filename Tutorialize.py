@@ -376,7 +376,7 @@ if __name__ == "__main__":
 	parser.add_argument('-t', '--terminal', action='store_true', help='Flag to indicate terminal mode')
 	parser.add_argument('-r', '--raw', action='store_true', help='Flag to indicate raw output')
 	parser.add_argument('-l', '--last', action='store_true', help='Flag to print the last tutorial')
-	parser.add_argument("topic", nargs="*", help="The topic to process")
+	parser.add_argument("topic", nargs="?", help="The topic to process")
 	args = parser.parse_args()
 	topic = args.topic
 	subject = args.subject
