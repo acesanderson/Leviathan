@@ -37,7 +37,7 @@ def get_config():
 	}
 	ideal_chunk_size_by_words = 1000
 	# Get the local variables at this point
-	num_clusters = 20
+	num_clusters = 11
 	test_text_path = 'tests/article.txt'
 	test_book_path = 'tests/NLTK.txt'
 	local_vars = locals()
