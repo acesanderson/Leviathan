@@ -319,7 +319,7 @@ def Tutorialize_Sync(topic: str, persona: str, save_to_file = True) -> str:
 	Process a topic into a tutorial using the persona template.
 	"""
 	messages = Chain.create_messages(system_prompt = persona)
-	model = Model('claude-3-opus-20240229')
+	model = Model('claude')
 	prompt = Prompt(tutorial_prompt)
 	chain = Chain(prompt, model)
 	response = chain.run(messages = messages, input_variables = {"topic": topic})
