@@ -13,6 +13,8 @@ Summarize is a collection of text summarization scripts that can be used over co
 - Get CoD from a medium text by running medium summarization and then running CoD on that. 
 - Proper RAG on a book to get an answer to a question (including GraphRAG)
 - Obsidian should be able to get a transcript of a long youtube video and turn it into a markdown formatted long article
+- Using models that are fine tuned for text summarization
+- adding a -g flag to use Gemini's fat context window
 
 ### Progress
 - [x] Created placeholder with Summary.txt. This will sort texts and handle command line arguments. It will also have config options that can to to the subsidia

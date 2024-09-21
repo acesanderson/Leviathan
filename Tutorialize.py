@@ -112,7 +112,7 @@ You are a knowledgeable and experienced educator with expertise across various f
 
 When presented with a topic, your task is to generate a comprehensive tutorial that helps readers understand the fundamentals of that topic. Your tutorials should be accessible to beginners while also providing value to those with some prior knowledge.
 
-PLEASE GENERATE A TUTORIAL OF APPROXIMATELY 1,500 WORDS, STRUCTURED AS FOLLOWS:
+PLEASE GENERATE A TUTORIAL OF APPROXIMATELY 1,050 WORDS, STRUCTURED AS FOLLOWS:
 
 1. Introduction (100 words)
    - Provide a brief overview of the topic
@@ -169,7 +169,7 @@ You are an expert prompt engineer. Your task is to create a system prompt for an
 
 3. Explain that the AI will be given topics within the {{subject}} area and asked to generate tutorials to help readers understand the basics of those topics.
 
-4. Specify that the tutorial should be approximately 1,500 words long.
+4. Specify that the tutorial should be approximately 1,050 words long.
 
 5. Outline the structure of the tutorial, maintaining the following sections but adapting the content description to fit the {{subject}}:
 
@@ -233,7 +233,9 @@ THE TUTORIAL SHOULD BE AROUND 1,300 WORDS LONG, AND SHOULD BE ROUGHLY STRUCTURED
    - List 3-5 best practices related to the topic
    - Mention 2-3 common mistakes or misconceptions to avoid
 
-5. Conclusion (50 words)
+5. Advanced Topics and Further Learning (100 words)
+
+6. Conclusion (50 words)
    - Summarize key takeaways
    - Encourage practical application of the learned concepts
 
@@ -260,6 +262,34 @@ Someone has come to you with this topic:
 ==========
 
 Please generate a tutorial on the topic.
+""".strip()
+
+complete_tutorial_prompt = """
+You are an expert curriculum developer who is able to take unfinished tutorials and finish them.
+
+You've been given the first half of a tutorial. Your task is to write the second half, with these guidelines in mind:
+- the information you provide should be as accurate as you can make it, and should be relevant to the topic at hand.
+- the second half should be in the spirit of the first half, and achieve any remaining learning objectives set out in the first half that were not yet addressed.
+- use the same style of markdown formatting that you see in the first half.
+- Return ONLY the part that you wrote, not the entire tutorial, and provide NO other comments or sentences.
+- The entire work (first half + your half) should have the general structure as set below:
+
+<tutorial_structure>
+1. Introduction
+2. Core Concepts
+3. Practical Application (400 words)
+4. Best Practices and Common Pitfalls
+5. Advanced Topics and Further Learning
+6. Conclusion
+</tutorial_structure>
+
+Here's the first half:
+
+<first_half_of_tutorial>
+{{tutorial}}
+</first_half_of_tutorial>
+
+Please complete the tutorial. Return ONLY the part that you wrote, not the entire tutorial, and provide NO other comments or sentences.
 """.strip()
 
 # Persistence functions
@@ -354,6 +384,18 @@ def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> l
 		results.append(filename)
 	return results
 
+def Complete_Tutorial(tutorial: str) -> str:
+	"""
+	Complete a tutorial with a conclusion.
+	Experimental feature, intending to get around context window limitations.
+	"""
+	print("Completing tutorial...")
+	prompt = Prompt(complete_tutorial_prompt)
+	model = Model('claude')
+	chain = Chain(prompt, model)
+	response = chain.run(input_variables = {"tutorial": tutorial})
+	return response.content
+
 if __name__ == "__main__":
 	"""
 	If without args, just creates an example tutorial.
@@ -372,6 +414,7 @@ if __name__ == "__main__":
 	parser.add_argument('-t', '--terminal', action='store_true', help='Flag to indicate terminal mode')
 	parser.add_argument('-r', '--raw', action='store_true', help='Flag to indicate raw output')
 	parser.add_argument('-l', '--last', action='store_true', help='Flag to print the last tutorial')
+	parser.add_argument('-e', '--experimental', action='store_true', help='Attempting a very lazy way to ensure tutorial completeness.')
 	parser.add_argument("topic", nargs="?", help="The topic to process")
 	args = parser.parse_args()
 	topic = args.topic
@@ -379,21 +422,32 @@ if __name__ == "__main__":
 	terminal = args.terminal
 	raw = args.raw
 	last = args.last
-	if terminal and topic:
+	experimental = args.experimental
+	if terminal and topic:	# We just want terminal, don't save.
 		save_to_file = False
-	elif topic:
+	elif topic:				# Save to file by default
 		save_to_file = True
-	elif last and not raw:
+	elif last and not raw:	# Print it again.
 		tutorial = load_tutorial_store()[-1]
 		print_markdown(tutorial)
 		sys.exit(0)
-	elif last and raw:
+	elif last and raw:	# Print the last tutorial in raw format, useful for clipping
 		tutorial = load_tutorial_store()[-1]
 		print(tutorial)
 		sys.exit(0)
-	tutorial = Tutorialize(topic, subject, save_to_file)
-	print_markdown(tutorial)
-	tutorial_store = load_tutorial_store()
-	tutorial_store.append(tutorial)
-	save_to_tutorial_store(tutorial_store)
+	if experimental:	# Seeing if another LLM call can just complete the damn thing.
+		tutorial = Tutorialize(topic, subject, save_to_file=True)
+		second_half = Complete_Tutorial(tutorial)
+		completed_tutorial = tutorial + second_half
+		print_markdown(completed_tutorial)
+		tutorial_store = load_tutorial_store()
+		tutorial_store.append(completed_tutorial)
+		save_to_tutorial_store(tutorial_store)
+		sys.exit(0)
+	else:	# Our default case
+		tutorial = Tutorialize(topic, subject, save_to_file)
+		print_markdown(tutorial)
+		tutorial_store = load_tutorial_store()
+		tutorial_store.append(tutorial)
+		save_to_tutorial_store(tutorial_store)
 
