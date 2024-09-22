@@ -3,4 +3,4 @@ __pycache__/
 .env
 /__pycache__/
 *.pkl
-/books/
+/Book/books/*
