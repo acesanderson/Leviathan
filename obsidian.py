@@ -317,8 +317,10 @@ if __name__ == '__main__':
 	print(f"URL: {args.url}")
 	print(f"Custom Prompt: {args.prompt}")
 	# if args, run main()
-	if all:
-		print('Saving entire article...')
+	if all and terminal:
+		summary = parse_input(url, transcript_cleanup = False)
+		print(summary)
+	elif all and not terminal:
 		save_entire_article(url)
 	elif custom_prompt:
 		main(url, custom_prompt = custom_prompt)

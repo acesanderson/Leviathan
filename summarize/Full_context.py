@@ -4,7 +4,8 @@ Like map reduce, but use entire text with every call. Use haiku.
 
 from Chain import Model, Prompt, Chain
 
-preferred_model = "claude-3-haiku-20240307"
+# preferred_model = "claude-3-haiku-20240307"
+preferred_model = "claude"
 
 # Import our example article for testing
 example_article = "examples/zitron.txt"
