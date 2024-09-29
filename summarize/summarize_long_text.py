@@ -39,7 +39,7 @@ def load_book(book_file: str) -> str:
 
 def convert_epub_to_markdown(epub_file: str) -> str:
 	"""
-	Convert an epub file to markdown.
+	Convert an epub file to markdown, using pandoc.
 	"""
 	# Run this command in the terminal and grab stdout: `pandoc Learning_and_Development_Handbook.epub -t markdown`
 	command = [

@@ -12,6 +12,8 @@ Ingests the following data:
 This uses gpt-4o by default, so it's not free. Switch to an ollama model if you want to use it for free.
 
 Next up:
+- the all function should use LLM calls to create a structured article
+ - there should also be a structured transcript (cleaned up language but everything otherwise retained ... no summarization)
 - automatically grab html (or PDF) versions of arxiv papers and summarize them.
 - add summarization scripts:
  - large, medium, small -- and route by text size
