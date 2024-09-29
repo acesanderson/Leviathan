@@ -9,6 +9,8 @@ from Medium_summarize import chunk_text_by_words, map_chain, reduce_chain
 import chromadb
 from sklearn.cluster import KMeans
 import numpy as np
+import argparse
+import subprocess
 
 # Customizable settings
 num_clusters = 11
@@ -22,6 +24,33 @@ def generate_test_book():
 	with open(test_book, 'r') as f:
 		book = f.read()
 	return book
+
+def load_book(book_file: str) -> str:
+	"""
+	Load a book from a file.
+	"""
+	# If extension is epub run convert_epub_to_markdown
+	if book_file.endswith('.epub'):
+		return convert_epub_to_markdown(book_file)
+	else:
+		with open(book_file, 'r') as f:
+			book = f.read()
+	return book
+
+def convert_epub_to_markdown(epub_file: str) -> str:
+	"""
+	Convert an epub file to markdown.
+	"""
+	# Run this command in the terminal and grab stdout: `pandoc Learning_and_Development_Handbook.epub -t markdown`
+	command = [
+		"pandoc",
+		epub_file,
+		"-t", "markdown"
+	]
+	# Run the pandoc command and capture the output
+	result = subprocess.run(command, capture_output=True, text=True, check=True)
+	# Return the captured stdout
+	return result.stdout
 
 def get_embeddings(text_chunks: list[str]) -> list:
 	"""
@@ -85,4 +114,16 @@ def main():
 	print(summary)
 
 if __name__ == "__main__":
-    main()
+	# create argparse
+	parser = argparse.ArgumentParser(description='Summarize a long text.')
+	parser.add_argument('book_file', type=str, help='The book file (md or .txt format) to summarize.')
+	args = parser.parse_args()
+	book_file = args.book_file
+	if not book_file:
+		main()
+		exit()
+	else:
+		text = load_book(book_file)
+		summary = summarize_long_text(text)
+		print(summary)
+

@@ -1,5 +1,6 @@
 """
-Like map reduce, but use entire text with every call. Use haiku.
+Like map reduce, but use entire text with every call.
+So far this is not promising.
 """
 
 from Chain import Model, Prompt, Chain

@@ -12,6 +12,8 @@ ideal_chunk_size_by_words = 1000
 ideal_overlap = 200
 sample_text = "examples/arxiv_paper.txt" # 8,000 token paper
 preferred_model = "claude"
+chunk_summary_length = 200 # Added these to add more oomph to the summary
+final_summary_length = 500
 
 # Our Pydantic classes
 class Answer_List(BaseModel):
@@ -33,7 +35,7 @@ Text Content: {{text_chunk}}
 
 Important Keywords: {{key_words}}
 
-Think "step by step" how to utilize both the important keywords and text content to create a great concise summary.
+Think "step by step" how to utilize both the important keywords and text content to create a great summary of at least {{chunk_summary_length}} words.
 """.strip()
 
 reduce_prompt_string = """
@@ -45,7 +47,7 @@ The following is set of summaries:
 ##################### 
 {% endfor %}
 
-Take these and distill them into one final, consolidated summary.
+Take these and distill them into one final, consolidated summary, of at least {{final_summary_length}} words.
 """.strip()
 
 # Our functions
@@ -113,7 +115,7 @@ def summarize_chunks_with_keywords_sync(chunks_with_keywords: list[tuple[str]]) 
 	summarized_chunks = []
 	for chunk, keywords in chunks_with_keywords:
 		chain = Chain(prompt, model)
-		summary = chain.run({'text_chunk':chunk, 'key_words':keywords}, verbose=False)
+		summary = chain.run({'text_chunk':chunk, 'key_words':keywords, 'chunk_summary_length':chunk_summary_length}, verbose=False)
 		summarized_chunks.append(summary.content)
 	return summarized_chunks
 
@@ -125,7 +127,7 @@ def summarize_chunks_with_keywords_async(chunks_with_keywords: list[tuple[str]])
 	prompt = Prompt(summarize_chunk_prompt_string)
 	model = Model('gpt3')
 	for chunk, keywords in chunks_with_keywords:
-		summarize_chunk_prompt = prompt.render({'text_chunk':chunk, 'key_words':keywords})
+		summarize_chunk_prompt = prompt.render({'text_chunk':chunk, 'key_words':keywords, 'chunk_summary_length':chunk_summary_length})
 		summarize_chunks_prompts.append(summarize_chunk_prompt)
 	print("running async: summarizing chunks")
 	summarized_chunks = model.run_async(prompts = summarize_chunks_prompts, verbose = True)
@@ -177,7 +179,7 @@ def reduce_chain(summarized_chunks: list[str]) -> str:
 	prompt = Prompt(reduce_prompt_string)
 	model = Model(preferred_model)
 	chain = Chain(prompt, model)
-	summary = chain.run({'summaries':summarized_chunks}, verbose=False)
+	summary = chain.run({'summaries':summarized_chunks, 'final_summary_length':final_summary_length}, verbose=False)
 	return summary
 
 def summarize_medium_text(text: str) -> str:
