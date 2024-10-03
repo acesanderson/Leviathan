@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 
-# Imports
-from Chain import Chain, Model, Prompt
-from obsidian import save_to_obsidian, obsidian_path, print_markdown
-import sys
-from time import sleep
-import argparse
+# Imports can take a while, so we'll give the user a spinner.
+# -----------------------------------------------------------------
+
 from rich.console import Console
-from rich.markdown import Markdown
-import pickle
-import os
+console = Console(width=100) # for spinner
+
+with console.status("[bold green]Loading...", spinner="dots"):
+	from Chain import Chain, Model, Prompt
+	from obsidian import save_to_obsidian, obsidian_path, print_markdown
+	import sys
+	from time import sleep
+	import argparse
+	from rich.console import Console
+	from rich.markdown import Markdown
+	import pickle
+	import os
 
 # Constants
 dir_path = os.path.dirname(os.path.realpath(__file__))
@@ -397,24 +403,12 @@ def Complete_Tutorial(tutorial: str) -> str:
 	return response.content
 
 if __name__ == "__main__":
-	"""
-	If without args, just creates an example tutorial.
-	If with a string, treats the string as a topic and generates a tutorial for it.
-	If -t, treats the string as a topic and prints the tutorial to the terminal.
-		- this is useful if you are bad at linux networking and can't save to obsidian.
-	If -r, treats the string as a topic and prints the tutorial to the terminal in raw format.
-	If -l, prints the last tutorial in the tutorial store, this is markdown by default but you can specify -lr for raw.
-	"""
-	# Handle null case first; this will just show help.
-	if len(sys.argv) == 1:                                 
-		sys.argv.append('-h')
 	# Parse arguments
 	parser = argparse.ArgumentParser(description="Process some topics.")
 	parser.add_argument('-s', '--subject', type=str, help='The subject to create a tutor persona for')
 	parser.add_argument('-t', '--terminal', action='store_true', help='Flag to indicate terminal mode')
 	parser.add_argument('-r', '--raw', action='store_true', help='Flag to indicate raw output')
 	parser.add_argument('-l', '--last', action='store_true', help='Flag to print the last tutorial')
-	parser.add_argument('-e', '--experimental', action='store_true', help='Attempting a very lazy way to ensure tutorial completeness.')
 	parser.add_argument("topic", nargs="?", help="The topic to process")
 	args = parser.parse_args()
 	topic = args.topic
@@ -422,7 +416,6 @@ if __name__ == "__main__":
 	terminal = args.terminal
 	raw = args.raw
 	last = args.last
-	experimental = args.experimental
 	if terminal and topic:	# We just want terminal, don't save.
 		save_to_file = False
 	elif topic:				# Save to file by default
@@ -435,16 +428,7 @@ if __name__ == "__main__":
 		tutorial = load_tutorial_store()[-1]
 		print(tutorial)
 		sys.exit(0)
-	if experimental:	# Seeing if another LLM call can just complete the damn thing.
-		tutorial = Tutorialize(topic, subject, save_to_file=True)
-		second_half = Complete_Tutorial(tutorial)
-		completed_tutorial = tutorial + second_half
-		print_markdown(completed_tutorial)
-		tutorial_store = load_tutorial_store()
-		tutorial_store.append(completed_tutorial)
-		save_to_tutorial_store(tutorial_store)
-		sys.exit(0)
-	else:	# Our default case
+	with console.status("[bold green]Query...", spinner="dots"):
 		tutorial = Tutorialize(topic, subject, save_to_file)
 		print_markdown(tutorial)
 		tutorial_store = load_tutorial_store()

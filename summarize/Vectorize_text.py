@@ -43,6 +43,12 @@ def query(collection: chromadb.Collection, query_string: str, n_results: int) ->
     ids, documents = documents, ids
     return list(zip(ids, documents))
 
+def contextualize_chunk(chunk: str, text: str) -> str:
+    """
+    Contextualizes a chunk by adding the surrounding text.
+    """
+    pass
+
 def rerank(options: list[tuple], query: str, k: int = 5) -> list[tuple]:
     """
     Reranks a list of options based on a query.

@@ -22,18 +22,23 @@ Next up:
 EVENTUALLY this will use a more sophisticated set of summarization techniques that are currently being worked out in text_summarization.py.
 """
 
-from download_article import download_article                   # type: ignore
-from download_youtube_transcript import download_transcript     # type: ignore
-from Chain import Chain, Model, Prompt, Parser                  # type: ignore
-import sys
-import os
-import argparse
-from typing import Union, Tuple
-from pydantic import BaseModel
-from datetime import datetime
-from time import sleep
+# Imports can take a while, so we'll give the user a spinner.
+# -----------------------------------------------------------------
+
 from rich.console import Console
-from rich.markdown import Markdown
+console = Console(width=100) # for spinner
+
+with console.status("[bold green]Loading...", spinner="dots"):
+	from download_article import download_article                   # type: ignore
+	from download_youtube_transcript import download_transcript     # type: ignore
+	from Chain import Chain, Model, Prompt, Parser                  # type: ignore
+	import sys
+	import os
+	import argparse
+	from typing import Union, Tuple
+	from pydantic import BaseModel
+	from datetime import datetime
+	from rich.markdown import Markdown
 
 # Define our variables
 # -----------------------------------------------------
@@ -263,7 +268,6 @@ def print_markdown(markdown_string: str):
 	"""
 	Prints formatted markdown to the console.
 	"""
-	console = Console(width=80)
 	# Create a Markdown object
 	border = "-" * 80
 	markdown_string = f"{border}\n{markdown_string}\n\n{border}"
@@ -325,6 +329,8 @@ if __name__ == '__main__':
 	elif all and not terminal:
 		save_entire_article(url)
 	elif custom_prompt:
-		main(url, custom_prompt = custom_prompt)
+		with console.status("[bold green]Query...", spinner="dots"):
+			main(url, custom_prompt = custom_prompt)
 	else:
-		main(url, custom_prompt = None)
+		with console.status("[bold green]Query...", spinner="dots"):
+			main(url, custom_prompt = None)
