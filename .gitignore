@@ -7,3 +7,4 @@ __pycache__/
 /Summarize/examples/
 /summarize/examples/
 tutorial_store.pkl
+.leviathan_message_store.pickle
