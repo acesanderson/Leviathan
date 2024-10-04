@@ -7,7 +7,7 @@ from Chain import Chain, Model, Prompt, Parser 	# type: ignore
 
 # Our config
 chain_of_density_summary_length_in_words = 250
-model_choice = "gpt"
+model_choice = "claude-3-haiku-20240307"
 sample_text = "examples/zitron.txt"
 
 # Our Pydantic classes
@@ -67,7 +67,6 @@ def chain_of_density(text: str) -> str:
 	Use Chain of Density prompt to summarize a text.
 	The prompt returns a list of json objects; the second to last seems to have the best mix of named entities to words.
 	"""
-	print("Summarizing text...")
 	prompt = Prompt(chain_of_density_prompt_string)
 	model = Model(model_choice)
 	parser = Parser(Chain_of_Density)

@@ -10,16 +10,6 @@ Ingests the following data:
 - article url -> article text (Morphy/extracted_articles)
 
 This uses gpt-4o by default, so it's not free. Switch to an ollama model if you want to use it for free.
-
-Next up:
-- the all function should use LLM calls to create a structured article
- - there should also be a structured transcript (cleaned up language but everything otherwise retained ... no summarization)
-- automatically grab html (or PDF) versions of arxiv papers and summarize them.
-- add summarization scripts:
- - large, medium, small -- and route by text size
- - add a '-c' flag (for Chain of Density summary)
-
-EVENTUALLY this will use a more sophisticated set of summarization techniques that are currently being worked out in text_summarization.py.
 """
 
 # Imports can take a while, so we'll give the user a spinner.
@@ -39,6 +29,7 @@ with console.status("[bold green]Loading...", spinner="dots"):
 	from pydantic import BaseModel
 	from datetime import datetime
 	from rich.markdown import Markdown
+	from Save_to_obsidian import save_to_obsidian
 
 # Define our variables
 # -----------------------------------------------------
@@ -46,7 +37,6 @@ with console.status("[bold green]Loading...", spinner="dots"):
 # get OBSIDIAN_PATH from environment variable
 obsidian_path = os.environ.get('OBSIDIAN_PATH')
 # switch this if on different comp
-summarized_urls = obsidian_path + '/Summarized_URLs.md'
 # example url for testing
 # url = 'https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805'
 
@@ -169,21 +159,6 @@ ONLY return the title, no extra text. This will be used to a title a file, and i
 # Our functions
 # -----------------------------------------------------
 
-def retrieve_summarized_urls() -> list[str]:
-	"""
-	This checks if we've already downloaded the article or transcript.
-	"""
-	with open(summarized_urls, 'r') as f:
-		urls = f.read()
-	urls = urls.split('\n')
-	return urls
-
-def save_summarized_url(url):
-	"""
-	Save the URL to the list of summarized URLs.
-	"""
-	with open(summarized_urls, 'a') as f:
-		f.write(url + '\n')
 
 def parse_input(input, transcript_cleanup = False) -> Union[str, tuple]:
 	"""
@@ -191,10 +166,7 @@ def parse_input(input, transcript_cleanup = False) -> Union[str, tuple]:
 	If user wants a cleaned up transcript (not s summary at all), set transcript_cleanup to True,
 	and function returns a tuple of title, article.
 	"""
-	urls = retrieve_summarized_urls()
-	if input in urls:
-		raise ValueError('URL has already been summarized.')
-	elif 'youtube' in input:
+	if 'youtube' in input:
 		# this is bad code, since we either return a string or a tuple
 		transcript = download_transcript(input)
 		if transcript_cleanup:
@@ -221,16 +193,6 @@ def clean_up_transcript(transcript: str) -> str:
 	response = chain.run(input_variables = {'transcript': transcript}, verbose=False)
 	title, article = response.content.title, response.content.article
 	return title, article
-
-def generate_title_for_article(article: str) -> str:
-	"""
-	Takes an article and generates a title for the article.
-	"""
-	prompt = Prompt(article_title_string)
-	model = Model('gpt3')
-	chain = Chain(prompt, model)
-	response = chain.run(input_variables = {'article': article}, verbose=False)
-	return response.content
 
 def summarize_text(text: str, custom_prompt: str = None):
 	"""
@@ -284,8 +246,7 @@ def main(url: str, custom_prompt = None):
 	if data:
 		title, summary = summarize_text(data, custom_prompt)
 		print_markdown(f"# {title}\n{summary}")
-		filename = save_to_obsidian(title, summary, url)
-		save_summarized_url(url)
+		filename = save_to_obsidian(text = summary, title, url)
 		print(f'Saved to Obsidian: {filename}')
 	else:
 		print('Output is empty.')
@@ -297,15 +258,6 @@ def save_entire_article(url: str):
 	title = "Saved_Transcript_" + str(datetime.now())
 	summary = parse_input(url, transcript_cleanup = False)
 	save_to_obsidian(title, summary, url)
-
-def save_to_obsidian(title: str, text: str, url: str = "") -> str:
-	# Make sure this is saveable as a file!
-	title = title.replace('/', '-').replace(':', '-').replace('?', '').replace('=', '').replace('&', '-').replace('.', '-').replace("'", "").replace('"', '').replace("(", "").replace(")","").replace(",","")
-	filename = f'{obsidian_path}/{title}.md'
-	text = url + "\n\n" + text
-	with open(filename, 'w') as f:
-		f.write(text)
-	return filename
 
 if __name__ == '__main__':
 	parser = argparse.ArgumentParser(description='Summarize and save to Obsidian.')
