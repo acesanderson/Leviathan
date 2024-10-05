@@ -32,13 +32,15 @@ with console.status("[bold green]Loading...", spinner="dots"):
 	import os
 	import argparse
 	import sys
+	import re
 	from rich.markdown import Markdown
-	import tiktoken
+	# import tiktoken
 
 # Define our variables
 # -----------------------------------------------------
 
 obsidian_path = os.environ.get('OBSIDIAN_PATH')
+preferred_folder = "Leviathan"
 messagestore_path = ".leviathan_message_store.pickle"
 example_article = "https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805"
 example_long_article = "https://arxiv.org/html/2309.02427v3"
@@ -186,6 +188,8 @@ Here is the transcript:
 <transcript>
 {{transcript}}
 </transcript>
+
+Do NOT add any additional content to the transcript or provide any other message. Your task is to format the existing text to make it more readable and coherent.
 """.strip()
 
 # Our functions
@@ -255,6 +259,17 @@ def query_text(text: str, query: str) -> str:
 		messagestore.add("assistant", response.content)
 	return response.content
 
+def extract_summary_from_string(text: str) -> str:
+	"""
+	Our summarization prompts have the LLM put the summary in xml tags.
+	We want to grab text within <summary> xml tags.
+	"""
+	pattern = r'<summary>(.*?)</summary>'
+	match = re.search(pattern, text, re.DOTALL)
+	if match:
+		return match.group(1).strip()
+	return None
+
 def summarize_youtube_transcript(transcript: str) -> str:
 	"""
 	This function takes a YouTube transcript and summarizes it.
@@ -264,7 +279,8 @@ def summarize_youtube_transcript(transcript: str) -> str:
 		prompt = Prompt(YouTube_prompt_string)
 		chain = Chain(prompt, model)
 		response = chain.run(input_variables={'transcript':transcript}, verbose = False)
-	return response.content
+	summary = extract_summary_from_string(response.content)
+	return summary
 
 def summarize_article(article: str) -> str:
 	"""
@@ -275,7 +291,8 @@ def summarize_article(article: str) -> str:
 		prompt = Prompt(Article_prompt_string)
 		chain = Chain(prompt, model)
 		response = chain.run(input_variables={'article':article}, verbose = False)
-	return response.content
+	summary = extract_summary_from_string(response.content)
+	return summary
 
 def format_transcript(transcript: str) -> str:
 	"""
@@ -373,6 +390,8 @@ if __name__ == '__main__':
 			sys.exit()
 		else:
 			print_markdown(last_message.content)
+		if args.save:
+			save_to_obsidian(text = last_message.content, folder = preferred_folder)
 		sys.exit()
 	if args.url:
 		url = args.url
@@ -385,6 +404,8 @@ if __name__ == '__main__':
 			else: 
 				print_markdown(formatted_text)
 			messagestore.add(url, formatted_text)
+			if args.save:
+				save_to_obsidian(text = formatted_text, url = url, folder = preferred_folder)
 			sys.exit()
 		if args.query:
 			query = args.query
@@ -417,6 +438,8 @@ if __name__ == '__main__':
 				sys.exit()
 			print_markdown(summary)
 			messagestore.add("assistant", summary)
+			if args.save:
+				save_to_obsidian(text = summary, url = url, folder = preferred_folder)
 			sys.exit()
 		else:
 			console.print(text)
