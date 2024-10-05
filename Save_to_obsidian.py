@@ -3,6 +3,8 @@ Abstracting this function out as I use it in multiple scripts.
 """
 import os
 from Chain import Prompt, Model, Chain
+import sys
+import argparse
 
 obsidian_path = os.environ.get('OBSIDIAN_PATH')
 # switch this if on different comp
@@ -64,3 +66,24 @@ def save_to_obsidian(text: str, title: str = "", url: str = "", folder = "extrac
 	with open(filename, 'w') as f:
 		f.write(text)
 	return filename
+
+if __name__ == "__main__":
+	# Capture arguments
+	parser = argparse.ArgumentParser(description="Save text to Obsidian.")
+	parser.add_argument("text", type=str, nargs="?", help="Text to be saved.")
+	parser.add_argument("-t", "--title", type=str, help="Title to be used.")
+	parser.add_argument("-f", "--folder", type=str, help="Folder to save to (default is extracted_articles).")
+	args = parser.parse_args()
+	if args.text:
+		text = args.text
+	# elif stdin is detected
+	elif not sys.stdin.isatty():
+		text = sys.stdin.read()
+	else:
+		print("No text provided; either pipe into script or provide as argument.")
+		sys.exit()
+	title = args.title if args.title else ""
+	folder = args.folder if args.folder else "extracted_articles"
+	# Save to Obsidian
+	filename = save_to_obsidian(text)
+	print(f"Text saved to {filename}.")
