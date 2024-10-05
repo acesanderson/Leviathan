@@ -336,6 +336,14 @@ if __name__ == '__main__':
 		sys.exit()
 	if args.last:
 		last_message = messagestore.last()
+		if args.chain_of_density:
+			cod_summary = chain_of_density_summary(last_message)
+			if args.raw:
+				console.print(cod_summary)
+				sys.exit()
+			else:
+				print_markdown(cod_summary)
+				sys.exit()
 		if args.raw:
 			console.print(last_message.content)
 		elif args.query:
