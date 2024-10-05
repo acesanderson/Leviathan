@@ -9,7 +9,7 @@ from Chain import Chain, Model, Prompt, Parser 	# type: ignore
 chain_of_density_summary_length_in_words = 250
 # model_choice = "claude-3-haiku-20240307" # Haiku would be a good choice but it doesn't play well with functions.
 # model_choice = "llama3.1:latest" # too slow
-# model_choice = "gpt" # works like a charm
+model_choice = "gpt" # works like a charm
 finishing_model = "claude-3-5-sonnet-20240620" # For chain_of_convergence final summary
 sample_text = "examples/zitron.txt"
 
@@ -103,7 +103,7 @@ def chain_of_convergence(text: str, number_of_summaries: int = 3) -> str:
 	# Generate the summaries first.
 	summaries = []
 	for i in range(number_of_summaries):
-		print(f"Generating summary {i+1} of {number_of_summaries}")
+		# print(f"Generating summary {i+1} of {number_of_summaries}")
 		summary = chain_of_density(text)
 		summaries.append(summary)
 		print(summary)
@@ -113,7 +113,7 @@ def chain_of_convergence(text: str, number_of_summaries: int = 3) -> str:
 	model = Model(model_choice)
 	chain = Chain(prompt, model)
 	enumerated_summaries = enumerate(summaries)	# We enumerate the summaries so we can use the index in the prompt (i.e. "summary_1")
-	print("Averaging the summaries")
+	# print("Averaging the summaries")
 	response = chain.run(input_variables = {'number':number_of_summaries, 'summaries':enumerated_summaries}, verbose=False)
 	return response.content
 

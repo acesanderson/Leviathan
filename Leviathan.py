@@ -28,7 +28,7 @@ with console.status("[bold green]Loading...", spinner="dots"):
 	from Chain import Chain, Model, Prompt, Parser                  # type: ignore
 	from Save_to_obsidian import save_to_obsidian					# type: ignore
 	from message_store import MessageStore							# type: ignore
-	from CoD import chain_of_density								# type: ignore
+	from CoD import chain_of_density, chain_of_convergence			# type: ignore
 	import os
 	import argparse
 	import sys
@@ -296,6 +296,14 @@ def chain_of_density_summary(text: str) -> str:
 		cod_summary = chain_of_density(text)
 	return cod_summary
 
+def chain_of_convergence_summary(text: str, n: int = 3) -> str:
+	"""
+	This function takes a text and returns a Chain of Convergence summary.
+	"""
+	with console.status(f"[bold green]Generating chain of convergence (CoC) with {n} summaries...", spinner="dots"):
+		cod_summary = chain_of_convergence(text, n)
+	return cod_summary
+
 def get_token_count(text: str) -> int:
 	"""
 	This function takes a text and returns the token count.
@@ -329,6 +337,7 @@ if __name__ == '__main__':
 	parser.add_argument('-f', '--format', action="store_true", help='Format transcript.')
 	parser.add_argument('-c', '--clear', action="store_true", help='Clear message store.')
 	parser.add_argument('-q', '--query', type=str, help='Query the text.')
+	parser.add_argument('-coc', '--chain_of_convergence', type=int, help='Run chain of convergence with n iterations.')
 	args = parser.parse_args()
 	# Route arguments
 	if args.clear:
@@ -343,6 +352,14 @@ if __name__ == '__main__':
 				sys.exit()
 			else:
 				print_markdown(cod_summary)
+				sys.exit()
+		if args.chain_of_convergence:
+			coc_summary = chain_of_convergence_summary(last_message, args.chain_of_convergence)
+			if args.raw:
+				console.print(coc_summary)
+				sys.exit()
+			else:
+				print_markdown(coc_summary)
 				sys.exit()
 		if args.raw:
 			console.print(last_message.content)
@@ -386,6 +403,14 @@ if __name__ == '__main__':
 					sys.exit()
 				else:
 					print_markdown(cod_summary)
+					sys.exit()
+			if args.chain_of_convergence:
+				coc_summary = chain_of_convergence_summary(last_message, args.chain_of_convergence)
+				if args.raw:
+					console.print(coc_summary)
+					sys.exit()
+				else:
+					print_markdown(coc_summary)
 					sys.exit()
 			if args.raw:
 				console.print(summary)
