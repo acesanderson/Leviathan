@@ -8,7 +8,8 @@ console = Console(width=100) # for spinner
 
 with console.status("[bold green]Loading...", spinner="dots"):
 	from Chain import Chain, Model, Prompt
-	from obsidian import save_to_obsidian, obsidian_path, print_markdown
+	from obsidian import print_markdown
+	from Save_to_obsidian import save_to_obsidian
 	import sys
 	from time import sleep
 	import argparse
@@ -20,6 +21,8 @@ with console.status("[bold green]Loading...", spinner="dots"):
 # Constants
 dir_path = os.path.dirname(os.path.realpath(__file__))
 tutorial_store_file = os.path.join(dir_path, 'tutorial_store.pkl')
+obsidian_path = os.environ.get('OBSIDIAN_PATH')
+preferred_folder = "Tutorials"
 
 generic_persona = """
 # Generic Tutorial System Prompt
@@ -243,7 +246,7 @@ def create_tutor(subject: str) -> str:
 	response = chain.run(input_variables = {"subject": subject})
 	return response.content
 
-def Tutorialize(topic: str|list[str], subject: str = "", save_to_file = True) -> str|list[str]:
+def Tutorialize(topic: str|list[str], subject: str = "") -> str|list[str]:
 	"""
 	Our main function.
 	If a subject is provided, we create a tutor persona for that subject.
@@ -253,12 +256,12 @@ def Tutorialize(topic: str|list[str], subject: str = "", save_to_file = True) ->
 	if subject:
 		print("Creating tutor persona...")
 		persona = create_tutor(subject)
-	else:	
+	else:
 		persona = generic_persona
 	if isinstance(topic, str):
-		return Tutorialize_Sync(topic, persona, save_to_file)
+		return Tutorialize_Sync(topic, persona)
 	elif isinstance(topic, list):
-		return Tutorialize_Async(topic,persona, save_to_file)
+		return Tutorialize_Async(topic,persona)
 
 def Tutorialize_Sync(topic: str, persona: str, save_to_file = True) -> str:
 	"""
@@ -270,16 +273,12 @@ def Tutorialize_Sync(topic: str, persona: str, save_to_file = True) -> str:
 	chain = Chain(prompt, model)
 	response = chain.run(messages = messages, input_variables = {"topic": topic})
 	tutorial = response.content
-	if save_to_file:
-		filename = save_to_obsidian(text = tutorial, title = topic)
-		print(f"Tutorial saved to {obsidian_path + filename}.")
-	else:
-		print(tutorial)
 	return tutorial
 
 def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> list[str]:
 	"""
 	Generate tutorials for a list of topics asynchronously.
+	NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
 	"""
 	messages = Chain.create_messages(system_prompt = persona)
 	model = Model('claude')
@@ -295,7 +294,7 @@ def Tutorialize_Async(topics: list[str], persona: str, save_to_file = True) -> l
 	async_results = model.run_async(prompts = [p[1] for p in prompts], model = "claude")
 	for (topic, _), result in zip(prompts, async_results):
 		if save_to_file:
-			filename = save_to_obsidian(text = result, title = topic)
+			filename = save_to_obsidian(text = tutorial, title = topic, folder = "tutorials")
 			print(f"Saved to {obsidian_path + filename}.")
 		results.append(filename)
 	return results
@@ -320,28 +319,31 @@ if __name__ == "__main__":
 	parser.add_argument('-r', '--raw', action='store_true', help='Flag to indicate raw output')
 	parser.add_argument('-l', '--last', action='store_true', help='Flag to print the last tutorial')
 	parser.add_argument("topic", nargs="?", help="The topic to process")
+	parser.add_argument('-save', '--save', action='store_true', help='Save to obsidian.')
 	args = parser.parse_args()
 	topic = args.topic
 	subject = args.subject
 	terminal = args.terminal
 	raw = args.raw
 	last = args.last
-	if terminal and topic:	# We just want terminal, don't save.
-		save_to_file = False
-	elif topic:				# Save to file by default
-		save_to_file = True
-	elif last and not raw:	# Print it again.
+	if last and not raw:	# Print it again.
 		tutorial = load_tutorial_store()[-1]
 		print_markdown(tutorial)
+		if args.save:
+			save_to_obsidian(tutorial, folder = preferred_folder)
 		sys.exit(0)
 	elif last and raw:	# Print the last tutorial in raw format, useful for clipping
 		tutorial = load_tutorial_store()[-1]
 		print(tutorial)
+		if args.save:
+			save_to_obsidian(tutorial, folder = preferred_folder)
 		sys.exit(0)
 	with console.status("[bold green]Query...", spinner="dots"):
-		tutorial = Tutorialize(topic, subject, save_to_file)
+		tutorial = Tutorialize(topic, subject)
 		print_markdown(tutorial)
 		tutorial_store = load_tutorial_store()
 		tutorial_store.append(tutorial)
 		save_to_tutorial_store(tutorial_store)
+		if args.save:
+			save_to_obsidian(tutorial, folder = preferred_folder)
 

@@ -1,3 +1,9 @@
+"""
+This is defunct, and I will be removing it shortly.
+
+print_markdown needs to be a separate script, as it's used in multiple places.
+"""
+
 
 """
 This will be a command line utility I can use to add things to my obsidian vault.
@@ -246,7 +252,7 @@ def main(url: str, custom_prompt = None):
 	if data:
 		title, summary = summarize_text(data, custom_prompt)
 		print_markdown(f"# {title}\n{summary}")
-		filename = save_to_obsidian(text = summary, title, url)
+		# filename = save_to_obsidian(text = summary, title, url)
 		print(f'Saved to Obsidian: {filename}')
 	else:
 		print('Output is empty.')

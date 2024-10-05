@@ -43,16 +43,18 @@ def get_title(text: str) -> str:
 	head = text.split('\n')[:5]
 	for h in head:
 		if h.startswith('# '):
-			return h[2:]
+			text = text.replace(h, '')
+			text = text.strip()
+			return text, h[2:]
 	else:
-		return generate_title(text)
+		return text, generate_title(text)
 
 def save_to_obsidian(text: str, title: str = "", url: str = "", folder = "extracted_articles") -> str:
 	"""
 	Takes a title, text, and optional URL and saves it to a file in the Obsidian vault.
 	"""
 	if not title:
-		title = get_title(text)
+		text, title = get_title(text)
 	title = obsidianize_title(title)
 	path = obsidian_path + folder
 	filename = f'{path}/{title}.md'
