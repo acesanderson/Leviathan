@@ -1,10 +1,18 @@
 """
 Abstracting this function out as I use it in multiple scripts.
 """
-import os
-from Chain import Prompt, Model, Chain
-import sys
-import argparse
+
+from rich.console import Console
+console = Console(width=100) # for spinner
+
+# our imports
+# -----------------------------------------------------------------
+
+with console.status("[bold green]Loading...", spinner="dots"):
+	import os
+	from Chain import Prompt, Model, Chain
+	import sys
+	import argparse
 
 obsidian_path = os.environ.get('OBSIDIAN_PATH')
 # switch this if on different comp
@@ -86,7 +94,8 @@ if __name__ == "__main__":
 	title = args.title if args.title else ""
 	folder = args.folder if args.folder else "extracted_articles"
 	# Save to Obsidian
-	filename = save_to_obsidian(text, title=title, folder=folder)
+	with console.status(f"[bold green]Saving to Obsidian in folder {folder}...", spinner="dots"):
+		filename = save_to_obsidian(text, title=title, folder=folder)
 	print(f"Text saved to {filename}.")
 	if args.print:
 		print(text)
