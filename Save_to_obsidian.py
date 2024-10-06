@@ -73,6 +73,7 @@ if __name__ == "__main__":
 	parser.add_argument("text", type=str, nargs="?", help="Text to be saved.")
 	parser.add_argument("-t", "--title", type=str, help="Title to be used.")
 	parser.add_argument("-f", "--folder", type=str, help="Folder to save to (default is extracted_articles).")
+	parser.add_argument("-p", "--print", action="store_true", help="Print the output.")
 	args = parser.parse_args()
 	if args.text:
 		text = args.text
@@ -87,3 +88,5 @@ if __name__ == "__main__":
 	# Save to Obsidian
 	filename = save_to_obsidian(text, title=title, folder=folder)
 	print(f"Text saved to {filename}.")
+	if args.print:
+		print(text)
