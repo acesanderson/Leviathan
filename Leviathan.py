@@ -365,7 +365,7 @@ if __name__ == '__main__':
 		if args.chain_of_density:
 			cod_summary = chain_of_density_summary(last_message)
 			if args.raw:
-				console.print(cod_summary)
+				print(cod_summary)
 				sys.exit()
 			else:
 				print_markdown(cod_summary)
@@ -373,18 +373,18 @@ if __name__ == '__main__':
 		if args.chain_of_convergence:
 			coc_summary = chain_of_convergence_summary(last_message, args.chain_of_convergence)
 			if args.raw:
-				console.print(coc_summary)
+				print(coc_summary)
 				sys.exit()
 			else:
 				print_markdown(coc_summary)
 				sys.exit()
 		if args.raw:
-			console.print(last_message.content)
+			print(last_message.content)
 		elif args.query:
 			query = args.query
 			response = query_text(last_message.content, query)
 			if args.raw:
-				console.print(response)
+				print(response)
 			else:
 				print_markdown(response)
 			sys.exit()
@@ -400,7 +400,7 @@ if __name__ == '__main__':
 		if mode == 'youtube' and args.format:
 			formatted_text = format_transcript(text)
 			if args.raw:
-				console.print(formatted_text)
+				print(formatted_text)
 			else: 
 				print_markdown(formatted_text)
 			messagestore.add(url, formatted_text)
@@ -411,7 +411,7 @@ if __name__ == '__main__':
 			query = args.query
 			response = query_text(text, query)
 			if args.raw:
-				console.print(response)
+				print(response)
 			else:
 				print_markdown(response)
 			sys.exit()
@@ -420,7 +420,7 @@ if __name__ == '__main__':
 			if args.chain_of_density:
 				cod_summary = chain_of_density_summary(summary)
 				if args.raw:
-					console.print(cod_summary)
+					print(cod_summary)
 					sys.exit()
 				else:
 					print_markdown(cod_summary)
@@ -428,7 +428,7 @@ if __name__ == '__main__':
 			if args.chain_of_convergence:
 				coc_summary = chain_of_convergence_summary(last_message, args.chain_of_convergence)
 				if args.raw:
-					console.print(coc_summary)
+					print(coc_summary)
 					sys.exit()
 				else:
 					print_markdown(coc_summary)
