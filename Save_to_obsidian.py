@@ -85,5 +85,5 @@ if __name__ == "__main__":
 	title = args.title if args.title else ""
 	folder = args.folder if args.folder else "extracted_articles"
 	# Save to Obsidian
-	filename = save_to_obsidian(text)
+	filename = save_to_obsidian(text, title=title, folder=folder)
 	print(f"Text saved to {filename}.")
