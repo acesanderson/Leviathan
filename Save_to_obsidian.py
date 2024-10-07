@@ -23,7 +23,11 @@ def obsidianize_title(title: str) -> str:
 	]
 	for old, new in replacements:
 		title = title.replace(old, new)
-	return title.strip()  # Remove leading/trailing whitespace
+	title = title.strip()
+	if title.startswith('Title-'):
+		title = title[6:]
+	title = title.strip()
+	return title  # Remove leading/trailing whitespace
 
 def generate_title(text: str) -> str:
 	"""

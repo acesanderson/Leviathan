@@ -20,7 +20,7 @@ with console.status("[bold green]Loading...", spinner="dots"):
 
 # Constants
 dir_path = os.path.dirname(os.path.realpath(__file__))
-tutorial_store_file = os.path.join(dir_path, 'tutorial_store.pkl')
+tutorial_store_file = os.path.join(dir_path, '.tutorial_store.pkl')
 obsidian_path = os.environ.get('OBSIDIAN_PATH')
 preferred_folder = "Tutorials"
 
@@ -224,6 +224,8 @@ def load_tutorial_store() -> list[str]:
 	"""
 	Load the message store from a pickle file.
 	"""
+	if not os.path.exists(tutorial_store_file):
+		initialize_tutorial_store()
 	with open(tutorial_store_file, 'rb') as f:
 		tutorial_store = pickle.load(f)
 	return tutorial_store
