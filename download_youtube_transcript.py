@@ -23,6 +23,9 @@ def Validate_Video_ID(input):
         return input
     elif re.match(r'^https?:\/\/(www\.)?youtube\.com\/.*[?&]v=([a-zA-Z0-9_-]{11})', input):
         return re.match(r'^https?:\/\/(www\.)?youtube\.com\/.*[?&]v=([a-zA-Z0-9_-]{11})', input).group(2)
+    # also match for urls that have "live" instead of the standard "watch" https://www.youtube.com/live/OOdtmCMSOo4
+    elif re.match(r'^https?:\/\/(www\.)?youtube\.com\/live\/([a-zA-Z0-9_-]{11})', input):
+        return re.match(r'^https?:\/\/(www\.)?youtube\.com\/live\/([a-zA-Z0-9_-]{11})', input).group(2)
     else:
         return ValueError("Invalid YouTube URL or Video ID")
 
