@@ -1,0 +1,6 @@
+setup.py
+Leviathan.egg-info/PKG-INFO
+Leviathan.egg-info/SOURCES.txt
+Leviathan.egg-info/dependency_links.txt
+Leviathan.egg-info/top_level.txt
+tests/test_text_summarization.py
