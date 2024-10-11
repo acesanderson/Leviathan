@@ -4,6 +4,7 @@ This implements Chain of Density (COD) classes summarizing texts.
 
 from pydantic import BaseModel
 from Chain import Chain, Model, Prompt, Parser 	# type: ignore
+import sys # for stdin
 
 # Our config
 chain_of_density_summary_length_in_words = 250
@@ -118,7 +119,13 @@ def chain_of_convergence(text: str, number_of_summaries: int = 3) -> str:
 	return response.content
 
 if __name__ == "__main__":
-	text = get_sample_text()
+	# Capture stdin if it's being piped into script
+	if not sys.stdin.isatty():
+		text = sys.stdin.read()
+		# We add this as context to the query
+		text = f"\n<context>\n{text}</context>"
+	else:
+		text = get_sample_text()
 	# summary = chain_of_density(text)
 	summary = chain_of_convergence(text, number_of_summaries=10)
 	print(summary)
