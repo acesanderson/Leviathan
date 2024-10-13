@@ -48,6 +48,8 @@ The following is set of summaries:
 {% endfor %}
 
 Take these and distill them into one final, consolidated summary, of at least {{final_summary_length}} words.
+
+Your summary should contain the key points and any controversies identified in the summaries, making sure to cover all critical information concisely.
 """.strip()
 
 # Our functions

@@ -41,6 +41,7 @@ A Missing Entity is:
 - Anywhere: located anywhere in the Article.
 
 Guidelines:
+- your approach to content should be: address the key points and any controversies, making sure to cover all critical information concisely.
 - The first summary should be long (~""" + str(chain_of_density_summary_length_in_words) + """  words) yet highly non-specific, 
 containing little information beyond the entities marked as missing. Use overly verbose language and fillers
 (e.g., "this article discusses") to reach ~""" + str(chain_of_density_summary_length_in_words) + """ words.
