@@ -7,7 +7,7 @@ from rich.console import Console
 
 console = Console(width=100)  # for spinner
 
-with console.status("[bold green]Loading...", spinner="dots"):
+with console.status("[green]Loading...", spinner="dots"):
 	from Chain import Chain, Model, Prompt
 	from obsidian import print_markdown
 	from Save_to_obsidian import save_to_obsidian
@@ -366,7 +366,7 @@ if __name__ == "__main__":
 		if args.save:
 			save_to_obsidian(tutorial, folder=preferred_folder)
 		sys.exit(0)
-	with console.status("[bold green]Query...", spinner="dots"):
+	with console.status("[green]Query...", spinner="dots"):
 		tutorial = Tutorialize(topic, subject)
 		print_markdown(tutorial)
 		tutorial_store = load_tutorial_store()
