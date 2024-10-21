@@ -31,7 +31,9 @@ OpenVPN specific concepts: Certificates and keys
 OpenVPN specific concepts: Routing and NAT
 Basic troubleshooting skills: Reading log files
 Basic troubleshooting skills: Using network diagnostic tools (ping, traceroute, netstat, tcpdump)
-""".strip().split('\n')
+""".strip().split(
+	"\n"
+)
 
 intermediate_topics = """
 Docker basics and containerization in Ubuntu
@@ -50,7 +52,9 @@ IPv6 basics and configuration in Ubuntu
 Reverse proxy setup (e.g., Nginx) in Ubuntu
 Useful for routing traffic to different services and adding an extra layer of security.
 Basic scripting for network automation (Bash, Python)
-""".strip().split('\n')
+""".strip().split(
+	"\n"
+)
 
 ubuntu_specific_topics = """
 Network configuration files in Ubuntu: Understanding /etc/network/interfaces, /etc/netplan/, and related files
@@ -68,7 +72,9 @@ Network configuration with sysctl: Tuning network parameters through /etc/sysctl
 DHCP client configuration in Ubuntu: Understanding and configuring dhclient
 Network bonding and bridging in Ubuntu: How to combine multiple network interfaces
 Resolv.conf and systemd-resolved in Ubuntu: Managing DNS resolution in modern Ubuntu systems
-""".strip().split('\n')
+""".strip().split(
+	"\n"
+)
 
 persona = """
 You are an experienced IT instructor with a great deal of experience with linux system administration.
@@ -125,16 +131,18 @@ Someone has come to you with this topic:
 Please generate a tutorial on the topic.
 """.strip()
 
+
 def process_topic(topic: str) -> str:
 	"""
 	Process a topic into a tutorial using the persona template.
 	"""
-	messages = Chain.create_messages(system_prompt = persona)
+	messages = Chain.create_messages(system_prompt=persona)
 	model = Model("claude")
 	prompt = Prompt(tutorial_prompt)
 	chain = Chain(prompt, model)
-	response = chain.run(messages = messages, input_variables = {"topic": topic})
+	response = chain.run(messages=messages, input_variables={"topic": topic})
 	return response.content
+
 
 def main():
 	"""
@@ -144,6 +152,7 @@ def main():
 	tutorial = process_topic(topic)
 	print(tutorial)
 	print("\n\n\n")
+
 
 if __name__ == "__main__":
 	main()

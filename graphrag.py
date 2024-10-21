@@ -40,6 +40,7 @@ After two years at sea, the Crimson Horizon returned to Plymouth, its holds fill
 
 nlp = spacy.load("en_core_web_sm")
 
+
 def generate_knowledge_graph(text: str) -> nx.Graph:
 	"""
 	Generate a knowledge graph from the given text using SpaCy for NLP and NetworkX for graph representation.
@@ -61,13 +62,14 @@ def generate_knowledge_graph(text: str) -> nx.Graph:
 			G.add_edge(token.head.text, token.text, label=token.dep_)
 	return G
 
+
 def graph_to_rdf(G: nx.Graph) -> Graph:
 	"""
 	Convert a NetworkX graph to an RDF graph.
-	
+
 	Args:
 		G (nx.Graph): The input NetworkX graph.
-	
+
 	Returns:
 		rdflib.Graph: The resulting RDF graph.
 	"""
@@ -84,6 +86,7 @@ def graph_to_rdf(G: nx.Graph) -> Graph:
 		v_uri = URIRef(f"http://example.org/{v.replace(' ', '_')}")
 		rdf_graph.add((u_uri, URIRef(f"http://example.org/{data['label']}"), v_uri))
 	return rdf_graph
+
 
 def query_rdf_graph(rdf_graph: Graph, query: str) -> list[Dict[str, Any]]:
 	"""
@@ -102,20 +105,28 @@ def query_rdf_graph(rdf_graph: Graph, query: str) -> list[Dict[str, Any]]:
 
 
 def visualize_graph(g):
-    # Create a layout for the nodes
-    pos = nx.spring_layout(g)
-    # Draw the graph
-    plt.figure(figsize=(12, 8))
-    nx.draw(g, pos, with_labels=True, node_color='lightblue', 
-            node_size=1500, font_size=10, font_weight='bold')
-    # Draw edge labels
-    edge_labels = nx.get_edge_attributes(g, 'label')
-    nx.draw_networkx_edge_labels(g, pos, edge_labels=edge_labels)
-    # Show the plot
-    plt.title("Knowledge Graph Visualization")
-    plt.axis('off')
-    plt.tight_layout()
-    plt.show()
+	# Create a layout for the nodes
+	pos = nx.spring_layout(g)
+	# Draw the graph
+	plt.figure(figsize=(12, 8))
+	nx.draw(
+		g,
+		pos,
+		with_labels=True,
+		node_color="lightblue",
+		node_size=1500,
+		font_size=10,
+		font_weight="bold",
+	)
+	# Draw edge labels
+	edge_labels = nx.get_edge_attributes(g, "label")
+	nx.draw_networkx_edge_labels(g, pos, edge_labels=edge_labels)
+	# Show the plot
+	plt.title("Knowledge Graph Visualization")
+	plt.axis("off")
+	plt.tight_layout()
+	plt.show()
+
 
 # Example usage
 if __name__ == "__main__":
@@ -136,5 +147,3 @@ if __name__ == "__main__":
 	results = query_rdf_graph(rdf_graph, sparql_query)
 	for result in results:
 		print(f"{result['subject']} {result['predicate']} {result['object']}")
-
-

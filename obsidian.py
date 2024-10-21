@@ -22,12 +22,13 @@ This uses gpt-4o by default, so it's not free. Switch to an ollama model if you 
 # -----------------------------------------------------------------
 
 from rich.console import Console
-console = Console(width=100) # for spinner
+
+console = Console(width=100)  # for spinner
 
 with console.status("[bold green]Loading...", spinner="dots"):
-	from download_article import download_article                   # type: ignore
-	from download_youtube_transcript import download_transcript     # type: ignore
-	from Chain import Chain, Model, Prompt, Parser                  # type: ignore
+	from download_article import download_article  # type: ignore
+	from download_youtube_transcript import download_transcript  # type: ignore
+	from Chain import Chain, Model, Prompt, Parser  # type: ignore
 	import sys
 	import os
 	import argparse
@@ -41,7 +42,7 @@ with console.status("[bold green]Loading...", spinner="dots"):
 # -----------------------------------------------------
 
 # get OBSIDIAN_PATH from environment variable
-obsidian_path = os.environ.get('OBSIDIAN_PATH')
+obsidian_path = os.environ.get("OBSIDIAN_PATH")
 # switch this if on different comp
 # example url for testing
 # url = 'https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805'
@@ -54,10 +55,12 @@ class Summary(BaseModel):
 	title: str
 	summary: str
 
+
 # for our YouTube -> Article chain
 class YouTube_Article(BaseModel):
 	title: str
 	article: str
+
 
 # Define our prompts
 # -----------------------------------------------------
@@ -166,19 +169,19 @@ ONLY return the title, no extra text. This will be used to a title a file, and i
 # -----------------------------------------------------
 
 
-def parse_input(input, transcript_cleanup = False) -> Union[str, tuple]:
+def parse_input(input, transcript_cleanup=False) -> Union[str, tuple]:
 	"""
 	This takes user input (i.e. the url) and either downloads the article or the Youtube transcript.
 	If user wants a cleaned up transcript (not s summary at all), set transcript_cleanup to True,
 	and function returns a tuple of title, article.
 	"""
-	if 'youtube' in input:
+	if "youtube" in input:
 		# this is bad code, since we either return a string or a tuple
 		transcript = download_transcript(input)
 		if transcript_cleanup:
 			transcript = clean_up_transcript(transcript)
 		return transcript
-	elif 'http' in input:
+	elif "http" in input:
 		# again, bad code, but we either return a string or a tuple
 		article = download_article(input)
 		if transcript_cleanup:
@@ -186,19 +189,21 @@ def parse_input(input, transcript_cleanup = False) -> Union[str, tuple]:
 			return title, article
 		return article
 	else:
-		raise ValueError('Input must be a YouTube URL or an article URL.')
+		raise ValueError("Input must be a YouTube URL or an article URL.")
+
 
 def clean_up_transcript(transcript: str) -> str:
 	"""
 	Cleans up YouTube transcript. This is not for summarization, but rather to convert this to a readable article and save to Obsidian.
 	"""
 	prompt = Prompt(youtube_article_string)
-	model = Model('claude')
+	model = Model("claude")
 	parser = Parser(YouTube_Article)
 	chain = Chain(prompt, model, parser)
-	response = chain.run(input_variables = {'transcript': transcript}, verbose=False)
+	response = chain.run(input_variables={"transcript": transcript}, verbose=False)
 	title, article = response.content.title, response.content.article
 	return title, article
+
 
 def summarize_text(text: str, custom_prompt: str = None):
 	"""
@@ -206,22 +211,23 @@ def summarize_text(text: str, custom_prompt: str = None):
 	If custom prompt provided, uses a different template.
 	"""
 	# Define our input variables. If default prompt, custom_prompt won't be used.
-	input_variables = {'transcript': text, 'custom_prompt': custom_prompt}
+	input_variables = {"transcript": text, "custom_prompt": custom_prompt}
 	# Assign the right prompt string
 	if custom_prompt:
 		prompt_string = custom_prompt_string
 	else:
 		prompt_string = default_prompt_string
 	# Create our chain
-	model = Model('gpt')
+	model = Model("gpt")
 	prompt = Prompt(prompt_string)
 	parser = Parser(Summary)
 	chain = Chain(prompt, model, parser)
-	response = chain.run(input_variables = input_variables, verbose=False)
+	response = chain.run(input_variables=input_variables, verbose=False)
 	# Extract title and summary from the Summary object we generated.
 	title, summary = response.content.title, response.content.summary
 	summary = summary.strip()
 	return title, summary
+
 
 def import_summary(url: str) -> Tuple[str, str]:
 	"""
@@ -231,6 +237,7 @@ def import_summary(url: str) -> Tuple[str, str]:
 	data = parse_input(url)
 	title, summary = summarize_text(data)
 	return title, summary
+
 
 def print_markdown(markdown_string: str):
 	"""
@@ -242,7 +249,8 @@ def print_markdown(markdown_string: str):
 	md = Markdown(markdown_string)
 	console.print(md)
 
-def main(url: str, custom_prompt = None):
+
+def main(url: str, custom_prompt=None):
 	"""Takes url, summarizes, and saves to Obsidian."""
 	try:
 		data = parse_input(url)
@@ -253,26 +261,47 @@ def main(url: str, custom_prompt = None):
 		title, summary = summarize_text(data, custom_prompt)
 		print_markdown(f"# {title}\n{summary}")
 		# filename = save_to_obsidian(text = summary, title, url)
-		print(f'Saved to Obsidian: {filename}')
+		print(f"Saved to Obsidian: {filename}")
 	else:
-		print('Output is empty.')
+		print("Output is empty.")
+
 
 def save_entire_article(url: str):
 	"""
 	No summarization here; just save the article. Title is just "Saved_Article" + timestamp.
 	"""
 	title = "Saved_Transcript_" + str(datetime.now())
-	summary = parse_input(url, transcript_cleanup = False)
+	summary = parse_input(url, transcript_cleanup=False)
 	save_to_obsidian(title, summary, url)
 
-if __name__ == '__main__':
-	parser = argparse.ArgumentParser(description='Summarize and save to Obsidian.')
-	parser.add_argument('url', type=str, help='URL to summarize.')
+
+if __name__ == "__main__":
+	parser = argparse.ArgumentParser(description="Summarize and save to Obsidian.")
+	parser.add_argument("url", type=str, help="URL to summarize.")
 	# if user puts "--p" or "--path" in command line, take what's after it and assign it to "custom_prompt"
 	# add an argument for the prompt
-	parser.add_argument('-p', '--prompt', nargs="?", type=str, dest='prompt', help='Prompt to use for summarization.')
-	parser.add_argument('-a', '--all', action='store_true', dest='all', help='Save the entire article to Obsidian.')
-	parser.add_argument('-t', '--terminal', action='store_true', dest='terminal', help='Print to terminal instead of saving to Obsidian.')
+	parser.add_argument(
+		"-p",
+		"--prompt",
+		nargs="?",
+		type=str,
+		dest="prompt",
+		help="Prompt to use for summarization.",
+	)
+	parser.add_argument(
+		"-a",
+		"--all",
+		action="store_true",
+		dest="all",
+		help="Save the entire article to Obsidian.",
+	)
+	parser.add_argument(
+		"-t",
+		"--terminal",
+		action="store_true",
+		dest="terminal",
+		help="Print to terminal instead of saving to Obsidian.",
+	)
 	args = parser.parse_args()
 	url = args.url
 	all = args.all
@@ -282,13 +311,13 @@ if __name__ == '__main__':
 	print(f"Custom Prompt: {args.prompt}")
 	# if args, run main()
 	if all and terminal:
-		summary = parse_input(url, transcript_cleanup = False)
+		summary = parse_input(url, transcript_cleanup=False)
 		print(summary)
 	elif all and not terminal:
 		save_entire_article(url)
 	elif custom_prompt:
 		with console.status("[bold green]Query...", spinner="dots"):
-			main(url, custom_prompt = custom_prompt)
+			main(url, custom_prompt=custom_prompt)
 	else:
 		with console.status("[bold green]Query...", spinner="dots"):
-			main(url, custom_prompt = None)
+			main(url, custom_prompt=None)

@@ -4,10 +4,12 @@ import pandas as pd
 
 # Pydantic classes
 class Flashcard(BaseModel):
-    front: str
-    back: str
+	front: str
+	back: str
 
-bash_terms = """
+
+bash_terms = (
+	"""
 enable alias
 enable bg
 enable bind
@@ -66,7 +68,10 @@ enable umask
 enable unalias
 enable unset
 enable wait
-""".strip().replace("enable ","").split("\n")
+""".strip()
+	.replace("enable ", "")
+	.split("\n")
+)
 
 persona = """
 You are a talent instructional designer who is talented as making flashcards from a knowledge base.
@@ -195,41 +200,41 @@ Please return the front and back of the flashcard for each term in the list belo
 
 # Create our chains
 def flashcarderize(term: str) -> Flashcard:
-    """
-    Takes a term, runs it through our chain and returns a Flashcard object.
-    """
-    # Set system prompt
-    messages = Chain.create_messages(system_prompt = persona)
-    # Set prompt
-    prompt = Prompt(flashcard_prompt)
-    # set model
-    model = Model('claude')
-    # create parser
-    parser = Parser(Flashcard)
-    # Define chain
-    chain = Chain(prompt, model, parser)
-    # Run chain
-    response = chain.run(input_variables = {'bash_term': term}, messages = messages)
-    return response.content
+	"""
+	Takes a term, runs it through our chain and returns a Flashcard object.
+	"""
+	# Set system prompt
+	messages = Chain.create_messages(system_prompt=persona)
+	# Set prompt
+	prompt = Prompt(flashcard_prompt)
+	# set model
+	model = Model("claude")
+	# create parser
+	parser = Parser(Flashcard)
+	# Define chain
+	chain = Chain(prompt, model, parser)
+	# Run chain
+	response = chain.run(input_variables={"bash_term": term}, messages=messages)
+	return response.content
+
 
 # if __name__ == "__main__":
 flashcards = []
 for index, term in enumerate(bash_terms):
-    try:
-        print(f"Flashcarding number {index+1} of {len(bash_terms)}: {term}")
-        flashcard = flashcarderize(term)
-        flashcards.append(flashcard)
-    except:
-        print("Failed to flashcard ", term)
+	try:
+		print(f"Flashcarding number {index+1} of {len(bash_terms)}: {term}")
+		flashcard = flashcarderize(term)
+		flashcards.append(flashcard)
+	except:
+		print("Failed to flashcard ", term)
 
 # tuple it up
 flashcard_tuples = []
 for flashcard in flashcards:
-    flashcard_tuples.append((flashcard.front, flashcard.back))
+	flashcard_tuples.append((flashcard.front, flashcard.back))
 
 # Create a dataframe
-df = pd.DataFrame(flashcard_tuples, columns = ['front', 'back'])
+df = pd.DataFrame(flashcard_tuples, columns=["front", "back"])
 
 # save to csv
-df.to_csv('~/Brian_Code/Leviathan/bash_flashcards.csv', index = False)
-
+df.to_csv("~/Brian_Code/Leviathan/bash_flashcards.csv", index=False)

@@ -3,7 +3,8 @@ Abstracting this function out as I use it in multiple scripts.
 """
 
 from rich.console import Console
-console = Console(width=100) # for spinner
+
+console = Console(width=100)  # for spinner
 
 # our imports
 # -----------------------------------------------------------------
@@ -14,28 +15,53 @@ with console.status("[bold green]Loading...", spinner="dots"):
 	import sys
 	import argparse
 
-obsidian_path = os.environ.get('OBSIDIAN_PATH')
+obsidian_path = os.environ.get("OBSIDIAN_PATH")
 # switch this if on different comp
+
 
 def obsidianize_title(title: str) -> str:
 	"""Clean up title for Obsidian filename rules."""
 	replacements = [
-		('/', '-'), (':', '-'), ('?', ''), ('=', ''),
-		('&', '-'), ('.', '-'), ("'", ''), ('"', ''),
-		('(', ''), (')', ''), (',', ''), ('*', ''),
-		('<', ''), ('>', ''), ('|', ''), ('\\', '-'),
-		('[', ''), (']', ''), ('{', ''), ('}', ''),
-		('+', '-'), ('!', ''), ('@', '-'), ('#', ''),
-		('$', ''), ('%', ''), ('^', ''), ('`', ''),
-		('~', ''), (';', ''), ('  ', ' ')  # Replace double spaces with single
+		("/", "-"),
+		(":", "-"),
+		("?", ""),
+		("=", ""),
+		("&", "-"),
+		(".", "-"),
+		("'", ""),
+		('"', ""),
+		("(", ""),
+		(")", ""),
+		(",", ""),
+		("*", ""),
+		("<", ""),
+		(">", ""),
+		("|", ""),
+		("\\", "-"),
+		("[", ""),
+		("]", ""),
+		("{", ""),
+		("}", ""),
+		("+", "-"),
+		("!", ""),
+		("@", "-"),
+		("#", ""),
+		("$", ""),
+		("%", ""),
+		("^", ""),
+		("`", ""),
+		("~", ""),
+		(";", ""),
+		("  ", " "),  # Replace double spaces with single
 	]
 	for old, new in replacements:
 		title = title.replace(old, new)
 	title = title.strip()
-	if title.startswith('Title-'):
+	if title.startswith("Title-"):
 		title = title[6:]
 	title = title.strip()
 	return title  # Remove leading/trailing whitespace
+
 
 def generate_title(text: str) -> str:
 	"""
@@ -49,21 +75,25 @@ def generate_title(text: str) -> str:
 	response = chain.run(text)
 	return response.content
 
+
 def get_title(text: str) -> str:
 	"""
 	This function will generate a title for a given text.
 	Either it captures an l1 header or it calls generate_title.
 	"""
-	head = text.split('\n')[:5]
+	head = text.split("\n")[:5]
 	for h in head:
-		if h.startswith('# '):
-			text = text.replace(h, '')
+		if h.startswith("# "):
+			text = text.replace(h, "")
 			text = text.strip()
 			return text, h[2:]
 	else:
 		return text, generate_title(text)
 
-def save_to_obsidian(text: str, title: str = "", url: str = "", folder = "extracted_articles") -> str:
+
+def save_to_obsidian(
+	text: str, title: str = "", url: str = "", folder="extracted_articles"
+) -> str:
 	"""
 	Takes a title, text, and optional URL and saves it to a file in the Obsidian vault.
 	"""
@@ -71,20 +101,26 @@ def save_to_obsidian(text: str, title: str = "", url: str = "", folder = "extrac
 		text, title = get_title(text)
 	title = obsidianize_title(title)
 	path = obsidian_path + folder
-	filename = f'{path}/{title}.md'
+	filename = f"{path}/{title}.md"
 	# If there is a URL, add it to the top of the file
 	if url:
-		text = f'{url}\n\n{text}'
-	with open(filename, 'w') as f:
+		text = f"{url}\n\n{text}"
+	with open(filename, "w") as f:
 		f.write(text)
 	return filename
+
 
 if __name__ == "__main__":
 	# Capture arguments
 	parser = argparse.ArgumentParser(description="Save text to Obsidian.")
 	parser.add_argument("text", type=str, nargs="?", help="Text to be saved.")
 	parser.add_argument("-t", "--title", type=str, help="Title to be used.")
-	parser.add_argument("-f", "--folder", type=str, help="Folder to save to (default is extracted_articles).")
+	parser.add_argument(
+		"-f",
+		"--folder",
+		type=str,
+		help="Folder to save to (default is extracted_articles).",
+	)
 	parser.add_argument("-p", "--print", action="store_true", help="Print the output.")
 	args = parser.parse_args()
 	if args.text:
@@ -98,7 +134,9 @@ if __name__ == "__main__":
 	title = args.title if args.title else ""
 	folder = args.folder if args.folder else "extracted_articles"
 	# Save to Obsidian
-	with console.status(f"[bold green]Saving to Obsidian in folder {folder}...", spinner="dots"):
+	with console.status(
+		f"[bold green]Saving to Obsidian in folder {folder}...", spinner="dots"
+	):
 		filename = save_to_obsidian(text, title=title, folder=folder)
 	print(f"Text saved to {filename}.")
 	if args.print:

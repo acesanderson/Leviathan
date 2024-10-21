@@ -17,15 +17,17 @@ Cross-lingual Embeddings: Models capable of generating comparable embeddings acr
 Data Augmentation for NLP: Techniques to artificially increase the size and diversity of training data, improving model robustness and performance.
 Evaluation Metrics for Embeddings: Methods to assess the quality of embeddings, such as intrinsic evaluation (e.g., analogy tasks) and extrinsic evaluation (performance on downstream tasks).
 Ethical Considerations in NLP: Understanding potential biases in pre-trained models and embeddings, and strategies to mitigate them for fair and responsible AI applications.
-""".strip().split('\n')
+""".strip().split(
+	"\n"
+)
 
-persona = "natural language processing, generative AI, sentencetransformers library in python"
+persona = (
+	"natural language processing, generative AI, sentencetransformers library in python"
+)
 
 chunked_topics = [nlp_topics[:5], nlp_topics[5:10], nlp_topics[10:15]]
 
 tutorials = []
 for topic_chunk in chunked_topics:
-    tutorials.append(Tutorialize_Async(topic_chunk, persona, save_to_file = True))
-    sleep(5)
-
-
+	tutorials.append(Tutorialize_Async(topic_chunk, persona, save_to_file=True))
+	sleep(5)
