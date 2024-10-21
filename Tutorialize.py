@@ -8,7 +8,7 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-	from Chain import Chain, Model, Prompt
+	from Chain import Chain, Model, Prompt, create_messages
 	from obsidian import print_markdown
 	from Save_to_obsidian import save_to_obsidian
 	import sys
@@ -277,7 +277,7 @@ def Tutorialize_Sync(topic: str, persona: str, save_to_file=True) -> str:
 	"""
 	Process a topic into a tutorial using the persona template.
 	"""
-	messages = Chain.create_messages(system_prompt=persona)
+	messages = create_messages(system_prompt=persona)
 	model = Model(preferred_model)
 	prompt = Prompt(tutorial_prompt)
 	chain = Chain(prompt, model)
@@ -291,7 +291,7 @@ def Tutorialize_Async(topics: list[str], persona: str, save_to_file=True) -> lis
 	Generate tutorials for a list of topics asynchronously.
 	NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
 	"""
-	messages = Chain.create_messages(system_prompt=persona)
+	messages = create_messages(system_prompt=persona)
 	model = Model(preferred_model)
 	prompt = Prompt(tutorial_prompt)
 	# construct list of prompts
