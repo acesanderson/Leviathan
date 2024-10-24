@@ -24,19 +24,19 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-	from download_article import download_article  # type: ignore
-	from download_youtube_transcript import download_transcript  # type: ignore
-	from Chain import Chain, Model, Prompt, Parser  # type: ignore
-	from Save_to_obsidian import save_to_obsidian  # type: ignore
-	from message_store import MessageStore  # type: ignore
-	from CoD import chain_of_density, chain_of_convergence  # type: ignore
-	import os
-	import argparse
-	import sys
-	import re
-	from rich.markdown import Markdown
+    from download_article import download_article  # type: ignore
+    from download_youtube_transcript import download_transcript  # type: ignore
+    from Chain import Chain, Model, Prompt, Parser  # type: ignore
+    from Save_to_obsidian import save_to_obsidian  # type: ignore
+    from message_store import MessageStore  # type: ignore
+    from CoD import chain_of_density, chain_of_convergence  # type: ignore
+    import os
+    import argparse
+    import sys
+    import re
+    from rich.markdown import Markdown
 
-	# import tiktoken
+    # import tiktoken
 
 # Define our variables
 # -----------------------------------------------------
@@ -199,295 +199,295 @@ Do NOT add any additional content to the transcript or provide any other message
 
 
 def categorize_url(url: str) -> str:
-	"""
-	Determine the type of URL.
-	"""
-	if "arxiv" in url:
-		return "arxiv"
-	elif "youtube" in url:
-		return "youtube"
-	elif "http" in url:
-		return "article"
-	else:
-		raise ValueError("Input must be a YouTube URL or an article URL.")
+    """
+    Determine the type of URL.
+    """
+    if "arxiv" in url:
+        return "arxiv"
+    elif "youtube" in url:
+        return "youtube"
+    elif "http" in url:
+        return "article"
+    else:
+        raise ValueError("Input must be a YouTube URL or an article URL.")
 
 
 def retrieve_text(url: str, mode: str) -> str:
-	"""
-	This function takes a URL and returns the text.
-	"""
-	match mode:
-		case "youtube":
-			with console.status(
-				"[green]Downloading YouTube transcript...", spinner="dots"
-			):
-				return download_transcript(url)
-		case "article":
-			with console.status("[green]Downloading article...", spinner="dots"):
-				return download_article(url)
-		case "arxiv":
-			with console.status("[green]Downloading Arxiv article...", spinner="dots"):
-				return download_arxiv(url)
-		case _:
-			raise ValueError("Not a recognized mode.")
+    """
+    This function takes a URL and returns the text.
+    """
+    match mode:
+        case "youtube":
+            with console.status(
+                "[green]Downloading YouTube transcript...", spinner="dots"
+            ):
+                return download_transcript(url)
+        case "article":
+            with console.status("[green]Downloading article...", spinner="dots"):
+                return download_article(url)
+        case "arxiv":
+            with console.status("[green]Downloading Arxiv article...", spinner="dots"):
+                return download_arxiv(url)
+        case _:
+            raise ValueError("Not a recognized mode.")
 
 
 def download_arxiv(url: str) -> str:
-	"""
-	This function takes an arXiv URL and returns the text.
-	Might need to download PDF, convert to text, and then trim off References.
-	"""
-	print("Still need to implement arxiv function.")
+    """
+    This function takes an arXiv URL and returns the text.
+    Might need to download PDF, convert to text, and then trim off References.
+    """
+    print("Still need to implement arxiv function.")
 
 
 def summarize(text: str, mode: str) -> str:
-	"""
-	This takes user input (i.e. the url) and either downloads the article or the Youtube transcript.
-	"""
-	match mode:
-		case "youtube":
-			return summarize_youtube_transcript(text)
-		case "article":
-			return summarize_article(text)
-		case "arxiv":
-			return summarize_article(text)
-		case _:
-			raise ValueError("Not a recognized mode.")
+    """
+    This takes user input (i.e. the url) and either downloads the article or the Youtube transcript.
+    """
+    match mode:
+        case "youtube":
+            return summarize_youtube_transcript(text)
+        case "article":
+            return summarize_article(text)
+        case "arxiv":
+            return summarize_article(text)
+        case _:
+            raise ValueError("Not a recognized mode.")
 
 
 def query_text(text: str, query: str) -> str:
-	"""
-	This function takes a text and a query and returns the response.
-	"""
-	with console.status("[green]Query...", spinner="dots"):
-		model = Model("claude-3-5-sonnet-20240620")
-		prompt_string = "Look at this text and answer the following question: <text>{{text}}</text> <query>{{query}}</query>"
-		prompt = Prompt(prompt_string)
-		chain = Chain(prompt, model)
-		response = chain.run(
-			input_variables={"text": text, "query": query}, verbose=False
-		)
-		messagestore.add("assistant", response.content)
-	return response.content
+    """
+    This function takes a text and a query and returns the response.
+    """
+    with console.status("[green]Query...", spinner="dots"):
+        model = Model("claude")
+        prompt_string = "Look at this text and answer the following question: <text>{{text}}</text> <query>{{query}}</query>"
+        prompt = Prompt(prompt_string)
+        chain = Chain(prompt, model)
+        response = chain.run(
+            input_variables={"text": text, "query": query}, verbose=False
+        )
+        messagestore.add("assistant", response.content)
+    return response.content
 
 
 def extract_summary_from_string(text: str) -> str:
-	"""
-	Our summarization prompts have the LLM put the summary in xml tags.
-	We want to grab text within <summary> xml tags.
-	"""
-	pattern = r"<summary>(.*?)</summary>"
-	match = re.search(pattern, text, re.DOTALL)
-	if match:
-		return match.group(1).strip()
-	return None
+    """
+    Our summarization prompts have the LLM put the summary in xml tags.
+    We want to grab text within <summary> xml tags.
+    """
+    pattern = r"<summary>(.*?)</summary>"
+    match = re.search(pattern, text, re.DOTALL)
+    if match:
+        return match.group(1).strip()
+    return None
 
 
 def summarize_youtube_transcript(transcript: str) -> str:
-	"""
-	This function takes a YouTube transcript and summarizes it.
-	"""
-	with console.status("[green]Summarizing YouTube transcript...", spinner="dots"):
-		model = Model("claude-3-5-sonnet-20240620")
-		prompt = Prompt(YouTube_prompt_string)
-		chain = Chain(prompt, model)
-		response = chain.run(input_variables={"transcript": transcript}, verbose=False)
-	summary = extract_summary_from_string(response.content)
-	return summary
+    """
+    This function takes a YouTube transcript and summarizes it.
+    """
+    with console.status("[green]Summarizing YouTube transcript...", spinner="dots"):
+        model = Model("claude")
+        prompt = Prompt(YouTube_prompt_string)
+        chain = Chain(prompt, model)
+        response = chain.run(input_variables={"transcript": transcript}, verbose=False)
+    summary = extract_summary_from_string(response.content)
+    return summary
 
 
 def summarize_article(article: str) -> str:
-	"""
-	This function takes an article and summarizes it.
-	"""
-	with console.status("[green]Summarizing article...", spinner="dots"):
-		model = Model("claude-3-5-sonnet-20240620")
-		prompt = Prompt(Article_prompt_string)
-		chain = Chain(prompt, model)
-		response = chain.run(input_variables={"article": article}, verbose=False)
-	summary = extract_summary_from_string(response.content)
-	return summary
+    """
+    This function takes an article and summarizes it.
+    """
+    with console.status("[green]Summarizing article...", spinner="dots"):
+        model = Model("claude")
+        prompt = Prompt(Article_prompt_string)
+        chain = Chain(prompt, model)
+        response = chain.run(input_variables={"article": article}, verbose=False)
+    summary = extract_summary_from_string(response.content)
+    return summary
 
 
 def format_transcript(transcript: str) -> str:
-	"""
-	This function takes a raw transcript and formats it.
-	"""
-	with console.status("[green]Query...", spinner="dots"):
-		model = Model("claude-3-5-sonnet-20240620")
-		prompt = Prompt(Format_transcript_prompt_string)
-		chain = Chain(prompt, model)
-		response = chain.run(input_variables={"transcript": transcript}, verbose=False)
-		return response.content
+    """
+    This function takes a raw transcript and formats it.
+    """
+    with console.status("[green]Query...", spinner="dots"):
+        model = Model("claude")
+        prompt = Prompt(Format_transcript_prompt_string)
+        chain = Chain(prompt, model)
+        response = chain.run(input_variables={"transcript": transcript}, verbose=False)
+        return response.content
 
 
 def chain_of_density_summary(text: str) -> str:
-	"""
-	This function takes a text and returns a Chain of Density summary.
-	"""
-	with console.status("[green]Generating chain of density (CoD)...", spinner="dots"):
-		cod_summary = chain_of_density(text)
-	return cod_summary
+    """
+    This function takes a text and returns a Chain of Density summary.
+    """
+    with console.status("[green]Generating chain of density (CoD)...", spinner="dots"):
+        cod_summary = chain_of_density(text)
+    return cod_summary
 
 
 def chain_of_convergence_summary(text: str, n: int = 3) -> str:
-	"""
-	This function takes a text and returns a Chain of Convergence summary.
-	"""
-	with console.status(
-		f"[green]Generating chain of convergence (CoC) with {n} summaries...",
-		spinner="dots",
-	):
-		cod_summary = chain_of_convergence(text, n)
-	return cod_summary
+    """
+    This function takes a text and returns a Chain of Convergence summary.
+    """
+    with console.status(
+        f"[green]Generating chain of convergence (CoC) with {n} summaries...",
+        spinner="dots",
+    ):
+        cod_summary = chain_of_convergence(text, n)
+    return cod_summary
 
 
 def get_token_count(text: str) -> int:
-	"""
-	This function takes a text and returns the token count.
-	"""
-	pass
+    """
+    This function takes a text and returns the token count.
+    """
+    pass
 
 
 def print_markdown(markdown_string: str):
-	"""
-	Prints formatted markdown to the console.
-	"""
-	# Create a Markdown object
-	border = "-" * 80
-	markdown_string = f"{border}\n{markdown_string}\n\n{border}"
-	md = Markdown(markdown_string)
-	console.print(md)
+    """
+    Prints formatted markdown to the console.
+    """
+    # Create a Markdown object
+    border = "-" * 80
+    markdown_string = f"{border}\n{markdown_string}\n\n{border}"
+    md = Markdown(markdown_string)
+    console.print(md)
 
 
 if __name__ == "__main__":
-	# Load our message store
-	dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
-	file_path = dir_path + messagestore_path
-	messagestore = MessageStore(console=console, file_path=file_path)
-	# Parse arguments
-	parser = argparse.ArgumentParser(description="Summarize a URL.")
-	parser.add_argument("url", type=str, nargs="?", help="URL to grab.")
-	parser.add_argument(
-		"-s", "--summarize", action="store_true", help="Summarize the content."
-	)
-	parser.add_argument(
-		"-t", "--tokencount", action="store_true", help="Get token count for content."
-	)
-	parser.add_argument(
-		"-save", "--save", action="store_true", help="Save to Obsidian."
-	)
-	parser.add_argument(
-		"-cod",
-		"--chain_of_density",
-		action="store_true",
-		help="Create a Chain of Density microsummary.",
-	)
-	parser.add_argument("-l", "--last", action="store_true", help="View last message.")
-	parser.add_argument("-r", "--raw", action="store_true", help="View raw.")
-	parser.add_argument(
-		"-f", "--format", action="store_true", help="Format transcript."
-	)
-	parser.add_argument(
-		"-c", "--clear", action="store_true", help="Clear message store."
-	)
-	parser.add_argument("-q", "--query", type=str, help="Query the text.")
-	parser.add_argument(
-		"-coc",
-		"--chain_of_convergence",
-		type=int,
-		help="Run chain of convergence with n iterations.",
-	)
-	args = parser.parse_args()
-	# Route arguments
-	if args.clear:
-		messagestore.clear()
-		sys.exit()
-	if args.last:
-		last_message = messagestore.last()
-		if args.chain_of_density:
-			cod_summary = chain_of_density_summary(last_message)
-			if args.raw:
-				print(cod_summary)
-				sys.exit()
-			else:
-				print_markdown(cod_summary)
-				sys.exit()
-		if args.chain_of_convergence:
-			coc_summary = chain_of_convergence_summary(
-				last_message, args.chain_of_convergence
-			)
-			if args.raw:
-				print(coc_summary)
-				sys.exit()
-			else:
-				print_markdown(coc_summary)
-				sys.exit()
-		if args.raw:
-			print(last_message.content)
-		elif args.query:
-			query = args.query
-			response = query_text(last_message.content, query)
-			if args.raw:
-				print(response)
-			else:
-				print_markdown(response)
-			sys.exit()
-		else:
-			print_markdown(last_message.content)
-		if args.save:
-			save_to_obsidian(text=last_message.content, folder=preferred_folder)
-		sys.exit()
-	if args.url:
-		url = args.url
-		mode = categorize_url(url)
-		text = retrieve_text(url, mode)
-		if mode == "youtube" and args.format:
-			formatted_text = format_transcript(text)
-			if args.raw:
-				print(formatted_text)
-			else:
-				print_markdown(formatted_text)
-			messagestore.add(url, formatted_text)
-			if args.save:
-				save_to_obsidian(text=formatted_text, url=url, folder=preferred_folder)
-			sys.exit()
-		if args.query:
-			query = args.query
-			response = query_text(text, query)
-			if args.raw:
-				print(response)
-			else:
-				print_markdown(response)
-			sys.exit()
-		if args.summarize:
-			summary = summarize(text, mode)
-			if args.chain_of_density:
-				cod_summary = chain_of_density_summary(summary)
-				if args.raw:
-					print(cod_summary)
-					sys.exit()
-				else:
-					print_markdown(cod_summary)
-					sys.exit()
-			if args.chain_of_convergence:
-				coc_summary = chain_of_convergence_summary(
-					last_message, args.chain_of_convergence
-				)
-				if args.raw:
-					print(coc_summary)
-					sys.exit()
-				else:
-					print_markdown(coc_summary)
-					sys.exit()
-			if args.raw:
-				console.print(summary)
-				sys.exit()
-			print_markdown(summary)
-			messagestore.add("assistant", summary)
-			if args.save:
-				save_to_obsidian(text=summary, url=url, folder=preferred_folder)
-			sys.exit()
-		else:
-			console.print(text)
-			messagestore.add(url, text)
+    # Load our message store
+    dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
+    file_path = dir_path + messagestore_path
+    messagestore = MessageStore(console=console, file_path=file_path)
+    # Parse arguments
+    parser = argparse.ArgumentParser(description="Summarize a URL.")
+    parser.add_argument("url", type=str, nargs="?", help="URL to grab.")
+    parser.add_argument(
+        "-s", "--summarize", action="store_true", help="Summarize the content."
+    )
+    parser.add_argument(
+        "-t", "--tokencount", action="store_true", help="Get token count for content."
+    )
+    parser.add_argument(
+        "-save", "--save", action="store_true", help="Save to Obsidian."
+    )
+    parser.add_argument(
+        "-cod",
+        "--chain_of_density",
+        action="store_true",
+        help="Create a Chain of Density microsummary.",
+    )
+    parser.add_argument("-l", "--last", action="store_true", help="View last message.")
+    parser.add_argument("-r", "--raw", action="store_true", help="View raw.")
+    parser.add_argument(
+        "-f", "--format", action="store_true", help="Format transcript."
+    )
+    parser.add_argument(
+        "-c", "--clear", action="store_true", help="Clear message store."
+    )
+    parser.add_argument("-q", "--query", type=str, help="Query the text.")
+    parser.add_argument(
+        "-coc",
+        "--chain_of_convergence",
+        type=int,
+        help="Run chain of convergence with n iterations.",
+    )
+    args = parser.parse_args()
+    # Route arguments
+    if args.clear:
+        messagestore.clear()
+        sys.exit()
+    if args.last:
+        last_message = messagestore.last()
+        if args.chain_of_density:
+            cod_summary = chain_of_density_summary(last_message)
+            if args.raw:
+                print(cod_summary)
+                sys.exit()
+            else:
+                print_markdown(cod_summary)
+                sys.exit()
+        if args.chain_of_convergence:
+            coc_summary = chain_of_convergence_summary(
+                last_message, args.chain_of_convergence
+            )
+            if args.raw:
+                print(coc_summary)
+                sys.exit()
+            else:
+                print_markdown(coc_summary)
+                sys.exit()
+        if args.raw:
+            print(last_message.content)
+        elif args.query:
+            query = args.query
+            response = query_text(last_message.content, query)
+            if args.raw:
+                print(response)
+            else:
+                print_markdown(response)
+            sys.exit()
+        else:
+            print_markdown(last_message.content)
+        if args.save:
+            save_to_obsidian(text=last_message.content, folder=preferred_folder)
+        sys.exit()
+    if args.url:
+        url = args.url
+        mode = categorize_url(url)
+        text = retrieve_text(url, mode)
+        if mode == "youtube" and args.format:
+            formatted_text = format_transcript(text)
+            if args.raw:
+                print(formatted_text)
+            else:
+                print_markdown(formatted_text)
+            messagestore.add(url, formatted_text)
+            if args.save:
+                save_to_obsidian(text=formatted_text, url=url, folder=preferred_folder)
+            sys.exit()
+        if args.query:
+            query = args.query
+            response = query_text(text, query)
+            if args.raw:
+                print(response)
+            else:
+                print_markdown(response)
+            sys.exit()
+        if args.summarize:
+            summary = summarize(text, mode)
+            if args.chain_of_density:
+                cod_summary = chain_of_density_summary(summary)
+                if args.raw:
+                    print(cod_summary)
+                    sys.exit()
+                else:
+                    print_markdown(cod_summary)
+                    sys.exit()
+            if args.chain_of_convergence:
+                coc_summary = chain_of_convergence_summary(
+                    last_message, args.chain_of_convergence
+                )
+                if args.raw:
+                    print(coc_summary)
+                    sys.exit()
+                else:
+                    print_markdown(coc_summary)
+                    sys.exit()
+            if args.raw:
+                console.print(summary)
+                sys.exit()
+            print_markdown(summary)
+            messagestore.add("assistant", summary)
+            if args.save:
+                save_to_obsidian(text=summary, url=url, folder=preferred_folder)
+            sys.exit()
+        else:
+            console.print(text)
+            messagestore.add(url, text)
