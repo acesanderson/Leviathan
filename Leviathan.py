@@ -3,7 +3,6 @@ This is replacing Obsidian script, as Save to Obsidian is now a plugin.
 This scripts allows a user to bring in content from YouTube, a URL, or a file (say, an epub).
 
 Various use cases:
-leviathan "youtubeurl" -save -f 
 leviathan "youtubeurl" -a | twig "Look at this transcript." -a "What would this look like as a curriculum?" > output.txt
 -cod for chain density AFTER summarization
 
@@ -26,9 +25,7 @@ console = Console(width=100)  # for spinner
 with console.status("[green]Loading...", spinner="dots"):
     from download_article import download_article  # type: ignore
     from download_youtube_transcript import download_transcript  # type: ignore
-    from Chain import Chain, Model, Prompt, Parser  # type: ignore
-    from Save_to_obsidian import save_to_obsidian  # type: ignore
-    from message_store import MessageStore  # type: ignore
+    from Chain import Chain, Model, Prompt, Parser, MessageStore  # type: ignore
     from CoD import chain_of_density, chain_of_convergence  # type: ignore
     import os
     import argparse
@@ -41,7 +38,6 @@ with console.status("[green]Loading...", spinner="dots"):
 # Define our variables
 # -----------------------------------------------------
 
-obsidian_path = os.environ.get("OBSIDIAN_PATH")
 preferred_folder = "Leviathan"
 messagestore_path = ".leviathan_message_store.pickle"
 example_article = "https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805"
@@ -280,7 +276,9 @@ def extract_summary_from_string(text: str) -> str:
     match = re.search(pattern, text, re.DOTALL)
     if match:
         return match.group(1).strip()
-    return None
+    else:
+        console.print("LLM output didn't have <summarize> tags.")
+        return None
 
 
 def summarize_youtube_transcript(transcript: str) -> str:
@@ -315,7 +313,7 @@ def format_transcript(transcript: str) -> str:
     """
     with console.status("[green]Query...", spinner="dots"):
         model = Model("claude")
-        prompt = Prompt(Format_transcript_prompt_string)
+        prmmpt = Prompt(Format_transcript_prompt_string)
         chain = Chain(prompt, model)
         response = chain.run(input_variables={"transcript": transcript}, verbose=False)
         return response.content
@@ -364,7 +362,7 @@ if __name__ == "__main__":
     # Load our message store
     dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
     file_path = dir_path + messagestore_path
-    messagestore = MessageStore(console=console, file_path=file_path)
+    messagestore = MessageStore(console=console, history_file=file_path)
     # Parse arguments
     parser = argparse.ArgumentParser(description="Summarize a URL.")
     parser.add_argument("url", type=str, nargs="?", help="URL to grab.")
@@ -373,9 +371,6 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "-t", "--tokencount", action="store_true", help="Get token count for content."
-    )
-    parser.add_argument(
-        "-save", "--save", action="store_true", help="Save to Obsidian."
     )
     parser.add_argument(
         "-cod",
@@ -435,8 +430,6 @@ if __name__ == "__main__":
             sys.exit()
         else:
             print_markdown(last_message.content)
-        if args.save:
-            save_to_obsidian(text=last_message.content, folder=preferred_folder)
         sys.exit()
     if args.url:
         url = args.url
@@ -448,9 +441,7 @@ if __name__ == "__main__":
                 print(formatted_text)
             else:
                 print_markdown(formatted_text)
-            messagestore.add(url, formatted_text)
-            if args.save:
-                save_to_obsidian(text=formatted_text, url=url, folder=preferred_folder)
+            messagestore.add_new("assistant", formatted_text)
             sys.exit()
         if args.query:
             query = args.query
@@ -484,10 +475,8 @@ if __name__ == "__main__":
                 console.print(summary)
                 sys.exit()
             print_markdown(summary)
-            messagestore.add("assistant", summary)
-            if args.save:
-                save_to_obsidian(text=summary, url=url, folder=preferred_folder)
+            messagestore.add_new("assistant", summary)
             sys.exit()
         else:
             console.print(text)
-            messagestore.add(url, text)
+            messagestore.add_new("assistant", text)
