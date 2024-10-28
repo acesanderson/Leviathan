@@ -23,23 +23,28 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-    from download_article import download_article  # type: ignore
-    from download_youtube_transcript import download_transcript  # type: ignore
-    from Chain import Chain, Model, Prompt, Parser, MessageStore  # type: ignore
-    from CoD import chain_of_density, chain_of_convergence  # type: ignore
+    from download_article import download_article
+    from download_youtube_transcript import download_transcript
+    from Chain import Chain, Model, Prompt, MessageStore
+    from CoD import chain_of_density, chain_of_convergence
     import os
     import argparse
     import sys
     import re
     from rich.markdown import Markdown
+    from pathlib import Path
 
-    # import tiktoken
-
-# Define our variables
+# Create our log file and message store history file.
 # -----------------------------------------------------
 
+dir_path = Path(__file__).parent
 preferred_folder = "Leviathan"
-messagestore_path = ".leviathan_message_store.pickle"
+history_file_path = dir_path / ".leviathan_message_store.pickle"
+log_file_path = dir_path / ".leviathan_log.txt"
+
+# Examples
+# -----------------------------------------------------
+
 example_article = "https://www.androidauthority.com/rabbit-r1-is-an-android-app-3438805"
 example_long_article = "https://arxiv.org/html/2309.02427v3"
 example_super_long_article = "https://arxiv.org/html/2408.14743v1"
@@ -267,18 +272,24 @@ def query_text(text: str, query: str) -> str:
     return response.content
 
 
-def extract_summary_from_string(text: str) -> str:
+def extract_summary_from_string(text: str, tries: int = 0) -> str:
     """
     Our summarization prompts have the LLM put the summary in xml tags.
     We want to grab text within <summary> xml tags.
     """
+    if tries > 3:
+        console.print(
+            "Prompt is not working, no <summary> xml tags detected. Attempted three times."
+        )
+        return None
     pattern = r"<summary>(.*?)</summary>"
     match = re.search(pattern, text, re.DOTALL)
     if match:
         return match.group(1).strip()
     else:
         console.print("LLM output didn't have <summarize> tags.")
-        return None
+        tries += 1
+        return extract_summary_from_string(text=text, tries=tries)
 
 
 def summarize_youtube_transcript(transcript: str) -> str:
@@ -360,9 +371,16 @@ def print_markdown(markdown_string: str):
 
 if __name__ == "__main__":
     # Load our message store
-    dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
-    file_path = dir_path + messagestore_path
-    messagestore = MessageStore(console=console, history_file=file_path)
+    messagestore = MessageStore(
+        console=console,
+        history_file=history_file_path,
+        log_file=log_file_path,
+        pruning=True,
+    )
+    messagestore.load()
+    # Create a log file
+    messagestore.clear_logs()
+    Chain._message_store = messagestore
     # Parse arguments
     parser = argparse.ArgumentParser(description="Summarize a URL.")
     parser.add_argument("url", type=str, nargs="?", help="URL to grab.")
