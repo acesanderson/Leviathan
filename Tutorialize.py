@@ -8,23 +8,27 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-	from Chain import Chain, Model, Prompt, create_messages
-	from obsidian import print_markdown
-	from Save_to_obsidian import save_to_obsidian
-	import sys
-	from time import sleep
-	import argparse
-	from rich.console import Console
-	from rich.markdown import Markdown
-	import pickle
-	import os
+    from Chain import Chain, Model, Prompt, MessageStore, create_messages
+    from obsidian import print_markdown
+    import sys
+    import argparse
+    from rich.console import Console
+    import os
+    from pathlib import Path
 
 # Constants
-dir_path = os.path.dirname(os.path.realpath(__file__))
-tutorial_store_file = os.path.join(dir_path, ".tutorial_store.pkl")
 obsidian_path = os.environ.get("OBSIDIAN_PATH")
 preferred_folder = "Tutorials"
 preferred_model = "claude"
+
+# Message Store for history and logging
+dir_path = Path(__file__).parent
+history_file = dir_path / ".tutorialize_history.pkl"
+log_file = dir_path / ".tutorialize_log.txt"
+messagestore = MessageStore(
+    console=console, history_file=history_file, log_file=log_file
+)
+Chain._message_store = messagestore
 
 generic_persona = """
 # Generic Tutorial System Prompt
@@ -213,164 +217,122 @@ Here's the first half:
 Please complete the tutorial. Return ONLY the part that you wrote, not the entire tutorial, and provide NO other comments or sentences.
 """.strip()
 
-# Persistence functions
-
-
-def initialize_tutorial_store():
-	"""
-	Initialize the message store with an empty list. Run this manually, this is not invoked in the script.
-	"""
-	tutorial_store = []
-	save_to_tutorial_store(tutorial_store)
-
-
-def load_tutorial_store() -> list[str]:
-	"""
-	Load the message store from a pickle file.
-	"""
-	if not os.path.exists(tutorial_store_file):
-		initialize_tutorial_store()
-	with open(tutorial_store_file, "rb") as f:
-		tutorial_store = pickle.load(f)
-	return tutorial_store
-
-
-def save_to_tutorial_store(obj):
-	"""
-	Save an object to a pickle file.
-	"""
-	with open(tutorial_store_file, "wb") as f:
-		pickle.dump(obj, f)
-
 
 # Functions
 def create_tutor(subject: str) -> str:
-	"""
-	Create a tutor persona for a given subject.
-	"""
-	prompt = Prompt(persona_metaprompt)
-	model = Model(preferred_model)
-	chain = Chain(prompt, model)
-	response = chain.run(input_variables={"subject": subject})
-	return response.content
+    """
+    Create a tutor persona for a given subject.
+    """
+    prompt = Prompt(persona_metaprompt)
+    model = Model(preferred_model)
+    chain = Chain(prompt, model)
+    response = chain.run(input_variables={"subject": subject})
+    return response.content
 
 
 def Tutorialize(topic: str | list[str], subject: str = "") -> str | list[str]:
-	"""
-	Our main function.
-	If a subject is provided, we create a tutor persona for that subject.
-	If only a single topic is provided (as str) we use the sync function process_topic.
-	If a list of topics is provided, we use the async function Tutorialize_Async.
-	"""
-	if subject:
-		print("Creating tutor persona...")
-		persona = create_tutor(subject)
-	else:
-		persona = generic_persona
-	if isinstance(topic, str):
-		return Tutorialize_Sync(topic, persona)
-	elif isinstance(topic, list):
-		return Tutorialize_Async(topic, persona)
+    """
+    Our main function.
+    If a subject is provided, we create a tutor persona for that subject.
+    If only a single topic is provided (as str) we use the sync function process_topic.
+    If a list of topics is provided, we use the async function Tutorialize_Async.
+    """
+    if subject:
+        print("Creating tutor persona...")
+        persona = create_tutor(subject)
+    else:
+        persona = generic_persona
+    if isinstance(topic, str):
+        return Tutorialize_Sync(topic, persona)
+    elif isinstance(topic, list):
+        return Tutorialize_Async(topic, persona)
 
 
-def Tutorialize_Sync(topic: str, persona: str, save_to_file=True) -> str:
-	"""
-	Process a topic into a tutorial using the persona template.
-	"""
-	messages = create_messages(system_prompt=persona)
-	model = Model(preferred_model)
-	prompt = Prompt(tutorial_prompt)
-	chain = Chain(prompt, model)
-	response = chain.run(messages=messages, input_variables={"topic": topic})
-	tutorial = response.content
-	return tutorial
+def Tutorialize_Sync(topic: str, persona: str) -> str:
+    """
+    Process a topic into a tutorial using the persona template.
+    """
+    messages = create_messages(system_prompt=persona)
+    model = Model(preferred_model)
+    prompt = Prompt(tutorial_prompt)
+    chain = Chain(prompt, model)
+    response = chain.run(messages=messages, input_variables={"topic": topic})
+    tutorial = response.content
+    return tutorial
 
 
-def Tutorialize_Async(topics: list[str], persona: str, save_to_file=True) -> list[str]:
-	"""
-	Generate tutorials for a list of topics asynchronously.
-	NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
-	"""
-	messages = create_messages(system_prompt=persona)
-	model = Model(preferred_model)
-	prompt = Prompt(tutorial_prompt)
-	# construct list of prompts
-	prompts = []
-	for topic in topics:
-		prompt_obj = prompt.render(input_variables={"topic": topic})
-		message_obj = messages + [{"role": "user", "content": prompt_obj}]
-		prompts.append((topic, message_obj))
-	# run async
-	results = []
-	async_results = model.run_async(prompts=[p[1] for p in prompts], model="claude")
-	for (topic, _), result in zip(prompts, async_results):
-		if save_to_file:
-			filename = save_to_obsidian(text=tutorial, title=topic, folder="tutorials")
-			print(f"Saved to {obsidian_path + filename}.")
-		results.append(filename)
-	return results
+def Tutorialize_Async(topics: list[str], persona: str) -> list[str]:
+    """
+    Generate tutorials for a list of topics asynchronously.
+    NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
+    """
+    messages = create_messages(system_prompt=persona)
+    model = Model(preferred_model)
+    prompt = Prompt(tutorial_prompt)
+    # construct list of prompts
+    prompts = []
+    for topic in topics:
+        prompt_obj = prompt.render(input_variables={"topic": topic})
+        message_obj = messages + [{"role": "user", "content": prompt_obj}]
+        prompts.append((topic, message_obj))
+    # run async
+    results = []
+    async_results = model.run_async(prompts=[p[1] for p in prompts], model="claude")
+    for (topic, _), result in zip(prompts, async_results):
+        results.append(filename)
+    return results
 
 
 def Complete_Tutorial(tutorial: str) -> str:
-	"""
-	Complete a tutorial with a conclusion.
-	Experimental feature, intending to get around context window limitations.
-	"""
-	print("Completing tutorial...")
-	prompt = Prompt(complete_tutorial_prompt)
-	model = Model(preferred_model)
-	chain = Chain(prompt, model)
-	response = chain.run(input_variables={"tutorial": tutorial})
-	return response.content
+    """
+    Complete a tutorial with a conclusion.
+    Experimental feature, intending to get around context window limitations.
+    """
+    print("Completing tutorial...")
+    prompt = Prompt(complete_tutorial_prompt)
+    model = Model(preferred_model)
+    chain = Chain(prompt, model)
+    response = chain.run(input_variables={"tutorial": tutorial})
+    return response.content
 
 
 if __name__ == "__main__":
-	# Parse arguments
-	parser = argparse.ArgumentParser(description="Process some topics.")
-	parser.add_argument(
-		"-s", "--subject", type=str, help="The subject to create a tutor persona for"
-	)
-	parser.add_argument(
-		"-t", "--terminal", action="store_true", help="Flag to indicate terminal mode"
-	)
-	parser.add_argument(
-		"-r", "--raw", action="store_true", help="Flag to indicate raw output"
-	)
-	parser.add_argument(
-		"-l", "--last", action="store_true", help="Flag to print the last tutorial"
-	)
-	parser.add_argument("topic", nargs="?", help="The topic to process")
-	parser.add_argument(
-		"-save", "--save", action="store_true", help="Save to obsidian."
-	)
-	parser.add_argument(
-		"-o", "--ollama", action="store_true", help="Use local LLM instead."
-	)
-	args = parser.parse_args()
-	topic = args.topic
-	subject = args.subject
-	terminal = args.terminal
-	raw = args.raw
-	last = args.last
-	if args.ollama:
-		preferred_model = "llama3.1:latest"
-	if last and not raw:  # Print it again.
-		tutorial = load_tutorial_store()[-1]
-		print_markdown(tutorial)
-		if args.save:
-			save_to_obsidian(tutorial, folder=preferred_folder)
-		sys.exit(0)
-	elif last and raw:  # Print the last tutorial in raw format, useful for clipping
-		tutorial = load_tutorial_store()[-1]
-		print(tutorial)
-		if args.save:
-			save_to_obsidian(tutorial, folder=preferred_folder)
-		sys.exit(0)
-	with console.status("[green]Query...", spinner="dots"):
-		tutorial = Tutorialize(topic, subject)
-		print_markdown(tutorial)
-		tutorial_store = load_tutorial_store()
-		tutorial_store.append(tutorial)
-		save_to_tutorial_store(tutorial_store)
-		if args.save:
-			save_to_obsidian(tutorial, folder=preferred_folder)
+    messagestore.load()
+    # Parse arguments
+    parser = argparse.ArgumentParser(description="Process some topics.")
+    parser.add_argument(
+        "-s", "--subject", type=str, help="The subject to create a tutor persona for"
+    )
+    parser.add_argument(
+        "-t", "--terminal", action="store_true", help="Flag to indicate terminal mode"
+    )
+    parser.add_argument(
+        "-r", "--raw", action="store_true", help="Flag to indicate raw output"
+    )
+    parser.add_argument(
+        "-l", "--last", action="store_true", help="Flag to print the last tutorial"
+    )
+    parser.add_argument("topic", nargs="?", help="The topic to process")
+    parser.add_argument(
+        "-o", "--ollama", action="store_true", help="Use local LLM instead."
+    )
+    args = parser.parse_args()
+    topic = args.topic
+    subject = args.subject
+    terminal = args.terminal
+    raw = args.raw
+    last = args.last
+    if args.ollama:
+        preferred_model = "llama3.1:latest"
+    if last and not raw:  # Print the last tutorial in markdown format
+        tutorial = messagestore.last().content
+        print_markdown(tutorial)
+        sys.exit(0)
+    elif last and raw:  # Print the last tutorial in raw format, useful for clipping
+        tutorial = messagestore.last().content
+        print(tutorial)
+        sys.exit(0)
+    with console.status("[green]Query...", spinner="dots"):
+        tutorial = Tutorialize(topic, subject)
+        print_markdown(tutorial)
+        messagestore.add_new("assistant", tutorial)

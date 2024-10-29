@@ -324,7 +324,7 @@ def format_transcript(transcript: str) -> str:
     """
     with console.status("[green]Query...", spinner="dots"):
         model = Model("claude")
-        prmmpt = Prompt(Format_transcript_prompt_string)
+        prompt = Prompt(Format_transcript_prompt_string)
         chain = Chain(prompt, model)
         response = chain.run(input_variables={"transcript": transcript}, verbose=False)
         return response.content

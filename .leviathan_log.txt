@@ -1,109 +1,34 @@
-[1;32m──────────────────────────────────────────────── [0mMessage[1;32m ─────────────────────────────────────────────────[0m
+[1;32m───────────────────────────────────────────────────────────────────────────────────────── [0mMessage[1;32m ─────────────────────────────────────────────────────────────────────────────────────────[0m
 [1;36massistant:[0m
-[34mif you're learning or trying to get into Vim or neovim there are certain commands you must know here are [0m
-[1;34m30[0m[34m commands or concepts in Vim that I think are imperative to any good vimer now these commands start off [0m
-[34mpretty easy but they get more and more intense as we go along so stick around it's going to be fun now the[0m
-[34mfirst thing we want to do is edit a file and I have one prepared so to do that we want to type envm which [0m
-[34mis short for neovim that is the command we use to enter neovim then we put the name of the file after that[0m
-[34mand we're in now first things first to quit neovim it is colon Q colon opens the command prompt and Q [0m
-[34mstands for quit hit enter and you're out there you go I just saved you a lot of time you're welcome but in[0m
-[34mall seriousness let's open this file up again and let's get into a few Concepts now this video is going to[0m
-[34massume that you know at least the basic concepts of Vim like HJ k l those are the direction Keys H is left[0m
-[34mJ is Down K is up and L is right left down up right or lur for short l so let's start off by replacing a [0m
-[34mword throughout this document now let's say I want to replace post with something else to search for the [0m
-[34mword that's under our cursor we can type star star will match all occurrences of the word that was [0m
-[34mcurrently under our cursor pretty straightforward then we type shift n to go back to the previous match we[0m
-[34mjust looked for or we hit n again to go forward in our match search capital N goes backwards regular n [0m
-[34mgoes forwards or you could just keep hitting end to cycle through all of your matches now to change [0m
-[34msomething in Vim we use the C motion that means change but you can append things to the end of the change [0m
-[34mmotion I like to append IW or inw so I like to do change in word and that will delete that word under my [0m
-[34mcursor and put me into insert mode and I can change it to whatever I like then all I have to do is hit n [0m
-[34mto go to my next match for that previous word and to replay what I just did previously I can just hit dot [0m
-[34mso in my case that was ciw from post to poops there you go nice and concise but but there's an even more [0m
-[34minteresting way to change all the occurrences of a word to something else inside of a file in Vim that is [0m
-[34mthe said command now to use the said command you want to type colon which opens our Command Prompt in Vim [0m
-[34mpercent s and after this we want to type a regular expression so let's type slash post and you can see [0m
-[34mit's matching in post then we type slash again to give us the thing we want to change it to poops again [0m
-[34mwhy not it worked last time then you type SLG for Global for you know globally finding and replacing all [0m
-[34mthe words in this file if we hit enter there you go in one command all of these matches were changed [0m
-[34mpretty cool but there's one more thing you could do here you could type that same command but put a c at [0m
-[34mthe end of it and that will ask you for every single match if you want to make that change so if we hit [0m
-[34menter on this first one I don't want to replace post's controller with poop's controller that's not what I[0m
-[34mwant to do so I hit no then I want to replace this one hit y for yes y for yes and there you go that's a [0m
-[34mcool way of using the said command with confirmation okay now let's go over another scenario let's say [0m
-[34myou're in this document and you want to copy something and paste it somewhere else in the document now in [0m
-[34morder to copy something in Vim you want to use the Y motion that stands for yank that will yank something [0m
-[34minto a register which we'll go over later and then you can use that to paste it somewhere else but I like [0m
-[34mto prepend the yank motion with visual motion so I like to do thew which I don't know if you remember [0m
-[34mearlier but change in W meant change in word viw means visually highlight in word so now I'm visually [0m
-[34mhighlighting this and I can take actions on what I've just highlighted so I have a push y I've then yanked[0m
-[34mthat word now I can go somewhere else in my file and hit P to paste it simple as that but now let's say I [0m
-[34mwant to yank another word before action yank now I go down here and I paste and now I'm pasting before [0m
-[34maction but what about the thing I yanked earlier where is that can I still use it now before I show you [0m
-[34mwhere that yank text went and trust me you're going to want to know it's pretty cool I want to mention [0m
-[34mreally quickly the sponsor of today's video brilliant brilliant is where you learn by doing with thousands[0m
-[34mof lessons in data analysis math programming and AI so I think learning a little bit every single day is [0m
-[34mone of the most important things you can do when learning something new and Brilliant helps you build real[0m
-[34mknowledge in just minutes a day with lessons you can do whenever you have time it's the opposite of [0m
-[34mmindless scrolling now if you're watching this video chances are you're interested in programming and [0m
-[34mBrilliant has a huge number of programming courses to build build foundational knowledge and learn real [0m
-[34mworld applications whether it's python lower level things like data structures Loops design patterns or [0m
-[34mjust learning how to think like a programmer brilliant has you covered try everything brilliant has to [0m
-[34moffer for free for [0m[1;34m30[0m[34m days at brilliant.org typecraft also you get [0m[1;34m20[0m[34m% off an annual membership for life [0m
-[34manyways let's get back to vim and figure out where that pesky text went well as it turns out you can [0m
-[34mbecause Vim stores everything in registers and we can see our registers by typing colon reeg for the regge[0m
-[34mcommand this shows us all of the registers and their contents in neovim typically the way this works when [0m
-[34myou delete something or you change something or You Yank something the thing you made an operation on gets[0m
-[34mput into one of these registers typically it starts at zero and then increments by one for every action [0m
-[34myou do so if I yanked one thing and then change another thing the previous thing I yank should be in [0m
-[34mregister zero if I keep going from there it'll go to register one register [0m[1;34m2[0m[34m etc etc so if I yanked [0m
-[34mdeleted or changed something previously and I want to use that value to paste it again I didn't lose the [0m
-[34mvalue if I yanked something else I can say paste something in the third register down here and to actually[0m
-[34mpaste something in for example the third register we want to prepend it with the double quote so we do [0m
-[34mdouble quote three for third register and P for paste there we go we just pasted the contents of our third[0m
-[34mregister pretty sweet and you can also yank things to specific register as well so if I want to highlight [0m
-[34mthis whole entire method I can type double quote [0m[1;34m7[0m[34m yank and that will yank this to the seventh register so[0m
-[34mnow if we type colon regge again to look at our registers we see in our seventh register we have all the [0m
-[34mstuff we just yanked so now we can go down here and type double quote 7p and there we go that is what we [0m
-[34mhad in our seventh register and I find that super helpful if you want to manage the stuff that you're [0m
-[34mcopying and pasting throughout files registers you a great way of doing that but here's something that's [0m
-[34mreally cool there are actually special registers in neovim that do specific things the one that I like to [0m
-[34muse all the time is the star register which is the system clipboard now it's the star register in Mac OS [0m
-[34mbut in Linux it's the plus register I don't know off the top of my head what it is in Windows I think it's[0m
-[34malso plus but I could be wrong feel free to correct me in the comments below but when you yank something [0m
-[34mto this special system clipboard register what it does is it allows you to copy and paste things from them[0m
-[34minto other programs so if I visually highlight this text and I do double quote plus yank I just yanked [0m
-[34mthese four lines into the plus register which as we said before is a special register neovim that is the [0m
-[34msystem clipboard so let's just say I have another program that I want to paste this contents of this into [0m
-[34mmaybe I'm slacking with one of my co-workers and I want to paste the output of whatever I just copied from[0m
-[34mneovim into a chat since I yanked these four lines into the system clipboard register if I just do the [0m
-[34mnormal command for pasting into any other program which in Linux is control V it's command via Mac OS we [0m
-[34mcan see that the stuff I copied from Vim is now available to any other program this is super helpful and I[0m
-[34muse this all the time there's another fun little special register that I don't really use but I find it [0m
-[34minteresting the percent register always holds the name of the file that you currently have open in neovim [0m
-[34mand that's the percent register so if I do double quote percent p i just pasted the name of this file now [0m
-[34mI don't know if I find this super useful but you could do something fun by going into the command line of [0m
-[34mneovim and typing let the register at system clipboard be equal to the output of the percent register if I[0m
-[34mtype that and then I go to another program and just paste you see I paste the name of the file I've used [0m
-[34mthis a couple of times at work but I don't know I just thought it was fun you could use that if you want [0m
-[34mnow there's one more command or concept that I think is absolutely imperative to know if you want to be [0m
-[34mgood at vim and that concept is macros so let's go over scenario let's say I have um this data that I've [0m
-[34mcopy and pasted into a file this is a ruby file but it isn't valid Ruby code because I just pasted an [0m
-[34marray from somewhere into this file to make it valid Ruby code I have to go to each line and make sure [0m
-[34mthese are double qued lines and type a comma at the end this will then make it a valid array and Ruby but [0m
-[34mI don't want to have to do this for every single line that's ridiculous how can I make my life a little [0m
-[34mbit easier well macros will save your life here a macro basically stores and then can replay actions that [0m
-[34myou take inside of vim and you can record it manually yourself it's pretty easy and it's actually very fun[0m
-[34mto start recording a macro you type Q and then you type a register that you want to record it into I'm [0m
-[34mgoing to type the letter H and you can see at the bottom here it's saying recording at H meaning it's [0m
-[34mrecording a macro into the H register so and now I just edit one line here and make sure I keep in mind [0m
-[34mthat these changes can be replayed on every single line so I do insert I add a double quote I go to the [0m
-[34mend add a double quote add a comma go down and then go to the beginning of the line now if I hit Q I am [0m
-[34mdone recording my macro and to replay my macro I do at symbol and the register I recorded it into so [0m
-[34mthat's at H and there you go it replayed my macro now the coolest thing about this is you can prepend with[0m
-[34mdifferent motions replaying a macro so if I do something like five at H it's going to replay my macro for [0m
-[34mthe next five lines and I at AG again and I'm all done macros are extremely powerful in neovim and it's [0m
-[34msomething that you should absolutely learn if you want to master neovim or Vim in general now if you like [0m
-[34mhow Vim looks on my machine I have a whole bunch of videos a whole entire course actually on how to set up[0m
-[34mNeo it's called neovim for noobs subscribe and check it out and hey thanks nerds[0m
+[34m# Political Discussion: Ballot Box Fires and Election Security[0m
+
+[34m## Ballot Box Incidents in Oregon and Washington[0m
+[34mA concerning incident has emerged involving ballot box fires in Oregon and Washington state. The fires destroyed hundreds of ballots, with authorities believing the incidents are [0m
+[34mconnected. Law enforcement has identified a suspect vehicle - an S60 Volvo - tied to these events. The incidents occurred in predominantly blue districts, including Vancouver's Clark [0m
+[34mCounty and Portland's Multnomah County.[0m
+
+[34mIn Oregon, three ballots were impacted, and officials have reached out to affected voters. The Washington state incident was more severe, with hundreds of ballots affected. Officials are [0m
+[34madvising voters who used these drop boxes over the weekend to check their ballot status online.[0m
+
+[34m## Local Political Context[0m
+[34mMarie Gluesenkamp Perez, a Democratic representative from the area, has requested increased law enforcement presence at ballot locations. The discussion revealed criticism of her [0m
+[34mpolitical evolution, noting how she campaigned on progressive policies but later aligned with more moderate positions. Her district, encompassing Clark County and Vancouver, represents a [0m
+[34munique political demographic in the Portland metropolitan area.[0m
+
+[34m## Security Measures and Response[0m
+[34mThe FBI and Department of Homeland Security are investigating these incidents as potential domestic violent extremism targeting the voting process. In response to such threats, ballot [0m
+[34mdrop boxes in Clark County are being monitored with:[0m
+[34m- Video surveillance[0m
+[34m- Physical security measures[0m
+[34m- Staff presence[0m
+[34m- Ground mounting[0m
+
+[34m## Voter Registration and Election Integrity[0m
+[34mIn Pennsylvania, officials have identified potential fraud in up to **[0m[1;34m2[0m[34m,[0m[1;34m500[0m[34m** voter registration forms in Lancaster County. The suspicious applications showed:[0m
+[34m- Inaccurate addresses[0m
+[34m- Mismatched signatures[0m
+[34m- Multiple forms with identical handwriting[0m
+
+[34mOfficials emphasize that voter registration fraud differs from voter fraud, with built-in safeguards like driver's license numbers and Social Security verification helping to identify [0m
+[34mfraudulent applications.[0m
 
