@@ -27,11 +27,10 @@ with console.status("[green]Loading...", spinner="dots"):
     from download_youtube_transcript import download_transcript
     from Chain import Chain, Model, Prompt, MessageStore
     from CoD import chain_of_density, chain_of_convergence
-    import os
     import argparse
     import sys
     import re
-    from rich.markdown import Markdown
+    from print_markdown import print_markdown
     from pathlib import Path
 
 # Create our log file and message store history file.
@@ -358,17 +357,6 @@ def get_token_count(text: str) -> int:
     pass
 
 
-def print_markdown(markdown_string: str):
-    """
-    Prints formatted markdown to the console.
-    """
-    # Create a Markdown object
-    border = "-" * 80
-    markdown_string = f"{border}\n{markdown_string}\n\n{border}"
-    md = Markdown(markdown_string)
-    console.print(md)
-
-
 if __name__ == "__main__":
     # Load our message store
     messagestore = MessageStore(
@@ -424,7 +412,7 @@ if __name__ == "__main__":
                 print(cod_summary)
                 sys.exit()
             else:
-                print_markdown(cod_summary)
+                print_markdown(string_to_display=cod_summary, console=console)
                 sys.exit()
         if args.chain_of_convergence:
             coc_summary = chain_of_convergence_summary(
@@ -434,7 +422,7 @@ if __name__ == "__main__":
                 print(coc_summary)
                 sys.exit()
             else:
-                print_markdown(coc_summary)
+                print_markdown(string_to_display=coc_summary, console=console)
                 sys.exit()
         if args.raw:
             print(last_message.content)
@@ -444,10 +432,10 @@ if __name__ == "__main__":
             if args.raw:
                 print(response)
             else:
-                print_markdown(response)
+                print_markdown(string_to_display=response, console=console)
             sys.exit()
         else:
-            print_markdown(last_message.content)
+            print_markdown(string_to_display=last_message.content, console=console)
         sys.exit()
     if args.url:
         url = args.url
@@ -458,7 +446,7 @@ if __name__ == "__main__":
             if args.raw:
                 print(formatted_text)
             else:
-                print_markdown(formatted_text)
+                print_markdown(string_to_display=formatted_text, console=console)
             messagestore.add_new("assistant", formatted_text)
             sys.exit()
         if args.query:
@@ -467,7 +455,7 @@ if __name__ == "__main__":
             if args.raw:
                 print(response)
             else:
-                print_markdown(response)
+                print_markdown(string_to_display=response, console=console)
             sys.exit()
         if args.summarize:
             summary = summarize(text, mode)
@@ -477,7 +465,7 @@ if __name__ == "__main__":
                     print(cod_summary)
                     sys.exit()
                 else:
-                    print_markdown(cod_summary)
+                    print_markdown(string_to_display=cod_summary, console=console)
                     sys.exit()
             if args.chain_of_convergence:
                 coc_summary = chain_of_convergence_summary(
@@ -487,12 +475,12 @@ if __name__ == "__main__":
                     print(coc_summary)
                     sys.exit()
                 else:
-                    print_markdown(coc_summary)
+                    print_markdown(string_to_display=coc_summary, console=console)
                     sys.exit()
             if args.raw:
                 console.print(summary)
                 sys.exit()
-            print_markdown(summary)
+            print_markdown(string_to_display=summary, console=console)
             messagestore.add_new("assistant", summary)
             sys.exit()
         else:
