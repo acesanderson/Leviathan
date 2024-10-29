@@ -9,7 +9,7 @@ console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
     from Chain import Chain, Model, Prompt, MessageStore, create_messages
-    from obsidian import print_markdown
+    from print_markdown import print_markdown
     import sys
     import argparse
     from rich.console import Console
@@ -266,21 +266,7 @@ def Tutorialize_Async(topics: list[str], persona: str) -> list[str]:
     Generate tutorials for a list of topics asynchronously.
     NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
     """
-    messages = create_messages(system_prompt=persona)
-    model = Model(preferred_model)
-    prompt = Prompt(tutorial_prompt)
-    # construct list of prompts
-    prompts = []
-    for topic in topics:
-        prompt_obj = prompt.render(input_variables={"topic": topic})
-        message_obj = messages + [{"role": "user", "content": prompt_obj}]
-        prompts.append((topic, message_obj))
-    # run async
-    results = []
-    async_results = model.run_async(prompts=[p[1] for p in prompts], model="claude")
-    for (topic, _), result in zip(prompts, async_results):
-        results.append(filename)
-    return results
+    pass
 
 
 def Complete_Tutorial(tutorial: str) -> str:
@@ -326,13 +312,16 @@ if __name__ == "__main__":
         preferred_model = "llama3.1:latest"
     if last and not raw:  # Print the last tutorial in markdown format
         tutorial = messagestore.last().content
-        print_markdown(tutorial)
+        print_markdown(string_to_display=tutorial, console=console)
         sys.exit(0)
     elif last and raw:  # Print the last tutorial in raw format, useful for clipping
         tutorial = messagestore.last().content
         print(tutorial)
         sys.exit(0)
+    if not args.topic:
+        print("Please provide a topic.")
+        sys.exit(1)
     with console.status("[green]Query...", spinner="dots"):
         tutorial = Tutorialize(topic, subject)
-        print_markdown(tutorial)
+        print_markdown(string_to_display=tutorial, console=console)
         messagestore.add_new("assistant", tutorial)
