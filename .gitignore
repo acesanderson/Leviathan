@@ -9,3 +9,4 @@ __pycache__/
 /summarize/examples/
 tutorial_store.pkl
 .leviathan_message_store.pickle
+*.txt
