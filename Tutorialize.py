@@ -8,7 +8,7 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-    from Chain import Chain, Model, Prompt, MessageStore, create_messages
+    from Chain import Chain, Model, Prompt, MessageStore, create_system_message
     from print_markdown import print_markdown
     import sys
     import argparse
@@ -252,7 +252,8 @@ def Tutorialize_Sync(topic: str, persona: str) -> str:
     """
     Process a topic into a tutorial using the persona template.
     """
-    messages = create_messages(system_prompt=persona)
+    message = create_system_message(system_prompt=persona)
+    messages = [message]
     model = Model(preferred_model)
     prompt = Prompt(tutorial_prompt)
     chain = Chain(prompt, model)
