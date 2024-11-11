@@ -1,6 +1,6 @@
-from Leviathan.leviathan.Leviathan import categorize_url, retrieve_text, summarize
+from Leviathan import categorize_url, retrieve_text, summarize
 
-url = "https://www.bbc.com/news/world-asia-56900013"
+url = "https://www.youtube.com/watch?v=GUXxLy68EF8&t=3s"
 
 print("Categorizing URL...")
 category = categorize_url(url)

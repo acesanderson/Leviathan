@@ -26,7 +26,7 @@ with console.status("[green]Loading...", spinner="dots"):
     from .download_article import download_article
     from .download_youtube_transcript import download_transcript
     from Chain import Chain, Model, Prompt, MessageStore
-    from CoD import chain_of_density, chain_of_convergence
+    from ..summarize.summarize_short_text import chain_of_density, chain_of_convergence
     import argparse
     import sys
     import re

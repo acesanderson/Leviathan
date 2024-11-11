@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 # Imports can take a while, so we'll give the user a spinner.
 # -----------------------------------------------------------------
 
@@ -9,7 +7,7 @@ console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
     from Chain import Chain, Model, Prompt, MessageStore, create_system_message
-    from print_markdown import print_markdown
+    from ..utilities.print_markdown import print_markdown
     import sys
     import argparse
     from rich.console import Console
@@ -230,7 +228,7 @@ def create_tutor(subject: str) -> str:
     return response.content
 
 
-def Tutorialize(topic: str | list[str], subject: str = "") -> str | list[str]:
+def tutorialize(topic: str | list[str], subject: str = "") -> str | list[str]:
     """
     Our main function.
     If a subject is provided, we create a tutor persona for that subject.
@@ -323,6 +321,6 @@ if __name__ == "__main__":
         print("Please provide a topic.")
         sys.exit(1)
     with console.status("[green]Query...", spinner="dots"):
-        tutorial = Tutorialize(topic, subject)
+        tutorial = tutorialize(topic, subject)
         print_markdown(string_to_display=tutorial, console=console)
         messagestore.add_new("assistant", tutorial)
