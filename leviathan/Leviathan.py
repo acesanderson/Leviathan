@@ -23,14 +23,14 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-    from download_article import download_article
-    from download_youtube_transcript import download_transcript
+    from .download_article import download_article
+    from .download_youtube_transcript import download_transcript
     from Chain import Chain, Model, Prompt, MessageStore
     from CoD import chain_of_density, chain_of_convergence
     import argparse
     import sys
     import re
-    from print_markdown import print_markdown
+    from ..utilities.print_markdown import print_markdown
     from pathlib import Path
 
 # Create our log file and message store history file.
