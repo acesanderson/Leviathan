@@ -110,7 +110,11 @@ def save_to_obsidian(
     return filename
 
 
-if __name__ == "__main__":
+# Main
+# -----------------------------------------------------------------
+
+
+def main():
     # Capture arguments
     parser = argparse.ArgumentParser(description="Save text to Obsidian.")
     parser.add_argument("text", type=str, nargs="?", help="Text to be saved.")
@@ -141,3 +145,7 @@ if __name__ == "__main__":
     print(f"Text saved to {filename}.")
     if args.print:
         print(text)
+
+
+if __name__ == "__main__":
+    main()

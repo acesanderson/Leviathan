@@ -6,7 +6,9 @@ setup(
     packages=find_packages(),
     entry_points={
         "console_scripts": [
-            "leviathan=leviathan.Leviathan:main",
+            "leviathan=leviathan.leviathan:main",
+            "sto=save_to_obsidian.save_to_obsidian:main",
+            "tutorialize=tutorialize.tutorialize:main",
         ],
     },
 )

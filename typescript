@@ -1,58 +1,0 @@
-Script started on 2024-11-10 19:33:59-06:00 [TERM="tmux-256color" TTY="/dev/pts/6" COLUMNS="127" LINES="71"]
-Cannot open display "default display"
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code/Leviathan[00m$ cat __init__.py 
-[?2004l__version__ = "0.1.0"
-
-from .leviathan.leviathan import categorize_url, retrieve_text, summarize
-from .save_to_obsidian import save_to_obsidian
-from .tutorialize.tutorialize import tutorialize
-from .summarize import summarize_long_text, summarize_medium_text, summarize_short_text
-
-__all__ = [
-    "categorize_url",
-    "retrieve_text",
-    "summarize",
-    "save_to_obsidian",
-    "tutorialize",
-    "summarize_long_text",
-    "summarize_medium_text",
-    "summarize_short_text",
-]
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code/Leviathan[00m$ cat setup.py 
-[?2004lfrom setuptools import setup, find_packages
-
-setup(
-    name="Leviathan",
-    version="2.0",
-    packages=find_packages(),
-    entry_points={
-        "console_scripts": [
-            "leviathan=leviathan.Leviathan:main",
-        ],
-    },
-)
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code/Leviathan[00m$ python leviathan[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kpip show Leviathan
-[?2004lName: Leviathan
-Version: 2.0
-Summary: 
-Home-page: 
-Author: 
-Author-email: 
-License: 
-Location: /home/bianders/Brian_Code/Leviathan
-Editable project location: /home/bianders/Brian_Code/Leviathan
-Requires: 
-Required-by: 
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code/Leviathan[00m$ python leviathan
-[?2004l/home/bianders/Brian_Code/.Magnus/bin/python3: can't find '__main__' module in '/home/bianders/Brian_Code/Leviathan/leviathan'
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code/Leviathan[00m$ python Leviathan
-[?2004lpython3: can't open file '/home/bianders/Brian_Code/Leviathan/Leviathan': [Errno 2] No such file or directory
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code/Leviathan[00m$ cd ..
-[?2004l[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code[00m$ python leviathan
-[?2004lpython3: can't open file '/home/bianders/Brian_Code/leviathan': [Errno 2] No such file or directory
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code[00m$ pythobn Leviathan[K[K[K[K[K[K[K[K[K[K[K[Kn Leviathan
-[?2004l/home/bianders/Brian_Code/.Magnus/bin/python3: can't find '__main__' module in '/home/bianders/Brian_Code/Leviathan'
-[?2004h(.Magnus) [01;32mbianders@Caruana[00m:[01;34m~/Brian_Code[00m$ exit
-[?2004lexit
-
-Script done on 2024-11-10 19:34:37-06:00 [COMMAND_EXIT_CODE="1"]

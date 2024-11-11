@@ -7,7 +7,7 @@ console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
     from Chain import Chain, Model, Prompt, MessageStore, create_system_message
-    from ..utilities.print_markdown import print_markdown
+    from utilities.print_markdown import print_markdown
     import sys
     import argparse
     from rich.console import Console
@@ -281,7 +281,11 @@ def Complete_Tutorial(tutorial: str) -> str:
     return response.content
 
 
-if __name__ == "__main__":
+# Main
+# -----------------------------------------------------------------
+
+
+def main():
     messagestore.load()
     # Parse arguments
     parser = argparse.ArgumentParser(description="Process some topics.")
@@ -324,3 +328,7 @@ if __name__ == "__main__":
         tutorial = tutorialize(topic, subject)
         print_markdown(string_to_display=tutorial, console=console)
         messagestore.add_new("assistant", tutorial)
+
+
+if __name__ == "__main__":
+    main()
