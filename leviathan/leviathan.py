@@ -357,7 +357,9 @@ def get_token_count(text: str) -> int:
     pass
 
 
-if __name__ == "__main__":
+# Main
+# -----------------------------------------------------
+def main():
     # Load our message store
     messagestore = MessageStore(
         console=console,
@@ -486,3 +488,7 @@ if __name__ == "__main__":
         else:
             console.print(text)
             messagestore.add_new("assistant", text)
+
+
+if __name__ == "__main__":
+    main()
