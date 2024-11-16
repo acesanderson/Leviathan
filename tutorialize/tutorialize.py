@@ -303,6 +303,7 @@ def main():
     terminal = args.terminal
     raw = args.raw
     last = args.last
+    preferred_model = "claude"
     if args.ollama:
         preferred_model = "llama3.1:latest"
     if args.model:
