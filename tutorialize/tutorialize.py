@@ -228,7 +228,9 @@ def create_tutor(subject: str) -> str:
     return response.content
 
 
-def tutorialize(topic: str | list[str], subject: str = "") -> str | list[str]:
+def tutorialize(
+    topic: str | list[str], subject: str = "", preferred_model: str = preferred_model
+) -> str | list[str]:
     """
     Our main function.
     If a subject is provided, we create a tutor persona for that subject.
@@ -241,12 +243,14 @@ def tutorialize(topic: str | list[str], subject: str = "") -> str | list[str]:
     else:
         persona = generic_persona
     if isinstance(topic, str):
-        return Tutorialize_Sync(topic, persona)
+        return Tutorialize_Sync(topic, persona, preferred_model)
     elif isinstance(topic, list):
-        return Tutorialize_Async(topic, persona)
+        return Tutorialize_Async(topic, persona, preferred_model)
 
 
-def Tutorialize_Sync(topic: str, persona: str) -> str:
+def Tutorialize_Sync(
+    topic: str, persona: str, preferred_model: str = preferred_model
+) -> str:
     """
     Process a topic into a tutorial using the persona template.
     """
@@ -266,19 +270,6 @@ def Tutorialize_Async(topics: list[str], persona: str) -> list[str]:
     NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
     """
     pass
-
-
-def Complete_Tutorial(tutorial: str) -> str:
-    """
-    Complete a tutorial with a conclusion.
-    Experimental feature, intending to get around context window limitations.
-    """
-    print("Completing tutorial...")
-    prompt = Prompt(complete_tutorial_prompt)
-    model = Model(preferred_model)
-    chain = Chain(prompt, model)
-    response = chain.run(input_variables={"tutorial": tutorial})
-    return response.content
 
 
 # Main
@@ -305,6 +296,7 @@ def main():
     parser.add_argument(
         "-o", "--ollama", action="store_true", help="Use local LLM instead."
     )
+    parser.add_argument("-m", "--model", type=str, help="The model to use")
     args = parser.parse_args()
     topic = args.topic
     subject = args.subject
@@ -313,6 +305,13 @@ def main():
     last = args.last
     if args.ollama:
         preferred_model = "llama3.1:latest"
+    if args.model:
+        try:
+            Model(args.model)
+            preferred_model = args.model
+        except:
+            print(f"Model not recognized: {args.model}.")
+            sys.exit()
     if last and not raw:  # Print the last tutorial in markdown format
         tutorial = messagestore.last().content
         print_markdown(string_to_display=tutorial, console=console)
@@ -325,7 +324,7 @@ def main():
         print("Please provide a topic.")
         sys.exit(1)
     with console.status("[green]Query...", spinner="dots"):
-        tutorial = tutorialize(topic, subject)
+        tutorial = tutorialize(topic, subject, preferred_model)
         print_markdown(string_to_display=tutorial, console=console)
         messagestore.add_new("assistant", tutorial)
 
