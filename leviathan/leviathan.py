@@ -23,10 +23,13 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-    from .download_article import download_article
-    from .download_youtube_transcript import download_transcript
-    from utilities.print_markdown import print_markdown
-    from summarize.summarize_short_text import chain_of_density, chain_of_convergence
+    from Leviathan.leviathan.download_article import download_article
+    from Leviathan.leviathan.download_youtube_transcript import download_transcript
+    from Leviathan.utilities.print_markdown import print_markdown
+    from Leviathan.summarize.summarize_short_text import (
+        chain_of_density,
+        chain_of_convergence,
+    )
     from Chain import Chain, Model, Prompt, MessageStore
     import argparse
     import sys

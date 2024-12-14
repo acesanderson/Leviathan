@@ -7,7 +7,7 @@ console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
     from Chain import Chain, Model, Prompt, MessageStore, create_system_message
-    from utilities.print_markdown import print_markdown
+    from Leviathan.utilities.print_markdown import print_markdown
     import sys
     import argparse
     from rich.console import Console
@@ -223,7 +223,7 @@ def create_tutor(subject: str) -> str:
     """
     prompt = Prompt(persona_metaprompt)
     model = Model(preferred_model)
-    chain = Chain(prompt, model)
+    chain = Chain(prompt=prompt, model=model)
     response = chain.run(input_variables={"subject": subject})
     return response.content
 
@@ -258,7 +258,7 @@ def Tutorialize_Sync(
     messages = [message]
     model = Model(preferred_model)
     prompt = Prompt(tutorial_prompt)
-    chain = Chain(prompt, model)
+    chain = Chain(prompt=prompt, model=model)
     response = chain.run(messages=messages, input_variables={"topic": topic})
     tutorial = response.content
     return tutorial

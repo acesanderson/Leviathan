@@ -5,7 +5,11 @@ Next up: create a Book class that can handle this process, and becomes the main 
 (i.e. endgame = chat)
 """
 
-from .summarize_medium_text import chunk_text_by_words, map_chain, reduce_chain
+from Leviathan.summarize.summarize_medium_text import (
+    chunk_text_by_words,
+    map_chain,
+    reduce_chain,
+)
 import chromadb
 from sklearn.cluster import KMeans
 import numpy as np
