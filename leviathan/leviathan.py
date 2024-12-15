@@ -266,7 +266,7 @@ def query_text(text: str, query: str) -> str:
         model = Model("claude")
         prompt_string = "Look at this text and answer the following question: <text>{{text}}</text> <query>{{query}}</query>"
         prompt = Prompt(prompt_string)
-        chain = Chain(prompt, model)
+        chain = Chain(prompt=prompt, model=model)
         response = chain.run(
             input_variables={"text": text, "query": query}, verbose=False
         )
@@ -301,7 +301,7 @@ def summarize_youtube_transcript(transcript: str) -> str:
     with console.status("[green]Summarizing YouTube transcript...", spinner="dots"):
         model = Model("claude")
         prompt = Prompt(YouTube_prompt_string)
-        chain = Chain(prompt, model)
+        chain = Chain(prompt=prompt, model=model)
         response = chain.run(input_variables={"transcript": transcript}, verbose=False)
     summary = extract_summary_from_string(response.content)
     return summary
@@ -314,7 +314,7 @@ def summarize_article(article: str) -> str:
     with console.status("[green]Summarizing article...", spinner="dots"):
         model = Model("claude")
         prompt = Prompt(Article_prompt_string)
-        chain = Chain(prompt, model)
+        chain = Chain(prompt=prompt, model=model)
         response = chain.run(input_variables={"article": article}, verbose=False)
     summary = extract_summary_from_string(response.content)
     return summary
@@ -327,7 +327,7 @@ def format_transcript(transcript: str) -> str:
     with console.status("[green]Query...", spinner="dots"):
         model = Model("claude")
         prompt = Prompt(Format_transcript_prompt_string)
-        chain = Chain(prompt, model)
+        chain = Chain(prompt=prompt, model=model)
         response = chain.run(input_variables={"transcript": transcript}, verbose=False)
         return response.content
 
