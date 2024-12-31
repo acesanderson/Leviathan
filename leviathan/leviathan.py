@@ -243,34 +243,36 @@ def download_arxiv(url: str) -> str:
     print("Still need to implement arxiv function.")
 
 
-def summarize(text: str, mode: str) -> str:
+def summarize(text: str, mode: str, preferred_model: str) -> str:
     """
     This takes user input (i.e. the url) and either downloads the article or the Youtube transcript.
     """
     match mode:
         case "youtube":
-            return summarize_youtube_transcript(text)
+            return summarize_youtube_transcript(text, preferred_model)
         case "article":
-            return summarize_article(text)
+            return summarize_article(text, preferred_model)
         case "arxiv":
-            return summarize_article(text)
+            return summarize_article(text, preferred_model)
         case _:
             raise ValueError("Not a recognized mode.")
 
 
-def query_text(text: str, query: str) -> str:
+def query_text(
+    text: str, query: str, messagestore: MessageStore, preferred_model: str
+) -> str:
     """
     This function takes a text and a query and returns the response.
     """
     with console.status("[green]Query...", spinner="dots"):
-        model = Model("claude")
+        model = Model(preferred_model)
         prompt_string = "Look at this text and answer the following question: <text>{{text}}</text> <query>{{query}}</query>"
         prompt = Prompt(prompt_string)
         chain = Chain(prompt=prompt, model=model)
         response = chain.run(
-            input_variables={"text": text, "query": query}, verbose=False
+            input_variables={"text": text, "query": query}, verbose=True
         )
-        messagestore.add("assistant", response.content)
+        messagestore.add_new("assistant", response.content)
     return response.content
 
 
@@ -294,41 +296,41 @@ def extract_summary_from_string(text: str, tries: int = 0) -> str:
         return extract_summary_from_string(text=text, tries=tries)
 
 
-def summarize_youtube_transcript(transcript: str) -> str:
+def summarize_youtube_transcript(transcript: str, preferred_model: str) -> str:
     """
     This function takes a YouTube transcript and summarizes it.
     """
     with console.status("[green]Summarizing YouTube transcript...", spinner="dots"):
-        model = Model("claude")
+        model = Model(preferred_model)
         prompt = Prompt(YouTube_prompt_string)
         chain = Chain(prompt=prompt, model=model)
-        response = chain.run(input_variables={"transcript": transcript}, verbose=False)
+        response = chain.run(input_variables={"transcript": transcript}, verbose=True)
     summary = extract_summary_from_string(response.content)
     return summary
 
 
-def summarize_article(article: str) -> str:
+def summarize_article(article: str, preferred_model: str) -> str:
     """
     This function takes an article and summarizes it.
     """
     with console.status("[green]Summarizing article...", spinner="dots"):
-        model = Model("claude")
+        model = Model(preferred_model)
         prompt = Prompt(Article_prompt_string)
         chain = Chain(prompt=prompt, model=model)
-        response = chain.run(input_variables={"article": article}, verbose=False)
+        response = chain.run(input_variables={"article": article}, verbose=True)
     summary = extract_summary_from_string(response.content)
     return summary
 
 
-def format_transcript(transcript: str) -> str:
+def format_transcript(transcript: str, preferred_model: str) -> str:
     """
     This function takes a raw transcript and formats it.
     """
     with console.status("[green]Query...", spinner="dots"):
-        model = Model("claude")
+        model = Model(preferred_model)
         prompt = Prompt(Format_transcript_prompt_string)
         chain = Chain(prompt=prompt, model=model)
-        response = chain.run(input_variables={"transcript": transcript}, verbose=False)
+        response = chain.run(input_variables={"transcript": transcript}, verbose=True)
         return response.content
 
 
@@ -351,13 +353,6 @@ def chain_of_convergence_summary(text: str, n: int = 3) -> str:
     ):
         cod_summary = chain_of_convergence(text, n)
     return cod_summary
-
-
-def get_token_count(text: str) -> int:
-    """
-    This function takes a text and returns the token count.
-    """
-    pass
 
 
 # Main
@@ -404,8 +399,13 @@ def main():
         type=int,
         help="Run chain of convergence with n iterations.",
     )
+    parser.add_argument("-m", "--model", type=str, help="Specify the model.")
     args = parser.parse_args()
     # Route arguments
+    if args.model:
+        preferred_model = args.model
+    else:
+        preferred_model = "claude"
     if args.clear:
         messagestore.clear()
         sys.exit()
@@ -433,7 +433,9 @@ def main():
             print(last_message.content)
         elif args.query:
             query = args.query
-            response = query_text(last_message.content, query)
+            response = query_text(
+                last_message.content, query, messagestore, preferred_model
+            )
             if args.raw:
                 print(response)
             else:
@@ -447,7 +449,7 @@ def main():
         mode = categorize_url(url)
         text = retrieve_text(url, mode)
         if mode == "youtube" and args.format:
-            formatted_text = format_transcript(text)
+            formatted_text = format_transcript(text, preferred_model)
             if args.raw:
                 print(formatted_text)
             else:
@@ -456,14 +458,14 @@ def main():
             sys.exit()
         if args.query:
             query = args.query
-            response = query_text(text, query)
+            response = query_text(text, query, messagestore, preferred_model)
             if args.raw:
                 print(response)
             else:
                 print_markdown(string_to_display=response, console=console)
             sys.exit()
         if args.summarize:
-            summary = summarize(text, mode)
+            summary = summarize(text, mode, preferred_model)
             if args.chain_of_density:
                 cod_summary = chain_of_density_summary(summary)
                 if args.raw:
@@ -474,7 +476,7 @@ def main():
                     sys.exit()
             if args.chain_of_convergence:
                 coc_summary = chain_of_convergence_summary(
-                    last_message, args.chain_of_convergence
+                    text, args.chain_of_convergence
                 )
                 if args.raw:
                     print(coc_summary)
