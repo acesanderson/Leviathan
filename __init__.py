@@ -9,6 +9,7 @@ from Leviathan.summarize import (
     summarize_short_text,
 )
 from Leviathan.utilities.print_markdown import print_markdown
+from Leviathan.cookbook.cookbook import compose_recipe
 
 __all__ = [
     "categorize_url",
@@ -20,4 +21,5 @@ __all__ = [
     "summarize_medium_text",
     "summarize_short_text",
     "print_markdown",
+    "compose_recipe",
 ]
