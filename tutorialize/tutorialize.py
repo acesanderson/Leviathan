@@ -17,7 +17,7 @@ with console.status("[green]Loading...", spinner="dots"):
 # Constants
 obsidian_path = os.environ.get("OBSIDIAN_PATH")
 preferred_folder = "Tutorials"
-preferred_model = "gemini"
+preferred_model = "claude"
 
 # Message Store for history and logging
 dir_path = Path(__file__).parent
@@ -303,7 +303,7 @@ def main():
     terminal = args.terminal
     raw = args.raw
     last = args.last
-    preferred_model = "gemini"
+    preferred_model = "claude"
     if args.ollama:
         preferred_model = "llama3.1:latest"
     if args.model:

@@ -10,7 +10,7 @@ with console.status("[green]Loading...", spinner="dots"):
     import sys
 
 # Constants
-preferred_model = "claude"
+preferred_model = "deepseek"
 
 # Message Store for history and logging
 dir_path = Path(__file__).parent
