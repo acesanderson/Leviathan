@@ -1,6 +1,7 @@
 __version__ = "0.1.0"
 
 from Leviathan.leviathan.leviathan import categorize_url, retrieve_text, summarize
+from Leviathan.leviathan.download_youtube_transcript import download_transcript
 from Leviathan.save_to_obsidian import save_to_obsidian
 from Leviathan.tutorialize.tutorialize import tutorialize
 from Leviathan.summarize import (
@@ -22,4 +23,5 @@ __all__ = [
     "summarize_short_text",
     "print_markdown",
     "compose_recipe",
+    "download_transcript",
 ]
