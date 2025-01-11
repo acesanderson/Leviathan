@@ -81,11 +81,12 @@ When writing the summary, follow these guidelines:
    - For transcripts over 6,000 words, aim for a summary of at least 2,000 words.
    - For shorter transcripts, use a ratio of approximately 1:3 (summary:transcript). For example, a 3,000-word transcript should have a summary of about 1,000 words.
 2. Focus on the unique contributions and insights presented in the video. Avoid generic summaries that could apply to any video on the topic.
-3. Use specific examples, data points, or arguments from the transcript to illustrate key points.
-4. Highlight any novel ideas, counterintuitive claims, or particularly compelling arguments made in the video.
-5. If the video presents multiple perspectives on a topic, ensure that you accurately represent each viewpoint.
-6. Pay attention to the speaker's tone and emphasis, noting any points they seem to consider particularly important.
-7. If the transcript includes descriptions of visual elements (e.g., charts, demonstrations), mention these in your summary if they are crucial to understanding the content.
+3. Do not comment on the qualities of the video, we do not need to hear that you found the video insightful.
+4. Use specific examples, data points, or arguments from the transcript to illustrate key points.
+5. Highlight any novel ideas, counterintuitive claims, or particularly compelling arguments made in the video.
+6. If the video presents multiple perspectives on a topic, ensure that you accurately represent each viewpoint.
+7. Pay attention to the speaker's tone and emphasis, noting any points they seem to consider particularly important.
+8. If the transcript includes descriptions of visual elements (e.g., charts, demonstrations), mention these in your summary if they are crucial to understanding the content.
 
 To avoid sounding too generic:
 1. Use specific terminology and jargon from the video when appropriate, explaining it if necessary.
