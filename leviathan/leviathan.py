@@ -430,7 +430,7 @@ def main():
                 print_markdown(string_to_display=coc_summary, console=console)
                 sys.exit()
         if args.raw:
-            print(last_message.content)
+            print(last_message)
         elif args.query:
             query = args.query
             response = query_text(
