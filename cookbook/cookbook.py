@@ -1,3 +1,7 @@
+"""
+TODO: train a model with unsloth OR at least give a few-shot corpus to LLM.
+"""
+
 from rich.console import Console
 
 console = Console(width=100)  # for spinner
