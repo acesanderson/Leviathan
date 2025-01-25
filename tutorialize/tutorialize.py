@@ -229,7 +229,10 @@ def create_tutor(subject: str) -> str:
 
 
 def tutorialize(
-    topic: str | list[str], subject: str = "", preferred_model: str = preferred_model
+    topic: str | list[str],
+    subject: str = "",
+    preferred_model: str = preferred_model,
+    chat: bool = False,
 ) -> str | list[str]:
     """
     Our main function.
@@ -243,19 +246,25 @@ def tutorialize(
     else:
         persona = generic_persona
     if isinstance(topic, str):
-        return Tutorialize_Sync(topic, persona, preferred_model)
+        return Tutorialize_Sync(topic, persona, preferred_model, chat=chat)
     elif isinstance(topic, list):
-        return Tutorialize_Async(topic, persona, preferred_model)
+        return Tutorialize_Async(topic, persona, preferred_model, chat=chat)
 
 
 def Tutorialize_Sync(
-    topic: str, persona: str, preferred_model: str = preferred_model
+    topic: str,
+    persona: str,
+    preferred_model: str = preferred_model,
+    chat: bool = False,
 ) -> str:
     """
     Process a topic into a tutorial using the persona template.
     """
     message = create_system_message(system_prompt=persona)
-    messages = [message]
+    if chat:
+        messages = messagestore.messages.append(message)
+    else:
+        messages = [message]
     model = Model(preferred_model)
     prompt = Prompt(tutorial_prompt)
     chain = Chain(prompt=prompt, model=model)
@@ -264,12 +273,28 @@ def Tutorialize_Sync(
     return tutorial
 
 
-def Tutorialize_Async(topics: list[str], persona: str) -> list[str]:
+def Tutorialize_Async(topics: list[str], persona: str, chat: bool = False) -> list[str]:
     """
     Generate tutorials for a list of topics asynchronously.
     NOTE: THIS IS BROKEN BECAUSE OF SAVE TO OBSIDIAN
     """
     pass
+
+
+def chat(query) -> str:
+    """
+    Simple chat with memory. Not requesting a tutorial here.
+    """
+    messagestore.add_new(role="user", content=query)
+    model = Model(preferred_model)
+    prompt = Prompt(query)
+    chain = Chain(prompt=prompt, model=model)
+    messages = messagestore.messages
+    if len(messages) > 4:
+        messages = messages[:-4]
+    response = chain.run(messages=messages)
+    messagestore.add_new(role="assistant", content=response.content)
+    return response.content
 
 
 # Main
@@ -297,10 +322,18 @@ def main():
         "-o", "--ollama", action="store_true", help="Use local LLM instead."
     )
     parser.add_argument("-m", "--model", type=str, help="The model to use")
+    parser.add_argument(
+        "-c", "--chat", type=str, help="Pass the chat history to the model."
+    )
+    parser.add_argument(
+        "-hi",
+        "--history",
+        action="store_true",
+        help="Print the last 10 messages.",
+    )
     args = parser.parse_args()
     topic = args.topic
     subject = args.subject
-    terminal = args.terminal
     raw = args.raw
     last = args.last
     preferred_model = "claude"
@@ -313,6 +346,9 @@ def main():
         except:
             print(f"Model not recognized: {args.model}.")
             sys.exit()
+    if args.history:  # print the last 10 messages backwards in time
+        messagestore.view_history()
+        sys.exit()
     if last and not raw:  # Print the last tutorial in markdown format
         tutorial = messagestore.last().content
         print_markdown(string_to_display=tutorial, console=console)
@@ -321,11 +357,16 @@ def main():
         tutorial = messagestore.last().content
         print(tutorial)
         sys.exit(0)
+    if args.chat:
+        response = chat(args.chat)
+        print(messagestore.messages)
+        print_markdown(response)
+        sys.exit(0)
     if not args.topic:
         print("Please provide a topic.")
         sys.exit(1)
     with console.status("[green]Query...", spinner="dots"):
-        tutorial = tutorialize(topic, subject, preferred_model)
+        tutorial = tutorialize(topic, subject, preferred_model, chat=chat)
         print_markdown(string_to_display=tutorial, console=console)
         messagestore.add_new("assistant", tutorial)
 
