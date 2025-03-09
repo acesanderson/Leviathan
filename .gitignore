@@ -11,3 +11,5 @@ tutorial_store.pkl
 .leviathan_message_store.pickle
 *.txt
 .leviathan_log.txt
+*.mp3
+*.mp4
