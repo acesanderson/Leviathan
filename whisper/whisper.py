@@ -8,7 +8,7 @@ from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 from datasets import load_dataset
 import json
 
-MP3_FILE = "processed/dr_visit_12-16-2024.mp3"
+MP3_FILE = "output.mp3"
 
 
 def setup_device():
@@ -75,13 +75,22 @@ def main():
     save_transcription(result)
 
     # Print the text and timestamps
+    results = ""
     if "chunks" in result:
         for chunk in result["chunks"]:
-            timestamp = f"[{chunk['timestamp'][0]:.2f} -> {chunk['timestamp'][1]:.2f}]"
-            print(f"{timestamp}: {chunk['text']}")
+            try:
+                timestamp = (
+                    f"[{chunk['timestamp'][0]:.2f} -> {chunk['timestamp'][1]:.2f}]"
+                )
+                print(f"{timestamp}: {chunk['text']}")
+                results += chunk["text"]
+            except:
+                print("Error")
     else:
         print("Full text:", result["text"])
         print("\nTimestamps:", result.get("timestamps", []))
+
+    print(results)
 
 
 if __name__ == "__main__":

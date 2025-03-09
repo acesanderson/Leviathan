@@ -71,7 +71,7 @@ def generate_title(text: str) -> str:
     model = Model("claude-3-haiku-20240307")
     prompt_string = """Create a title for the following text:\n<text>{{text}}</text>"""
     prompt = Prompt(prompt_string)
-    chain = Chain(prompt, model)
+    chain = Chain(prompt=prompt, model=model)
     response = chain.run(text)
     return response.content
 
