@@ -1,0 +1,33 @@
+Synthesize our conversation into a dense information vector (targeting 10% of original length) optimized for future context reconstruction. Apply the following:
+
+1. Structure with hierarchical topic tags using [TOPIC] and [SUBTOPIC] markers
+2. Begin with a [USER_CONTEXT] section that captures:
+   - Initial user problem statement and goals 
+   - User's technical background and constraints
+   - Expected application or implementation context
+3. Preserve conversation turn sequence using {Q#}/{A#} notation for critical exchanges
+4. For each exchange, include [USER_INTENT: x] to document the user's specific needs/questions
+5. Maintain maximum information entropy by prioritizing:
+   - Technical specifications and parameters
+   - Non-obvious insights and constraints
+   - Decision points with considered alternatives
+   - Code snippets with critical comments only
+6. Track critical user feedback using [USER_FEEDBACK: x] markers when preferences are expressed
+7. Include original intent markers for each major topic using [INTENT: x]
+8. Format in a retrieval-optimized structure with semantic anchors using <key_concept> tags
+9. Include a "critical path" section that captures:
+   - The minimal knowledge required to reconstruct solutions
+   - The user's specific implementation priorities and constraints
+10. End with a [CONVERSATION_STATUS] section that summarizes:
+    - Current state of problem resolution (solved, partially solved, pivoted)
+    - Outstanding questions or implementation gaps
+    - Next steps identified but not yet addressed
+    - Any evolving requirements or scope changes
+
+Optimize for future LLM retrieval and context reconstruction rather than human readability.
+
+Here's the chat log:
+
+<chat_log>
+{{chat_log}}
+</chat_log>

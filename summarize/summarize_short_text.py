@@ -3,16 +3,18 @@ This implements Chain of Density (COD) classes summarizing texts.
 """
 
 from pydantic import BaseModel
-from Chain import Chain, Model, Prompt, Parser  # type: ignore
+from Chain import Chain, Model, Prompt, Parser, MessageStore
 import sys  # for stdin
 
 # Our config
 chain_of_density_summary_length_in_words = 250
 # model_choice = "claude-3-haiku-20240307" # Haiku would be a good choice but it doesn't play well with functions.
 # model_choice = "llama3.1:latest" # too slow
-model_choice = "gpt"  # works like a charm
+model_choice = "o3-mini"  # works like a charm
 finishing_model = "claude-3-5-sonnet-20240620"  # For chain_of_convergence final summary
 sample_text = "examples/zitron.txt"
+# messagestore
+Chain._message_store = MessageStore(log_file=".cod.log")
 
 
 # Our Pydantic classes
@@ -100,11 +102,12 @@ def chain_of_density(text: str) -> str:
     Use Chain of Density prompt to summarize a text.
     The prompt returns a list of json objects; the second to last seems to have the best mix of named entities to words.
     """
+    breakpoint()
     prompt = Prompt(chain_of_density_prompt_string)
     model = Model(model_choice)
     parser = Parser(Chain_of_Density)
-    chain = Chain(prompt, model, parser)
-    summary = chain.run(input_variables={"ARTICLE": text}, verbose=False)
+    chain = Chain(prompt=prompt, model=model, parser=parser)
+    summary = chain.run(input_variables={"ARTICLE": text}, verbose=True)
     summary = summary.content.COD[
         -2
     ].Denser_Summary  # this seems complicated because we have a type within a type; this is a List of Iterations.
@@ -129,7 +132,7 @@ def chain_of_convergence(text: str, number_of_summaries: int = 3) -> str:
     # Average them.
     prompt = Prompt(chain_of_convergence_prompt_string)
     model = Model(model_choice)
-    chain = Chain(prompt, model)
+    chain = Chain(prompt=prompt, model=model)
     enumerated_summaries = enumerate(
         summaries
     )  # We enumerate the summaries so we can use the index in the prompt (i.e. "summary_1")
@@ -144,14 +147,15 @@ def chain_of_convergence(text: str, number_of_summaries: int = 3) -> str:
     return response.content
 
 
-if __name__ == "__main__":
-    # Capture stdin if it's being piped into script
-    if not sys.stdin.isatty():
-        text = sys.stdin.read()
-        # We add this as context to the query
-        text = f"\n<context>\n{text}</context>"
-    else:
-        text = get_sample_text()
-    summary = chain_of_density(text)
-    # summary = chain_of_convergence(text, number_of_summaries=10)
-    print(summary)
+#
+# if __name__ == "__main__":
+#     # Capture stdin if it's being piped into script
+#     if not sys.stdin.isatty():
+#         text = sys.stdin.read()
+#         # We add this as context to the query
+#         text = f"\n<context>\n{text}</context>"
+#     else:
+#         text = get_sample_text()
+#     summary = chain_of_density(text)
+#     # summary = chain_of_convergence(text, number_of_summaries=10)
+#     print(summary)
