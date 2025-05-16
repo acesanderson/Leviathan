@@ -406,7 +406,7 @@ def main():
     if args.model:
         preferred_model = args.model
     else:
-        preferred_model = "gemini"
+        preferred_model = "gemini2.5"
     if args.clear:
         messagestore.clear()
         sys.exit()
