@@ -10,6 +10,7 @@ setup(
             "sto=Leviathan.save_to_obsidian.save_to_obsidian:main",
             "tutorialize=Leviathan.tutorialize.tutorialize:main",
             "cookbook=Leviathan.cookbook.cookbook:main",
+            "docs=Leviathan.docs.docs:main",
         ],
     },
 )
