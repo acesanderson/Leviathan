@@ -154,7 +154,7 @@ def generate_docs(flattened_project: str) -> str:
     model = Model("claude")
     prompt = Prompt(prompt_str)
     chain = Chain(prompt=prompt, model=model)
-    response = chain.run(input_variables={"code": flattened_project})
+    response = chain.run(input_variables={"code": flattened_project}, verbose=False)
     return str(response.content)
 
 
