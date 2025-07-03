@@ -6,7 +6,10 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-    from Chain import Chain, Model, Prompt, MessageStore, create_system_message
+    from Chain import Chain, Model, Prompt
+    from Chain.message.messagestore import MessageStore
+    from Chain.cache.cache import ChainCache
+    from Chain.message.textmessage import create_system_message
     from Leviathan.utilities.print_markdown import print_markdown
     import sys
     import argparse
@@ -27,6 +30,9 @@ messagestore = MessageStore(
     console=console, history_file=history_file, log_file=log_file
 )
 Chain._message_store = messagestore
+Model._chain_cache = ChainCache(
+    db_path = dir_path / ".tutorialize_cache",
+)
 
 generic_persona = """
 # Generic Tutorial System Prompt
@@ -365,10 +371,9 @@ def main():
     if not args.topic:
         print("Please provide a topic.")
         sys.exit(1)
-    with console.status("[green]Query...", spinner="dots"):
-        tutorial = tutorialize(topic, subject, preferred_model, chat=chat)
-        print_markdown(string_to_display=tutorial, console=console)
-        messagestore.add_new("assistant", tutorial)
+    tutorial = tutorialize(topic, subject, preferred_model, chat=chat)
+    print_markdown(string_to_display=tutorial, console=console)
+    messagestore.add_new("assistant", tutorial)
 
 
 if __name__ == "__main__":

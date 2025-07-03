@@ -3,8 +3,8 @@ This implements Chain of Density (COD) classes summarizing texts.
 """
 
 from pydantic import BaseModel
-from Chain import Chain, Model, Prompt, Parser, MessageStore
-import sys  # for stdin
+from Chain import Chain, Model, Prompt, Parser
+from Chain.message.messagestore import MessageStore
 
 # Our config
 chain_of_density_summary_length_in_words = 250
@@ -15,7 +15,6 @@ finishing_model = "claude-3-5-sonnet-20240620"  # For chain_of_convergence final
 sample_text = "examples/zitron.txt"
 # messagestore
 Chain._message_store = MessageStore(log_file=".cod.log")
-
 
 # Our Pydantic classes
 class Iteration(BaseModel):

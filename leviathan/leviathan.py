@@ -30,7 +30,8 @@ with console.status("[green]Loading...", spinner="dots"):
         chain_of_density,
         chain_of_convergence,
     )
-    from Chain import Chain, Model, Prompt, MessageStore
+    from Chain import Chain, Model, Prompt
+    from Chain.message.messagestore import MessageStore
     import argparse
     import sys
     import re
@@ -43,6 +44,7 @@ dir_path = Path(__file__).parent
 preferred_folder = "Leviathan"
 history_file_path = dir_path / ".leviathan_message_store.pickle"
 log_file_path = dir_path / ".leviathan_log.txt"
+Chain._console = console
 
 # Examples
 # -----------------------------------------------------

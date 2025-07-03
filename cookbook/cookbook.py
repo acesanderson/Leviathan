@@ -7,7 +7,8 @@ from rich.console import Console
 console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
-    from Chain import Chain, Model, Prompt, MessageStore, create_system_message
+    from Chain import Chain, Model, Prompt
+    from Chain.message.messagestore import MessageStore
     from Leviathan.utilities.print_markdown import print_markdown
     import argparse
     from pathlib import Path
