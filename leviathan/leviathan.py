@@ -31,9 +31,7 @@ with console.status("[green]Loading...", spinner="dots"):
         chain_of_convergence,
     )
     from Chain import Chain, Model, Prompt, MessageStore
-    import argparse
-    import sys
-    import re
+    import argparse, sys, re
     from pathlib import Path
 
 # Create our log file and message store history file.

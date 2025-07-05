@@ -13,3 +13,5 @@ tutorial_store.pkl
 .leviathan_log.txt
 *.mp3
 *.mp4
+*.json
+*.pkl

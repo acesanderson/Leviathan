@@ -3,8 +3,8 @@ This implements Chain of Density (COD) classes summarizing texts.
 """
 
 from pydantic import BaseModel
-from Chain import Chain, Model, Prompt, Parser, MessageStore
-import sys  # for stdin
+from Chain import Chain, Model, Prompt, Parser
+from Chain.message import MessageStore
 
 # Our config
 chain_of_density_summary_length_in_words = 250
