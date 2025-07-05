@@ -372,7 +372,10 @@ def main():
         print("Please provide a topic.")
         sys.exit(1)
     tutorial = tutorialize(topic, subject, preferred_model, chat=chat)
-    print_markdown(string_to_display=tutorial, console=console)
+    if not raw:
+        print_markdown(string_to_display=tutorial, console=console)
+    else:
+        print(tutorial)
     messagestore.add_new("assistant", tutorial)
 
 
