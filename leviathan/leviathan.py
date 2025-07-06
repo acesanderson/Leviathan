@@ -30,11 +30,16 @@ with console.status("[green]Loading...", spinner="dots"):
         chain_of_density,
         chain_of_convergence,
     )
+<<<<<<< HEAD
+    from Chain import Chain, Model, Prompt, MessageStore
+    import argparse, sys, re
+=======
     from Chain import Chain, Model, Prompt
     from Chain.message.messagestore import MessageStore
     import argparse
     import sys
     import re
+>>>>>>> 05c6bee533612ca096228de8a30b173aab7d96be
     from pathlib import Path
 
 # Create our log file and message store history file.
