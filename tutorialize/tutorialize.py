@@ -7,13 +7,9 @@ console = Console(width=100)  # for spinner
 
 with console.status("[green]Loading...", spinner="dots"):
     from Chain import Chain, Model, Prompt
-<<<<<<< HEAD
-    from Chain.message import MessageStore, create_system_message
-=======
     from Chain.message.messagestore import MessageStore
     from Chain.cache.cache import ChainCache
     from Chain.message.textmessage import create_system_message
->>>>>>> 05c6bee533612ca096228de8a30b173aab7d96be
     from Leviathan.utilities.print_markdown import print_markdown
     import sys
     import argparse
