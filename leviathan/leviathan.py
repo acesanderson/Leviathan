@@ -30,7 +30,7 @@ with console.status("[green]Loading...", spinner="dots"):
         chain_of_density,
         chain_of_convergence,
     )
-    from Chain import Chain, Model, Prompt
+    from Chain import Chain, Model, Prompt, ChainCache
     from Chain.message.messagestore import MessageStore
     from pathlib import Path
     import sys, re, argparse
@@ -43,6 +43,7 @@ preferred_folder = "Leviathan"
 history_file_path = dir_path / ".leviathan_message_store.pickle"
 log_file_path = dir_path / ".leviathan_log.txt"
 Chain._console = console
+Model._chain_cache = ChainCache(".leviathan_cache.db")
 
 # Examples
 # -----------------------------------------------------
@@ -455,7 +456,6 @@ def main():
                 print(formatted_text)
             else:
                 print_markdown(string_to_display=formatted_text, console=console)
-            messagestore.add_new("assistant", formatted_text)
             sys.exit()
         if args.query:
             query = args.query
@@ -489,11 +489,9 @@ def main():
                 console.print(summary)
                 sys.exit()
             print_markdown(string_to_display=summary, console=console)
-            messagestore.add_new("assistant", summary)
             sys.exit()
         else:
             console.print(text)
-            messagestore.add_new("assistant", text)
 
 
 if __name__ == "__main__":
