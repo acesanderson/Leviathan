@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "Leviathan"
+version = "2.0"
+description = "A series of information gathering + processing scripts."
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.57.1",
+    "chromadb>=1.0.15",
+    "instructor>=1.9.0",
+    "jinja2>=3.1.6",
+    "lxml[html-clean]>=6.0.0",
+    "newspaper4k>=0.9.3.1",
+    "openai>=1.93.0",
+    "pydantic>=2.11.7",
+    "python-dotenv>=1.1.1",
+    "rich>=14.0.0",
+    "scikit-learn>=1.7.0",
+    "tinydb>=4.8.2",
+    "youtube-transcript-api>=1.1.1",
+]
+
+[project.scripts]
+leviathan = "Leviathan.leviathan.leviathan:main"
+tutorialize = "Leviathan.tutorialize.tutorialize:main"
+cookbook = "Leviathan.cookbook.cookbook:main"
+docs = "Leviathan.docs.docs:main"
+
+[tool.pytest.ini_options]
+addopts = "-v -s --tb=short --no-header --showlocals --pdb -x"
+log_cli = true
+log_cli_level = "INFO"
+
+# Hatchling configuration (replaces setuptools.packages.find)
+[tool.hatch.build.targets.wheel]
+packages = ["Leviathan"]

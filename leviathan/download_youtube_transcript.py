@@ -9,8 +9,7 @@ From module creator:
 """
 
 from youtube_transcript_api import YouTubeTranscriptApi
-import sys
-import re
+import sys, re
 
 video_id = "5xb6uWLtCsI"
 example = "https://www.youtube.com/watch?v=VctsqOo8wsc&t=628s"
