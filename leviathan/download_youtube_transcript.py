@@ -50,6 +50,7 @@ def download_transcript(video_id):
 
 if __name__ == "__main__":
     video_id = "5xb6uWLtCsI"
+    # video_id = "dQw4w9WgXcQ"
     if len(sys.argv) > 1:
         video_id = sys.argv[1]
     print(download_transcript(video_id))
