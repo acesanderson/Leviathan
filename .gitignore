@@ -13,9 +13,7 @@ tutorial_store.pkl
 .leviathan_log.txt
 *.mp3
 *.mp4
-<<<<<<< HEAD
 *.pkl.json
-=======
 *.json
 *.pkl
->>>>>>> 2bb93d735339315d42da85a824981b5c4cb1cabf
+.tutorialize_cache

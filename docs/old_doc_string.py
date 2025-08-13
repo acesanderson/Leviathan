@@ -4,7 +4,6 @@ Uses flatten + file I/O to generate context.
 Shoudl also insert the resulting doc string at the top
 """
 
-
 prompt_str = """
 You are an expert Python developer analyzing a large codebase. Your task is to generate a concise module-level docstring for a Python script.
 
